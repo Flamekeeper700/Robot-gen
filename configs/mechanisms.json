@@ -1,0 +1,14 @@
+{
+    "direct": {
+        "name": "Open-loop duty cycle (Percent output)",
+        "defaultMethods": ["setPercentOutput", "zeroSensor"]
+    },
+    "flywheel": {
+        "name": "Flywheel (Velocity closed-loop + FF)",
+        "defaultMethods": ["setPercentOutput", "setClosedLoopTarget"]
+    },
+    "elevator": {
+        "name": "Elevator (Position closed-loop + kG)",
+        "defaultMethods": ["setPercentOutput", "setClosedLoopTarget", "zeroSensor"]
+    }
+}

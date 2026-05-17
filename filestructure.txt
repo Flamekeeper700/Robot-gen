@@ -1,0 +1,15 @@
+Found the fancy unicode symbols, enjoy the legend
+
+ROBOT GEN
+├── index.html
+├── filestructure.txt
+├── css/
+│  └── styles.css
+├── js/
+│  ├── app.js
+│  ├── generator.js
+│  └── templates.js
+└── configs/
+   ├── mechanisms.json
+   ├── methods.json
+   └── motors.json
