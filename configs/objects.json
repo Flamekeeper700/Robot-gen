@@ -64,6 +64,12 @@
                         "type": "int",
                         "default": "0",
                         "description": "PWM port on the roboRIO"
+                    },
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "default": "defaultName",
+                        "description": "PWM port on the roboRIO"
                     }
                 ]
             }
