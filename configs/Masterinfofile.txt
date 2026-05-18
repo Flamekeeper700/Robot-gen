@@ -1,0 +1,8 @@
+tags:
+constant -- should be stored in constants file and be statically referenced
+wpilib -- from wpilib specifically
+hardware -- interacts directly with frc hardware
+pwm -- uses pwm ports
+placements:
+"during class decleration" -- used for when things need to be declared upon class instances being made
+null -- doesnt matter

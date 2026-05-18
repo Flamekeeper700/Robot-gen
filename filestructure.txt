@@ -1,15 +1,49 @@
-Found the fancy unicode symbols, enjoy the legend
+========================================
+ROBOGEN FILE STRUCTURE LEGEND
+========================================
 
-ROBOT GEN
-├── index.html
-├── filestructure.txt
+ROBOT GEN/
+├── index.html              # Main application entry point
+├── filestructure.txt       # Legend file
+│
 ├── css/
-│  └── styles.css
+│   └── styles.css          # Styling
+│
 ├── js/
-│  ├── app.js
-│  ├── generator.js
-│  └── templates.js
-└── configs/
-   ├── mechanisms.json
-   ├── methods.json
-   └── motors.json
+│   ├── app.js              # UI interactions, state management, event handlers
+│   ├── generator.js        # ZIP builder, file generation, context assembly
+│   └── parser.js           # JSON loader, config caching, template helpers
+│
+└── configs/                # ALL configuration files
+    ├── global.json         # Global settings
+    ├── objects.json        # All hardware devices and other code objects (motors, sensors, PID controllers, Sim stuff, etc.)
+    ├── baseTypes.json      # All variable/basic type definitions
+    └── templates.json      # Holds base templates for main files
+
+========================================
+HOW TO EXTEND:
+========================================
+
+1. ADD NEW HARDWARE:
+   - Add entry to hardware.json with:
+     * name: Display name
+     * type: Category (motor, sensor, etc.)
+     * imports: Required Java imports
+     * templates: Declaration, config, getters
+     * methods: Hardware-specific method overrides
+
+2. ADD NEW METHODS:
+   - Add entry to methods.json with:
+     * displayName: UI label
+     * parameters: Array of {name, type, default}
+     * subsystemTemplate: Java code template
+     * commandExecute: Command execution code
+     * commandInitialize: Optional init code
+
+3. ADD NEW CONTROL PROFILES:
+   - Add entry to controls.json with:
+     * name: Profile display name
+     * defaultMethods: Array of method keys to include
+     * configFields: Array of field definitions for UI
+
+========================================

@@ -1,0 +1,45 @@
+{
+    "boolean": {
+        "name": "Boolean",
+        "type": "boolean",
+        "default": false,
+        "description": "A true or false value"
+    },
+    "select": {
+        "name": "Select",
+        "type": "select",
+        "default": "",
+        "options": [],
+        "description": "A dropdown selection with predefined options"
+    },
+    "string": {
+        "name": "String",
+        "type": "string",
+        "default": "",
+        "description": "A text value"
+    },
+    "int": {
+        "name": "Integer",
+        "type": "int",
+        "default": 0,
+        "description": "A whole number value"
+    },
+    "double": {
+        "name": "Double",
+        "type": "double",
+        "default": 0.0,
+        "description": "A decimal number value"
+    },
+    "void": {
+        "name": "Void",
+        "type": "void",
+        "default": null,
+        "description": "returns nothing"
+    },
+    "marker": {
+        "name": "Marker",
+        "type": "marker",
+        "default": null,
+        "description": "marks where something else is meant to be inserted"
+    }
+}
