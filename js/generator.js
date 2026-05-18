@@ -1,20 +1,20 @@
 import { parser } from './parser.js';
 
-export function generateSubsystemCode(subsystemData) {
+export function generateClass(classData) {
     const baseTemplate = parser.configs.templates.wpilibSubystem;
     
     let importsSet = new Set();
     let declarationsList = [];
     let constructorsList = [];
 
-    subsystemData.hardware.forEach(device => {
+    classData.hardware.forEach(device => {
         const typeDef = parser.configs.objects[device.type];
         if (!typeDef) return;
 
         typeDef.imports.forEach(imp => importsSet.add(imp));
 
         const declLine = parser.resolveTemplate(typeDef.declaration, { name: device.name });
-        declarationsList.push(`    private ${declLine}`);
+        declarationsList.push(`   ${declLine}`);
 
         const constructorDef = typeDef.constructors.find(c => c.name === device.chosenConstructor);
         if (constructorDef) {
@@ -28,7 +28,7 @@ export function generateSubsystemCode(subsystemData) {
 
     const masterContext = {
         packageRoot: parser.configs.global.packageRoot.default,
-        className: subsystemData.className,
+        className: classData.className,
         imports: Array.from(importsSet).join('\n'),
         constructors: constructorsList.join('\n'),
         simCode: "// TODO: Add simulation variables"
@@ -36,7 +36,7 @@ export function generateSubsystemCode(subsystemData) {
 
     let finalCode = parser.resolveTemplate(baseTemplate.template, masterContext);
 
-    const classHeader = `public class ${subsystemData.className} extends SubsystemBase {\n`;
+    const classHeader = `public class ${classData.className} extends SubsystemBase {\n`;
     const joinedDeclarations = declarationsList.join('\n') + '\n';
     finalCode = finalCode.replace(classHeader, classHeader + joinedDeclarations);
 

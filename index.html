@@ -11,9 +11,37 @@
         <h1>RoboGen Code Generator</h1>
     </header>
 
-    <main>
-        <button id="generate-btn">Generate Test Subsystem</button>
-        <pre><code id="output-preview">Click the button to generate code...</code></pre>
+    <main class="app-container">
+        <nav class="tab-container">
+            <button class="tab-btn active" data-tab="global-tab">Global Settings</button>
+            <button class="tab-btn" data-tab="subsystem-tab">Subsystems</button>
+            <button class="tab-btn" data-tab="preview-tab">Code Preview</button>
+        </nav>
+
+        <section class="workspace">
+            <div id="global-tab" class="tab-panel active">
+                <h2>Global Configuration</h2>
+                <div id="global-form" class="form-grid">
+                    </div>
+            </div>
+
+            <div id="subsystem-tab" class="tab-panel">
+                <h2>Subsystem Builder</h2>
+                <div class="subsystem-controls">
+                    <button id="add-subsystem-btn">+ Add Subsystem</button>
+                </div>
+                <div id="subsystems-container">
+                    </div>
+            </div>
+
+            <div id="preview-tab" class="tab-panel">
+                <h2>Generated Source Preview</h2>
+                <div class="preview-actions">
+                    <button id="export-zip-btn" class="primary-btn">Download Project ZIP</button>
+                </div>
+                <pre><code id="output-preview">Configure your options and check back here!</code></pre>
+            </div>
+        </section>
     </main>
 
     <script type="module" src="js/app.js"></script>
