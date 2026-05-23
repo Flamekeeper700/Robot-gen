@@ -1,7 +1,5770 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-23T01:13:48.189Z",
-    "apisProcessed": []
+    "generatedAt": "2026-05-23T01:20:38.957Z",
+    "apisProcessed": [
+      "WPILib_Global_API"
+    ]
   },
-  "classes": {}
+  "classes": {
+    "AddressableLED": {
+      "name": "AddressableLED",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AddressableLED"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AddressableLED ${instanceName} = new AddressableLED(${param});"
+        }
+      ],
+      "declarationTemplate": "AddressableLED ${instanceName};",
+      "methods": {}
+    },
+    "AddressableLEDBuffer": {
+      "name": "AddressableLEDBuffer",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AddressableLEDBuffer"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AddressableLEDBuffer ${instanceName} = new AddressableLEDBuffer(${param});"
+        }
+      ],
+      "declarationTemplate": "AddressableLEDBuffer ${instanceName};",
+      "methods": {}
+    },
+    "AddressableLEDBufferView": {
+      "name": "AddressableLEDBufferView",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AddressableLEDBufferView"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AddressableLEDBufferView ${instanceName} = new AddressableLEDBufferView(${param});"
+        }
+      ],
+      "declarationTemplate": "AddressableLEDBufferView ${instanceName};",
+      "methods": {}
+    },
+    "AddressableLEDSim": {
+      "name": "AddressableLEDSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.AddressableLEDSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AddressableLEDSim ${instanceName} = new AddressableLEDSim(${param});"
+        }
+      ],
+      "declarationTemplate": "AddressableLEDSim ${instanceName};",
+      "methods": {}
+    },
+    "ADIS16448_IMU": {
+      "name": "ADIS16448_IMU",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADIS16448_IMU"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADIS16448_IMU ${instanceName} = new ADIS16448_IMU(${param});"
+        }
+      ],
+      "declarationTemplate": "ADIS16448_IMU ${instanceName};",
+      "methods": {}
+    },
+    "ADIS16448_IMUSim": {
+      "name": "ADIS16448_IMUSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.ADIS16448_IMUSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADIS16448_IMUSim ${instanceName} = new ADIS16448_IMUSim(${param});"
+        }
+      ],
+      "declarationTemplate": "ADIS16448_IMUSim ${instanceName};",
+      "methods": {}
+    },
+    "ADIS16470_IMU": {
+      "name": "ADIS16470_IMU",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADIS16470_IMU"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADIS16470_IMU ${instanceName} = new ADIS16470_IMU(${param});"
+        }
+      ],
+      "declarationTemplate": "ADIS16470_IMU ${instanceName};",
+      "methods": {}
+    },
+    "ADIS16470_IMUSim": {
+      "name": "ADIS16470_IMUSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.ADIS16470_IMUSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADIS16470_IMUSim ${instanceName} = new ADIS16470_IMUSim(${param});"
+        }
+      ],
+      "declarationTemplate": "ADIS16470_IMUSim ${instanceName};",
+      "methods": {}
+    },
+    "ADXL345_I2C": {
+      "name": "ADXL345_I2C",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL345_I2C"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL345_I2C ${instanceName} = new ADXL345_I2C(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL345_I2C ${instanceName};",
+      "methods": {}
+    },
+    "ADXL345_SPI": {
+      "name": "ADXL345_SPI",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL345_SPI"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL345_SPI ${instanceName} = new ADXL345_SPI(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL345_SPI ${instanceName};",
+      "methods": {}
+    },
+    "ADXL345Sim": {
+      "name": "ADXL345Sim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.ADXL345Sim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL345Sim ${instanceName} = new ADXL345Sim(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL345Sim ${instanceName};",
+      "methods": {}
+    },
+    "ADXL362": {
+      "name": "ADXL362",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL362"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL362 ${instanceName} = new ADXL362(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL362 ${instanceName};",
+      "methods": {}
+    },
+    "ADXL362Sim": {
+      "name": "ADXL362Sim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.ADXL362Sim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL362Sim ${instanceName} = new ADXL362Sim(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL362Sim ${instanceName};",
+      "methods": {}
+    },
+    "ADXRS450_Gyro": {
+      "name": "ADXRS450_Gyro",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "imu",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXRS450_Gyro"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXRS450_Gyro ${instanceName} = new ADXRS450_Gyro(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXRS450_Gyro ${instanceName};",
+      "methods": {}
+    },
+    "ADXRS450_GyroSim": {
+      "name": "ADXRS450_GyroSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "imu",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.ADXRS450_GyroSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXRS450_GyroSim ${instanceName} = new ADXRS450_GyroSim(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXRS450_GyroSim ${instanceName};",
+      "methods": {}
+    },
+    "Alert": {
+      "name": "Alert",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Alert"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Alert ${instanceName} = new Alert(${param});"
+        }
+      ],
+      "declarationTemplate": "Alert ${instanceName};",
+      "methods": {}
+    },
+    "Alert.AlertType": {
+      "name": "Alert.AlertType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Alert.AlertType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Alert.AlertType ${instanceName} = new Alert.AlertType(${param});"
+        }
+      ],
+      "declarationTemplate": "Alert.AlertType ${instanceName};",
+      "methods": {}
+    },
+    "ADXL345_I2C.AllAxes": {
+      "name": "ADXL345_I2C.AllAxes",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL345_I2C.AllAxes"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL345_I2C.AllAxes ${instanceName} = new ADXL345_I2C.AllAxes(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL345_I2C.AllAxes ${instanceName};",
+      "methods": {}
+    },
+    "ADXL345_SPI.AllAxes": {
+      "name": "ADXL345_SPI.AllAxes",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL345_SPI.AllAxes"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL345_SPI.AllAxes ${instanceName} = new ADXL345_SPI.AllAxes(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL345_SPI.AllAxes ${instanceName};",
+      "methods": {}
+    },
+    "ADXL362.AllAxes": {
+      "name": "ADXL362.AllAxes",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL362.AllAxes"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL362.AllAxes ${instanceName} = new ADXL362.AllAxes(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL362.AllAxes ${instanceName};",
+      "methods": {}
+    },
+    "DriverStation.Alliance": {
+      "name": "DriverStation.Alliance",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DriverStation.Alliance"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DriverStation.Alliance ${instanceName} = new DriverStation.Alliance(${param});"
+        }
+      ],
+      "declarationTemplate": "DriverStation.Alliance ${instanceName};",
+      "methods": {}
+    },
+    "AnalogAccelerometer": {
+      "name": "AnalogAccelerometer",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogAccelerometer"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogAccelerometer ${instanceName} = new AnalogAccelerometer(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogAccelerometer ${instanceName};",
+      "methods": {}
+    },
+    "AnalogEncoder": {
+      "name": "AnalogEncoder",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogEncoder"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogEncoder ${instanceName} = new AnalogEncoder(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogEncoder ${instanceName};",
+      "methods": {}
+    },
+    "AnalogEncoderSim": {
+      "name": "AnalogEncoderSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.AnalogEncoderSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogEncoderSim ${instanceName} = new AnalogEncoderSim(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogEncoderSim ${instanceName};",
+      "methods": {}
+    },
+    "AnalogGyro": {
+      "name": "AnalogGyro",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "imu",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogGyro"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogGyro ${instanceName} = new AnalogGyro(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogGyro ${instanceName};",
+      "methods": {}
+    },
+    "AnalogGyroSim": {
+      "name": "AnalogGyroSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "imu",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.AnalogGyroSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogGyroSim ${instanceName} = new AnalogGyroSim(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogGyroSim ${instanceName};",
+      "methods": {}
+    },
+    "AnalogInput": {
+      "name": "AnalogInput",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogInput"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogInput ${instanceName} = new AnalogInput(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogInput ${instanceName};",
+      "methods": {}
+    },
+    "AnalogInputSim": {
+      "name": "AnalogInputSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.AnalogInputSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogInputSim ${instanceName} = new AnalogInputSim(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogInputSim ${instanceName};",
+      "methods": {}
+    },
+    "AnalogOutput": {
+      "name": "AnalogOutput",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogOutput"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogOutput ${instanceName} = new AnalogOutput(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogOutput ${instanceName};",
+      "methods": {}
+    },
+    "AnalogOutputSim": {
+      "name": "AnalogOutputSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.AnalogOutputSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogOutputSim ${instanceName} = new AnalogOutputSim(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogOutputSim ${instanceName};",
+      "methods": {}
+    },
+    "AnalogPotentiometer": {
+      "name": "AnalogPotentiometer",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogPotentiometer"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogPotentiometer ${instanceName} = new AnalogPotentiometer(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogPotentiometer ${instanceName};",
+      "methods": {}
+    },
+    "AnalogTrigger": {
+      "name": "AnalogTrigger",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogTrigger"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogTrigger ${instanceName} = new AnalogTrigger(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogTrigger ${instanceName};",
+      "methods": {}
+    },
+    "AnalogTriggerOutput": {
+      "name": "AnalogTriggerOutput",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogTriggerOutput"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogTriggerOutput ${instanceName} = new AnalogTriggerOutput(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogTriggerOutput ${instanceName};",
+      "methods": {}
+    },
+    "AnalogTriggerOutput.AnalogTriggerOutputException": {
+      "name": "AnalogTriggerOutput.AnalogTriggerOutputException",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogTriggerOutput.AnalogTriggerOutputException"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogTriggerOutput.AnalogTriggerOutputException ${instanceName} = new AnalogTriggerOutput.AnalogTriggerOutputException(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogTriggerOutput.AnalogTriggerOutputException ${instanceName};",
+      "methods": {}
+    },
+    "AnalogTriggerSim": {
+      "name": "AnalogTriggerSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.AnalogTriggerSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogTriggerSim ${instanceName} = new AnalogTriggerSim(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogTriggerSim ${instanceName};",
+      "methods": {}
+    },
+    "AnalogTriggerOutput.AnalogTriggerType": {
+      "name": "AnalogTriggerOutput.AnalogTriggerType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AnalogTriggerOutput.AnalogTriggerType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AnalogTriggerOutput.AnalogTriggerType ${instanceName} = new AnalogTriggerOutput.AnalogTriggerType(${param});"
+        }
+      ],
+      "declarationTemplate": "AnalogTriggerOutput.AnalogTriggerType ${instanceName};",
+      "methods": {}
+    },
+    "AprilTag": {
+      "name": "AprilTag",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTag"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTag ${instanceName} = new AprilTag(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTag ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagDetection": {
+      "name": "AprilTagDetection",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagDetection"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagDetection ${instanceName} = new AprilTagDetection(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagDetection ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagDetector": {
+      "name": "AprilTagDetector",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagDetector"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagDetector ${instanceName} = new AprilTagDetector(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagDetector ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagFieldLayout": {
+      "name": "AprilTagFieldLayout",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagFieldLayout"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagFieldLayout ${instanceName} = new AprilTagFieldLayout(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagFieldLayout ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagFields": {
+      "name": "AprilTagFields",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagFields"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagFields ${instanceName} = new AprilTagFields(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagFields ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagJNI": {
+      "name": "AprilTagJNI",
+      "package": "edu.wpi.first.apriltag.jni",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.jni.AprilTagJNI"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagJNI ${instanceName} = new AprilTagJNI(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagJNI ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagPoseEstimate": {
+      "name": "AprilTagPoseEstimate",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagPoseEstimate"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagPoseEstimate ${instanceName} = new AprilTagPoseEstimate(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagPoseEstimate ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagPoseEstimator": {
+      "name": "AprilTagPoseEstimator",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagPoseEstimator"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagPoseEstimator ${instanceName} = new AprilTagPoseEstimator(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagPoseEstimator ${instanceName};",
+      "methods": {}
+    },
+    "AsynchronousInterrupt": {
+      "name": "AsynchronousInterrupt",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AsynchronousInterrupt"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AsynchronousInterrupt ${instanceName} = new AsynchronousInterrupt(${param});"
+        }
+      ],
+      "declarationTemplate": "AsynchronousInterrupt ${instanceName};",
+      "methods": {}
+    },
+    "ADXL345_I2C.Axes": {
+      "name": "ADXL345_I2C.Axes",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL345_I2C.Axes"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL345_I2C.Axes ${instanceName} = new ADXL345_I2C.Axes(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL345_I2C.Axes ${instanceName};",
+      "methods": {}
+    },
+    "ADXL345_SPI.Axes": {
+      "name": "ADXL345_SPI.Axes",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL345_SPI.Axes"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL345_SPI.Axes ${instanceName} = new ADXL345_SPI.Axes(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL345_SPI.Axes ${instanceName};",
+      "methods": {}
+    },
+    "ADXL362.Axes": {
+      "name": "ADXL362.Axes",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL362.Axes"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL362.Axes ${instanceName} = new ADXL362.Axes(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL362.Axes ${instanceName};",
+      "methods": {}
+    },
+    "PS4Controller.Axis": {
+      "name": "PS4Controller.Axis",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PS4Controller.Axis"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PS4Controller.Axis ${instanceName} = new PS4Controller.Axis(${param});"
+        }
+      ],
+      "declarationTemplate": "PS4Controller.Axis ${instanceName};",
+      "methods": {}
+    },
+    "PS5Controller.Axis": {
+      "name": "PS5Controller.Axis",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PS5Controller.Axis"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PS5Controller.Axis ${instanceName} = new PS5Controller.Axis(${param});"
+        }
+      ],
+      "declarationTemplate": "PS5Controller.Axis ${instanceName};",
+      "methods": {}
+    },
+    "StadiaController.Axis": {
+      "name": "StadiaController.Axis",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.StadiaController.Axis"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "StadiaController.Axis ${instanceName} = new StadiaController.Axis(${param});"
+        }
+      ],
+      "declarationTemplate": "StadiaController.Axis ${instanceName};",
+      "methods": {}
+    },
+    "XboxController.Axis": {
+      "name": "XboxController.Axis",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.XboxController.Axis"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XboxController.Axis ${instanceName} = new XboxController.Axis(${param});"
+        }
+      ],
+      "declarationTemplate": "XboxController.Axis ${instanceName};",
+      "methods": {}
+    },
+    "Joystick.AxisType": {
+      "name": "Joystick.AxisType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Joystick.AxisType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Joystick.AxisType ${instanceName} = new Joystick.AxisType(${param});"
+        }
+      ],
+      "declarationTemplate": "Joystick.AxisType ${instanceName};",
+      "methods": {}
+    },
+    "BatterySim": {
+      "name": "BatterySim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.BatterySim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "BatterySim ${instanceName} = new BatterySim(${param});"
+        }
+      ],
+      "declarationTemplate": "BatterySim ${instanceName};",
+      "methods": {}
+    },
+    "BooleanEvent": {
+      "name": "BooleanEvent",
+      "package": "edu.wpi.first.wpilibj.event",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.event.BooleanEvent"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "BooleanEvent ${instanceName} = new BooleanEvent(${param});"
+        }
+      ],
+      "declarationTemplate": "BooleanEvent ${instanceName};",
+      "methods": {}
+    },
+    "BuiltInAccelerometer": {
+      "name": "BuiltInAccelerometer",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.BuiltInAccelerometer"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "BuiltInAccelerometer ${instanceName} = new BuiltInAccelerometer(${param});"
+        }
+      ],
+      "declarationTemplate": "BuiltInAccelerometer ${instanceName};",
+      "methods": {}
+    },
+    "BuiltInAccelerometerSim": {
+      "name": "BuiltInAccelerometerSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.BuiltInAccelerometerSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "BuiltInAccelerometerSim ${instanceName} = new BuiltInAccelerometerSim(${param});"
+        }
+      ],
+      "declarationTemplate": "BuiltInAccelerometerSim ${instanceName};",
+      "methods": {}
+    },
+    "BuiltInLayouts": {
+      "name": "BuiltInLayouts",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "BuiltInLayouts ${instanceName} = new BuiltInLayouts(${param});"
+        }
+      ],
+      "declarationTemplate": "BuiltInLayouts ${instanceName};",
+      "methods": {}
+    },
+    "BuiltInWidgets": {
+      "name": "BuiltInWidgets",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "BuiltInWidgets ${instanceName} = new BuiltInWidgets(${param});"
+        }
+      ],
+      "declarationTemplate": "BuiltInWidgets ${instanceName};",
+      "methods": {}
+    },
+    "PS4Controller.Button": {
+      "name": "PS4Controller.Button",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PS4Controller.Button"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PS4Controller.Button ${instanceName} = new PS4Controller.Button(${param});"
+        }
+      ],
+      "declarationTemplate": "PS4Controller.Button ${instanceName};",
+      "methods": {}
+    },
+    "PS5Controller.Button": {
+      "name": "PS5Controller.Button",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PS5Controller.Button"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PS5Controller.Button ${instanceName} = new PS5Controller.Button(${param});"
+        }
+      ],
+      "declarationTemplate": "PS5Controller.Button ${instanceName};",
+      "methods": {}
+    },
+    "StadiaController.Button": {
+      "name": "StadiaController.Button",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.StadiaController.Button"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "StadiaController.Button ${instanceName} = new StadiaController.Button(${param});"
+        }
+      ],
+      "declarationTemplate": "StadiaController.Button ${instanceName};",
+      "methods": {}
+    },
+    "XboxController.Button": {
+      "name": "XboxController.Button",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.XboxController.Button"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XboxController.Button ${instanceName} = new XboxController.Button(${param});"
+        }
+      ],
+      "declarationTemplate": "XboxController.Button ${instanceName};",
+      "methods": {}
+    },
+    "Joystick.ButtonType": {
+      "name": "Joystick.ButtonType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Joystick.ButtonType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Joystick.ButtonType ${instanceName} = new Joystick.ButtonType(${param});"
+        }
+      ],
+      "declarationTemplate": "Joystick.ButtonType ${instanceName};",
+      "methods": {}
+    },
+    "ADIS16448_IMU.CalibrationTime": {
+      "name": "ADIS16448_IMU.CalibrationTime",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADIS16448_IMU.CalibrationTime"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADIS16448_IMU.CalibrationTime ${instanceName} = new ADIS16448_IMU.CalibrationTime(${param});"
+        }
+      ],
+      "declarationTemplate": "ADIS16448_IMU.CalibrationTime ${instanceName};",
+      "methods": {}
+    },
+    "ADIS16470_IMU.CalibrationTime": {
+      "name": "ADIS16470_IMU.CalibrationTime",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADIS16470_IMU.CalibrationTime"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADIS16470_IMU.CalibrationTime ${instanceName} = new ADIS16470_IMU.CalibrationTime(${param});"
+        }
+      ],
+      "declarationTemplate": "ADIS16470_IMU.CalibrationTime ${instanceName};",
+      "methods": {}
+    },
+    "CallbackStore": {
+      "name": "CallbackStore",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.CallbackStore"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CallbackStore ${instanceName} = new CallbackStore(${param});"
+        }
+      ],
+      "declarationTemplate": "CallbackStore ${instanceName};",
+      "methods": {}
+    },
+    "CAN": {
+      "name": "CAN",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.CAN"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CAN ${instanceName} = new CAN(${param});"
+        }
+      ],
+      "declarationTemplate": "CAN ${instanceName};",
+      "methods": {}
+    },
+    "OnBoardIO.ChannelMode": {
+      "name": "OnBoardIO.ChannelMode",
+      "package": "edu.wpi.first.wpilibj.romi",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.romi.OnBoardIO.ChannelMode"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "OnBoardIO.ChannelMode ${instanceName} = new OnBoardIO.ChannelMode(${param});"
+        }
+      ],
+      "declarationTemplate": "OnBoardIO.ChannelMode ${instanceName};",
+      "methods": {}
+    },
+    "Color": {
+      "name": "Color",
+      "package": "edu.wpi.first.wpilibj.util",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.util.Color"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Color ${instanceName} = new Color(${param});"
+        }
+      ],
+      "declarationTemplate": "Color ${instanceName};",
+      "methods": {}
+    },
+    "Color8Bit": {
+      "name": "Color8Bit",
+      "package": "edu.wpi.first.wpilibj.util",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.util.Color8Bit"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Color8Bit ${instanceName} = new Color8Bit(${param});"
+        }
+      ],
+      "declarationTemplate": "Color8Bit ${instanceName};",
+      "methods": {}
+    },
+    "AddressableLED.ColorOrder": {
+      "name": "AddressableLED.ColorOrder",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.AddressableLED.ColorOrder"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AddressableLED.ColorOrder ${instanceName} = new AddressableLED.ColorOrder(${param});"
+        }
+      ],
+      "declarationTemplate": "AddressableLED.ColorOrder ${instanceName};",
+      "methods": {}
+    },
+    "Command": {
+      "name": "Command",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.Command"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Command ${instanceName} = new Command(${param});"
+        }
+      ],
+      "declarationTemplate": "Command ${instanceName};",
+      "methods": {}
+    },
+    "CommandGenericHID": {
+      "name": "CommandGenericHID",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.CommandGenericHID"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CommandGenericHID ${instanceName} = new CommandGenericHID(${param});"
+        }
+      ],
+      "declarationTemplate": "CommandGenericHID ${instanceName};",
+      "methods": {}
+    },
+    "CommandJoystick": {
+      "name": "CommandJoystick",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.CommandJoystick"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CommandJoystick ${instanceName} = new CommandJoystick(${param});"
+        }
+      ],
+      "declarationTemplate": "CommandJoystick ${instanceName};",
+      "methods": {}
+    },
+    "CommandPS4Controller": {
+      "name": "CommandPS4Controller",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.CommandPS4Controller"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CommandPS4Controller ${instanceName} = new CommandPS4Controller(${param});"
+        }
+      ],
+      "declarationTemplate": "CommandPS4Controller ${instanceName};",
+      "methods": {}
+    },
+    "CommandPS5Controller": {
+      "name": "CommandPS5Controller",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.CommandPS5Controller"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CommandPS5Controller ${instanceName} = new CommandPS5Controller(${param});"
+        }
+      ],
+      "declarationTemplate": "CommandPS5Controller ${instanceName};",
+      "methods": {}
+    },
+    "Commands": {
+      "name": "Commands",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.Commands"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Commands ${instanceName} = new Commands(${param});"
+        }
+      ],
+      "declarationTemplate": "Commands ${instanceName};",
+      "methods": {}
+    },
+    "CommandScheduler": {
+      "name": "CommandScheduler",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.CommandScheduler"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CommandScheduler ${instanceName} = new CommandScheduler(${param});"
+        }
+      ],
+      "declarationTemplate": "CommandScheduler ${instanceName};",
+      "methods": {}
+    },
+    "CommandStadiaController": {
+      "name": "CommandStadiaController",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.CommandStadiaController"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CommandStadiaController ${instanceName} = new CommandStadiaController(${param});"
+        }
+      ],
+      "declarationTemplate": "CommandStadiaController ${instanceName};",
+      "methods": {}
+    },
+    "CommandXboxController": {
+      "name": "CommandXboxController",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.CommandXboxController"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CommandXboxController ${instanceName} = new CommandXboxController(${param});"
+        }
+      ],
+      "declarationTemplate": "CommandXboxController ${instanceName};",
+      "methods": {}
+    },
+    "ComplexWidget": {
+      "name": "ComplexWidget",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.ComplexWidget"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ComplexWidget ${instanceName} = new ComplexWidget(${param});"
+        }
+      ],
+      "declarationTemplate": "ComplexWidget ${instanceName};",
+      "methods": {}
+    },
+    "Compressor": {
+      "name": "Compressor",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Compressor"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Compressor ${instanceName} = new Compressor(${param});"
+        }
+      ],
+      "declarationTemplate": "Compressor ${instanceName};",
+      "methods": {}
+    },
+    "CompressorConfigType": {
+      "name": "CompressorConfigType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.CompressorConfigType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CompressorConfigType ${instanceName} = new CompressorConfigType(${param});"
+        }
+      ],
+      "declarationTemplate": "CompressorConfigType ${instanceName};",
+      "methods": {}
+    },
+    "ConditionalCommand": {
+      "name": "ConditionalCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.ConditionalCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ConditionalCommand ${instanceName} = new ConditionalCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "ConditionalCommand ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagDetector.Config": {
+      "name": "AprilTagDetector.Config",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagDetector.Config"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagDetector.Config ${instanceName} = new AprilTagDetector.Config(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagDetector.Config ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagPoseEstimator.Config": {
+      "name": "AprilTagPoseEstimator.Config",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagPoseEstimator.Config"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagPoseEstimator.Config ${instanceName} = new AprilTagPoseEstimator.Config(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagPoseEstimator.Config ${instanceName};",
+      "methods": {}
+    },
+    "SysIdRoutine.Config": {
+      "name": "SysIdRoutine.Config",
+      "package": "edu.wpi.first.wpilibj2.command.sysid",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Config"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SysIdRoutine.Config ${instanceName} = new SysIdRoutine.Config(${param});"
+        }
+      ],
+      "declarationTemplate": "SysIdRoutine.Config ${instanceName};",
+      "methods": {}
+    },
+    "CoordinateAxis": {
+      "name": "CoordinateAxis",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.CoordinateAxis"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CoordinateAxis ${instanceName} = new CoordinateAxis(${param});"
+        }
+      ],
+      "declarationTemplate": "CoordinateAxis ${instanceName};",
+      "methods": {}
+    },
+    "CoordinateSystem": {
+      "name": "CoordinateSystem",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.CoordinateSystem"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CoordinateSystem ${instanceName} = new CoordinateSystem(${param});"
+        }
+      ],
+      "declarationTemplate": "CoordinateSystem ${instanceName};",
+      "methods": {}
+    },
+    "Counter": {
+      "name": "Counter",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Counter"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Counter ${instanceName} = new Counter(${param});"
+        }
+      ],
+      "declarationTemplate": "Counter ${instanceName};",
+      "methods": {}
+    },
+    "CounterBase": {
+      "name": "CounterBase",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.CounterBase"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CounterBase ${instanceName} = new CounterBase(${param});"
+        }
+      ],
+      "declarationTemplate": "CounterBase ${instanceName};",
+      "methods": {}
+    },
+    "CTREPCMSim": {
+      "name": "CTREPCMSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.CTREPCMSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CTREPCMSim ${instanceName} = new CTREPCMSim(${param});"
+        }
+      ],
+      "declarationTemplate": "CTREPCMSim ${instanceName};",
+      "methods": {}
+    },
+    "DataLogManager": {
+      "name": "DataLogManager",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DataLogManager"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DataLogManager ${instanceName} = new DataLogManager(${param});"
+        }
+      ],
+      "declarationTemplate": "DataLogManager ${instanceName};",
+      "methods": {}
+    },
+    "DCMotorSim": {
+      "name": "DCMotorSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DCMotorSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DCMotorSim ${instanceName} = new DCMotorSim(${param});"
+        }
+      ],
+      "declarationTemplate": "DCMotorSim ${instanceName};",
+      "methods": {}
+    },
+    "DeferredCommand": {
+      "name": "DeferredCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.DeferredCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DeferredCommand ${instanceName} = new DeferredCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "DeferredCommand ${instanceName};",
+      "methods": {}
+    },
+    "DifferentialDrive": {
+      "name": "DifferentialDrive",
+      "package": "edu.wpi.first.wpilibj.drive",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.drive.DifferentialDrive"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DifferentialDrive ${instanceName} = new DifferentialDrive(${param});"
+        }
+      ],
+      "declarationTemplate": "DifferentialDrive ${instanceName};",
+      "methods": {}
+    },
+    "DifferentialDrivetrainSim": {
+      "name": "DifferentialDrivetrainSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DifferentialDrivetrainSim ${instanceName} = new DifferentialDrivetrainSim(${param});"
+        }
+      ],
+      "declarationTemplate": "DifferentialDrivetrainSim ${instanceName};",
+      "methods": {}
+    },
+    "DigitalGlitchFilter": {
+      "name": "DigitalGlitchFilter",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DigitalGlitchFilter"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DigitalGlitchFilter ${instanceName} = new DigitalGlitchFilter(${param});"
+        }
+      ],
+      "declarationTemplate": "DigitalGlitchFilter ${instanceName};",
+      "methods": {}
+    },
+    "DigitalInput": {
+      "name": "DigitalInput",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DigitalInput"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DigitalInput ${instanceName} = new DigitalInput(${param});"
+        }
+      ],
+      "declarationTemplate": "DigitalInput ${instanceName};",
+      "methods": {}
+    },
+    "DigitalOutput": {
+      "name": "DigitalOutput",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DigitalOutput"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DigitalOutput ${instanceName} = new DigitalOutput(${param});"
+        }
+      ],
+      "declarationTemplate": "DigitalOutput ${instanceName};",
+      "methods": {}
+    },
+    "DigitalPWMSim": {
+      "name": "DigitalPWMSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DigitalPWMSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DigitalPWMSim ${instanceName} = new DigitalPWMSim(${param});"
+        }
+      ],
+      "declarationTemplate": "DigitalPWMSim ${instanceName};",
+      "methods": {}
+    },
+    "DigitalSource": {
+      "name": "DigitalSource",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DigitalSource"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DigitalSource ${instanceName} = new DigitalSource(${param});"
+        }
+      ],
+      "declarationTemplate": "DigitalSource ${instanceName};",
+      "methods": {}
+    },
+    "DIOSim": {
+      "name": "DIOSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DIOSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DIOSim ${instanceName} = new DIOSim(${param});"
+        }
+      ],
+      "declarationTemplate": "DIOSim ${instanceName};",
+      "methods": {}
+    },
+    "Relay.Direction": {
+      "name": "Relay.Direction",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Relay.Direction"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Relay.Direction ${instanceName} = new Relay.Direction(${param});"
+        }
+      ],
+      "declarationTemplate": "Relay.Direction ${instanceName};",
+      "methods": {}
+    },
+    "SysIdRoutine.Direction": {
+      "name": "SysIdRoutine.Direction",
+      "package": "edu.wpi.first.wpilibj2.command.sysid",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Direction"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SysIdRoutine.Direction ${instanceName} = new SysIdRoutine.Direction(${param});"
+        }
+      ],
+      "declarationTemplate": "SysIdRoutine.Direction ${instanceName};",
+      "methods": {}
+    },
+    "DMA": {
+      "name": "DMA",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DMA"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DMA ${instanceName} = new DMA(${param});"
+        }
+      ],
+      "declarationTemplate": "DMA ${instanceName};",
+      "methods": {}
+    },
+    "DMASample.DMAReadStatus": {
+      "name": "DMASample.DMAReadStatus",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DMASample.DMAReadStatus"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DMASample.DMAReadStatus ${instanceName} = new DMASample.DMAReadStatus(${param});"
+        }
+      ],
+      "declarationTemplate": "DMASample.DMAReadStatus ${instanceName};",
+      "methods": {}
+    },
+    "DMASample": {
+      "name": "DMASample",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DMASample"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DMASample ${instanceName} = new DMASample(${param});"
+        }
+      ],
+      "declarationTemplate": "DMASample ${instanceName};",
+      "methods": {}
+    },
+    "DoubleSolenoid": {
+      "name": "DoubleSolenoid",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DoubleSolenoid"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DoubleSolenoid ${instanceName} = new DoubleSolenoid(${param});"
+        }
+      ],
+      "declarationTemplate": "DoubleSolenoid ${instanceName};",
+      "methods": {}
+    },
+    "DoubleSolenoidSim": {
+      "name": "DoubleSolenoidSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DoubleSolenoidSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DoubleSolenoidSim ${instanceName} = new DoubleSolenoidSim(${param});"
+        }
+      ],
+      "declarationTemplate": "DoubleSolenoidSim ${instanceName};",
+      "methods": {}
+    },
+    "DriverStation": {
+      "name": "DriverStation",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DriverStation"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DriverStation ${instanceName} = new DriverStation(${param});"
+        }
+      ],
+      "declarationTemplate": "DriverStation ${instanceName};",
+      "methods": {}
+    },
+    "DriverStationModeThread": {
+      "name": "DriverStationModeThread",
+      "package": "edu.wpi.first.wpilibj.internal",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.internal.DriverStationModeThread"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DriverStationModeThread ${instanceName} = new DriverStationModeThread(${param});"
+        }
+      ],
+      "declarationTemplate": "DriverStationModeThread ${instanceName};",
+      "methods": {}
+    },
+    "DriverStationSim": {
+      "name": "DriverStationSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DriverStationSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DriverStationSim ${instanceName} = new DriverStationSim(${param});"
+        }
+      ],
+      "declarationTemplate": "DriverStationSim ${instanceName};",
+      "methods": {}
+    },
+    "DSControlWord": {
+      "name": "DSControlWord",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DSControlWord"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DSControlWord ${instanceName} = new DSControlWord(${param});"
+        }
+      ],
+      "declarationTemplate": "DSControlWord ${instanceName};",
+      "methods": {}
+    },
+    "DutyCycle": {
+      "name": "DutyCycle",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DutyCycle"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DutyCycle ${instanceName} = new DutyCycle(${param});"
+        }
+      ],
+      "declarationTemplate": "DutyCycle ${instanceName};",
+      "methods": {}
+    },
+    "DutyCycleEncoder": {
+      "name": "DutyCycleEncoder",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DutyCycleEncoder"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DutyCycleEncoder ${instanceName} = new DutyCycleEncoder(${param});"
+        }
+      ],
+      "declarationTemplate": "DutyCycleEncoder ${instanceName};",
+      "methods": {}
+    },
+    "DutyCycleEncoderSim": {
+      "name": "DutyCycleEncoderSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DutyCycleEncoderSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DutyCycleEncoderSim ${instanceName} = new DutyCycleEncoderSim(${param});"
+        }
+      ],
+      "declarationTemplate": "DutyCycleEncoderSim ${instanceName};",
+      "methods": {}
+    },
+    "DutyCycleSim": {
+      "name": "DutyCycleSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DutyCycleSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DutyCycleSim ${instanceName} = new DutyCycleSim(${param});"
+        }
+      ],
+      "declarationTemplate": "DutyCycleSim ${instanceName};",
+      "methods": {}
+    },
+    "EdgeConfiguration": {
+      "name": "EdgeConfiguration",
+      "package": "edu.wpi.first.wpilibj.counter",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.counter.EdgeConfiguration"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "EdgeConfiguration ${instanceName} = new EdgeConfiguration(${param});"
+        }
+      ],
+      "declarationTemplate": "EdgeConfiguration ${instanceName};",
+      "methods": {}
+    },
+    "ElevatorSim": {
+      "name": "ElevatorSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.ElevatorSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ElevatorSim ${instanceName} = new ElevatorSim(${param});"
+        }
+      ],
+      "declarationTemplate": "ElevatorSim ${instanceName};",
+      "methods": {}
+    },
+    "Ellipse2d": {
+      "name": "Ellipse2d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Ellipse2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Ellipse2d ${instanceName} = new Ellipse2d(${param});"
+        }
+      ],
+      "declarationTemplate": "Ellipse2d ${instanceName};",
+      "methods": {}
+    },
+    "Ellipse2dProto": {
+      "name": "Ellipse2dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Ellipse2dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Ellipse2dProto ${instanceName} = new Ellipse2dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Ellipse2dProto ${instanceName};",
+      "methods": {}
+    },
+    "Ellipse2dStruct": {
+      "name": "Ellipse2dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Ellipse2dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Ellipse2dStruct ${instanceName} = new Ellipse2dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Ellipse2dStruct ${instanceName};",
+      "methods": {}
+    },
+    "Encoder": {
+      "name": "Encoder",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Encoder"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Encoder ${instanceName} = new Encoder(${param});"
+        }
+      ],
+      "declarationTemplate": "Encoder ${instanceName};",
+      "methods": {}
+    },
+    "EncoderSim": {
+      "name": "EncoderSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.EncoderSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "EncoderSim ${instanceName} = new EncoderSim(${param});"
+        }
+      ],
+      "declarationTemplate": "EncoderSim ${instanceName};",
+      "methods": {}
+    },
+    "CounterBase.EncodingType": {
+      "name": "CounterBase.EncodingType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.CounterBase.EncodingType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "CounterBase.EncodingType ${instanceName} = new CounterBase.EncodingType(${param});"
+        }
+      ],
+      "declarationTemplate": "CounterBase.EncodingType ${instanceName};",
+      "methods": {}
+    },
+    "EventImportance": {
+      "name": "EventImportance",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.EventImportance"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "EventImportance ${instanceName} = new EventImportance(${param});"
+        }
+      ],
+      "declarationTemplate": "EventImportance ${instanceName};",
+      "methods": {}
+    },
+    "EventLoop": {
+      "name": "EventLoop",
+      "package": "edu.wpi.first.wpilibj.event",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.event.EventLoop"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "EventLoop ${instanceName} = new EventLoop(${param});"
+        }
+      ],
+      "declarationTemplate": "EventLoop ${instanceName};",
+      "methods": {}
+    },
+    "ExternalDirectionCounter": {
+      "name": "ExternalDirectionCounter",
+      "package": "edu.wpi.first.wpilibj.counter",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.counter.ExternalDirectionCounter"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ExternalDirectionCounter ${instanceName} = new ExternalDirectionCounter(${param});"
+        }
+      ],
+      "declarationTemplate": "ExternalDirectionCounter ${instanceName};",
+      "methods": {}
+    },
+    "Field2d": {
+      "name": "Field2d",
+      "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.smartdashboard.Field2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Field2d ${instanceName} = new Field2d(${param});"
+        }
+      ],
+      "declarationTemplate": "Field2d ${instanceName};",
+      "methods": {}
+    },
+    "FieldObject2d": {
+      "name": "FieldObject2d",
+      "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.smartdashboard.FieldObject2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "FieldObject2d ${instanceName} = new FieldObject2d(${param});"
+        }
+      ],
+      "declarationTemplate": "FieldObject2d ${instanceName};",
+      "methods": {}
+    },
+    "Filesystem": {
+      "name": "Filesystem",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Filesystem"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Filesystem ${instanceName} = new Filesystem(${param});"
+        }
+      ],
+      "declarationTemplate": "Filesystem ${instanceName};",
+      "methods": {}
+    },
+    "SerialPort.FlowControl": {
+      "name": "SerialPort.FlowControl",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SerialPort.FlowControl"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SerialPort.FlowControl ${instanceName} = new SerialPort.FlowControl(${param});"
+        }
+      ],
+      "declarationTemplate": "SerialPort.FlowControl ${instanceName};",
+      "methods": {}
+    },
+    "FlywheelSim": {
+      "name": "FlywheelSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.FlywheelSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "FlywheelSim ${instanceName} = new FlywheelSim(${param});"
+        }
+      ],
+      "declarationTemplate": "FlywheelSim ${instanceName};",
+      "methods": {}
+    },
+    "FunctionalCommand": {
+      "name": "FunctionalCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.FunctionalCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "FunctionalCommand ${instanceName} = new FunctionalCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "FunctionalCommand ${instanceName};",
+      "methods": {}
+    },
+    "GenericHID": {
+      "name": "GenericHID",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.GenericHID"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "GenericHID ${instanceName} = new GenericHID(${param});"
+        }
+      ],
+      "declarationTemplate": "GenericHID ${instanceName};",
+      "methods": {}
+    },
+    "GenericHIDSim": {
+      "name": "GenericHIDSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.GenericHIDSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "GenericHIDSim ${instanceName} = new GenericHIDSim(${param});"
+        }
+      ],
+      "declarationTemplate": "GenericHIDSim ${instanceName};",
+      "methods": {}
+    },
+    "LEDPattern.GradientType": {
+      "name": "LEDPattern.GradientType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.LEDPattern.GradientType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "LEDPattern.GradientType ${instanceName} = new LEDPattern.GradientType(${param});"
+        }
+      ],
+      "declarationTemplate": "LEDPattern.GradientType ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagJNI.Helper": {
+      "name": "AprilTagJNI.Helper",
+      "package": "edu.wpi.first.apriltag.jni",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.jni.AprilTagJNI.Helper"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagJNI.Helper ${instanceName} = new AprilTagJNI.Helper(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagJNI.Helper ${instanceName};",
+      "methods": {}
+    },
+    "GenericHID.HIDType": {
+      "name": "GenericHID.HIDType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.GenericHID.HIDType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "GenericHID.HIDType ${instanceName} = new GenericHID.HIDType(${param});"
+        }
+      ],
+      "declarationTemplate": "GenericHID.HIDType ${instanceName};",
+      "methods": {}
+    },
+    "I2C": {
+      "name": "I2C",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.I2C"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "I2C ${instanceName} = new I2C(${param});"
+        }
+      ],
+      "declarationTemplate": "I2C ${instanceName};",
+      "methods": {}
+    },
+    "I2CSim": {
+      "name": "I2CSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.I2CSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "I2CSim ${instanceName} = new I2CSim(${param});"
+        }
+      ],
+      "declarationTemplate": "I2CSim ${instanceName};",
+      "methods": {}
+    },
+    "ADIS16448_IMU.IMUAxis": {
+      "name": "ADIS16448_IMU.IMUAxis",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADIS16448_IMU.IMUAxis"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADIS16448_IMU.IMUAxis ${instanceName} = new ADIS16448_IMU.IMUAxis(${param});"
+        }
+      ],
+      "declarationTemplate": "ADIS16448_IMU.IMUAxis ${instanceName};",
+      "methods": {}
+    },
+    "ADIS16470_IMU.IMUAxis": {
+      "name": "ADIS16470_IMU.IMUAxis",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADIS16470_IMU.IMUAxis"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADIS16470_IMU.IMUAxis ${instanceName} = new ADIS16470_IMU.IMUAxis(${param});"
+        }
+      ],
+      "declarationTemplate": "ADIS16470_IMU.IMUAxis ${instanceName};",
+      "methods": {}
+    },
+    "LEDReader.IndexedColorIterator": {
+      "name": "LEDReader.IndexedColorIterator",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.LEDReader.IndexedColorIterator"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "LEDReader.IndexedColorIterator ${instanceName} = new LEDReader.IndexedColorIterator(${param});"
+        }
+      ],
+      "declarationTemplate": "LEDReader.IndexedColorIterator ${instanceName};",
+      "methods": {}
+    },
+    "Encoder.IndexingType": {
+      "name": "Encoder.IndexingType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Encoder.IndexingType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Encoder.IndexingType ${instanceName} = new Encoder.IndexingType(${param});"
+        }
+      ],
+      "declarationTemplate": "Encoder.IndexingType ${instanceName};",
+      "methods": {}
+    },
+    "LEDPattern.IndexMapper": {
+      "name": "LEDPattern.IndexMapper",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.LEDPattern.IndexMapper"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "LEDPattern.IndexMapper ${instanceName} = new LEDPattern.IndexMapper(${param});"
+        }
+      ],
+      "declarationTemplate": "LEDPattern.IndexMapper ${instanceName};",
+      "methods": {}
+    },
+    "InstantCommand": {
+      "name": "InstantCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.InstantCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "InstantCommand ${instanceName} = new InstantCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "InstantCommand ${instanceName};",
+      "methods": {}
+    },
+    "InternalButton": {
+      "name": "InternalButton",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.InternalButton"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "InternalButton ${instanceName} = new InternalButton(${param});"
+        }
+      ],
+      "declarationTemplate": "InternalButton ${instanceName};",
+      "methods": {}
+    },
+    "Command.InterruptionBehavior": {
+      "name": "Command.InterruptionBehavior",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.Command.InterruptionBehavior"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Command.InterruptionBehavior ${instanceName} = new Command.InterruptionBehavior(${param});"
+        }
+      ],
+      "declarationTemplate": "Command.InterruptionBehavior ${instanceName};",
+      "methods": {}
+    },
+    "Relay.InvalidValueException": {
+      "name": "Relay.InvalidValueException",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Relay.InvalidValueException"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Relay.InvalidValueException ${instanceName} = new Relay.InvalidValueException(${param});"
+        }
+      ],
+      "declarationTemplate": "Relay.InvalidValueException ${instanceName};",
+      "methods": {}
+    },
+    "IterativeRobotBase": {
+      "name": "IterativeRobotBase",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.IterativeRobotBase"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "IterativeRobotBase ${instanceName} = new IterativeRobotBase(${param});"
+        }
+      ],
+      "declarationTemplate": "IterativeRobotBase ${instanceName};",
+      "methods": {}
+    },
+    "Joystick": {
+      "name": "Joystick",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Joystick"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Joystick ${instanceName} = new Joystick(${param});"
+        }
+      ],
+      "declarationTemplate": "Joystick ${instanceName};",
+      "methods": {}
+    },
+    "JoystickButton": {
+      "name": "JoystickButton",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.JoystickButton"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "JoystickButton ${instanceName} = new JoystickButton(${param});"
+        }
+      ],
+      "declarationTemplate": "JoystickButton ${instanceName};",
+      "methods": {}
+    },
+    "JoystickSim": {
+      "name": "JoystickSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.JoystickSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "JoystickSim ${instanceName} = new JoystickSim(${param});"
+        }
+      ],
+      "declarationTemplate": "JoystickSim ${instanceName};",
+      "methods": {}
+    },
+    "DifferentialDrivetrainSim.KitbotGearing": {
+      "name": "DifferentialDrivetrainSim.KitbotGearing",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotGearing"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DifferentialDrivetrainSim.KitbotGearing ${instanceName} = new DifferentialDrivetrainSim.KitbotGearing(${param});"
+        }
+      ],
+      "declarationTemplate": "DifferentialDrivetrainSim.KitbotGearing ${instanceName};",
+      "methods": {}
+    },
+    "DifferentialDrivetrainSim.KitbotMotor": {
+      "name": "DifferentialDrivetrainSim.KitbotMotor",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotMotor"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DifferentialDrivetrainSim.KitbotMotor ${instanceName} = new DifferentialDrivetrainSim.KitbotMotor(${param});"
+        }
+      ],
+      "declarationTemplate": "DifferentialDrivetrainSim.KitbotMotor ${instanceName};",
+      "methods": {}
+    },
+    "DifferentialDrivetrainSim.KitbotWheelSize": {
+      "name": "DifferentialDrivetrainSim.KitbotWheelSize",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotWheelSize"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DifferentialDrivetrainSim.KitbotWheelSize ${instanceName} = new DifferentialDrivetrainSim.KitbotWheelSize(${param});"
+        }
+      ],
+      "declarationTemplate": "DifferentialDrivetrainSim.KitbotWheelSize ${instanceName};",
+      "methods": {}
+    },
+    "Koors40": {
+      "name": "Koors40",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.Koors40"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Koors40 ${instanceName} = new Koors40(${param});"
+        }
+      ],
+      "declarationTemplate": "Koors40 ${instanceName};",
+      "methods": {}
+    },
+    "LayoutType": {
+      "name": "LayoutType",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.LayoutType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "LayoutType ${instanceName} = new LayoutType(${param});"
+        }
+      ],
+      "declarationTemplate": "LayoutType ${instanceName};",
+      "methods": {}
+    },
+    "LEDPattern": {
+      "name": "LEDPattern",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.LEDPattern"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "LEDPattern ${instanceName} = new LEDPattern(${param});"
+        }
+      ],
+      "declarationTemplate": "LEDPattern ${instanceName};",
+      "methods": {}
+    },
+    "LEDReader": {
+      "name": "LEDReader",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.LEDReader"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "LEDReader ${instanceName} = new LEDReader(${param});"
+        }
+      ],
+      "declarationTemplate": "LEDReader ${instanceName};",
+      "methods": {}
+    },
+    "LEDWriter": {
+      "name": "LEDWriter",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.LEDWriter"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "LEDWriter ${instanceName} = new LEDWriter(${param});"
+        }
+      ],
+      "declarationTemplate": "LEDWriter ${instanceName};",
+      "methods": {}
+    },
+    "LinearSystemSim": {
+      "name": "LinearSystemSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.LinearSystemSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "LinearSystemSim ${instanceName} = new LinearSystemSim(${param});"
+        }
+      ],
+      "declarationTemplate": "LinearSystemSim ${instanceName};",
+      "methods": {}
+    },
+    "LiveWindow": {
+      "name": "LiveWindow",
+      "package": "edu.wpi.first.wpilibj.livewindow",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.livewindow.LiveWindow"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "LiveWindow ${instanceName} = new LiveWindow(${param});"
+        }
+      ],
+      "declarationTemplate": "LiveWindow ${instanceName};",
+      "methods": {}
+    },
+    "DriverStation.MatchType": {
+      "name": "DriverStation.MatchType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DriverStation.MatchType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DriverStation.MatchType ${instanceName} = new DriverStation.MatchType(${param});"
+        }
+      ],
+      "declarationTemplate": "DriverStation.MatchType ${instanceName};",
+      "methods": {}
+    },
+    "MecanumControllerCommand": {
+      "name": "MecanumControllerCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.MecanumControllerCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MecanumControllerCommand ${instanceName} = new MecanumControllerCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "MecanumControllerCommand ${instanceName};",
+      "methods": {}
+    },
+    "MecanumDrive": {
+      "name": "MecanumDrive",
+      "package": "edu.wpi.first.wpilibj.drive",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.drive.MecanumDrive"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MecanumDrive ${instanceName} = new MecanumDrive(${param});"
+        }
+      ],
+      "declarationTemplate": "MecanumDrive ${instanceName};",
+      "methods": {}
+    },
+    "MecanumControllerCommand.MecanumVoltagesConsumer": {
+      "name": "MecanumControllerCommand.MecanumVoltagesConsumer",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.MecanumControllerCommand.MecanumVoltagesConsumer"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MecanumControllerCommand.MecanumVoltagesConsumer ${instanceName} = new MecanumControllerCommand.MecanumVoltagesConsumer(${param});"
+        }
+      ],
+      "declarationTemplate": "MecanumControllerCommand.MecanumVoltagesConsumer ${instanceName};",
+      "methods": {}
+    },
+    "SysIdRoutine.Mechanism": {
+      "name": "SysIdRoutine.Mechanism",
+      "package": "edu.wpi.first.wpilibj2.command.sysid",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Mechanism"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SysIdRoutine.Mechanism ${instanceName} = new SysIdRoutine.Mechanism(${param});"
+        }
+      ],
+      "declarationTemplate": "SysIdRoutine.Mechanism ${instanceName};",
+      "methods": {}
+    },
+    "Mechanism2d": {
+      "name": "Mechanism2d",
+      "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.smartdashboard.Mechanism2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Mechanism2d ${instanceName} = new Mechanism2d(${param});"
+        }
+      ],
+      "declarationTemplate": "Mechanism2d ${instanceName};",
+      "methods": {}
+    },
+    "MechanismLigament2d": {
+      "name": "MechanismLigament2d",
+      "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.smartdashboard.MechanismLigament2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MechanismLigament2d ${instanceName} = new MechanismLigament2d(${param});"
+        }
+      ],
+      "declarationTemplate": "MechanismLigament2d ${instanceName};",
+      "methods": {}
+    },
+    "MechanismObject2d": {
+      "name": "MechanismObject2d",
+      "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.smartdashboard.MechanismObject2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MechanismObject2d ${instanceName} = new MechanismObject2d(${param});"
+        }
+      ],
+      "declarationTemplate": "MechanismObject2d ${instanceName};",
+      "methods": {}
+    },
+    "MechanismRoot2d": {
+      "name": "MechanismRoot2d",
+      "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.smartdashboard.MechanismRoot2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MechanismRoot2d ${instanceName} = new MechanismRoot2d(${param});"
+        }
+      ],
+      "declarationTemplate": "MechanismRoot2d ${instanceName};",
+      "methods": {}
+    },
+    "Counter.Mode": {
+      "name": "Counter.Mode",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Counter.Mode"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Counter.Mode ${instanceName} = new Counter.Mode(${param});"
+        }
+      ],
+      "declarationTemplate": "Counter.Mode ${instanceName};",
+      "methods": {}
+    },
+    "SPI.Mode": {
+      "name": "SPI.Mode",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SPI.Mode"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SPI.Mode ${instanceName} = new SPI.Mode(${param});"
+        }
+      ],
+      "declarationTemplate": "SPI.Mode ${instanceName};",
+      "methods": {}
+    },
+    "PowerDistribution.ModuleType": {
+      "name": "PowerDistribution.ModuleType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PowerDistribution.ModuleType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PowerDistribution.ModuleType ${instanceName} = new PowerDistribution.ModuleType(${param});"
+        }
+      ],
+      "declarationTemplate": "PowerDistribution.ModuleType ${instanceName};",
+      "methods": {}
+    },
+    "MotorController": {
+      "name": "MotorController",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.MotorController"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MotorController ${instanceName} = new MotorController(${param});"
+        }
+      ],
+      "declarationTemplate": "MotorController ${instanceName};",
+      "methods": {}
+    },
+    "MotorControllerGroup": {
+      "name": "MotorControllerGroup",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MotorControllerGroup ${instanceName} = new MotorControllerGroup(${param});"
+        }
+      ],
+      "declarationTemplate": "MotorControllerGroup ${instanceName};",
+      "methods": {}
+    },
+    "SysIdRoutineLog.MotorLog": {
+      "name": "SysIdRoutineLog.MotorLog",
+      "package": "edu.wpi.first.wpilibj.sysid",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.sysid.SysIdRoutineLog.MotorLog"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SysIdRoutineLog.MotorLog ${instanceName} = new SysIdRoutineLog.MotorLog(${param});"
+        }
+      ],
+      "declarationTemplate": "SysIdRoutineLog.MotorLog ${instanceName};",
+      "methods": {}
+    },
+    "MotorSafety": {
+      "name": "MotorSafety",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.MotorSafety"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MotorSafety ${instanceName} = new MotorSafety(${param});"
+        }
+      ],
+      "declarationTemplate": "MotorSafety ${instanceName};",
+      "methods": {}
+    },
+    "RobotDriveBase.MotorType": {
+      "name": "RobotDriveBase.MotorType",
+      "package": "edu.wpi.first.wpilibj.drive",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.drive.RobotDriveBase.MotorType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RobotDriveBase.MotorType ${instanceName} = new RobotDriveBase.MotorType(${param});"
+        }
+      ],
+      "declarationTemplate": "RobotDriveBase.MotorType ${instanceName};",
+      "methods": {}
+    },
+    "NetworkBooleanEvent": {
+      "name": "NetworkBooleanEvent",
+      "package": "edu.wpi.first.wpilibj.event",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.event.NetworkBooleanEvent"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "NetworkBooleanEvent ${instanceName} = new NetworkBooleanEvent(${param});"
+        }
+      ],
+      "declarationTemplate": "NetworkBooleanEvent ${instanceName};",
+      "methods": {}
+    },
+    "NetworkButton": {
+      "name": "NetworkButton",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.NetworkButton"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "NetworkButton ${instanceName} = new NetworkButton(${param});"
+        }
+      ],
+      "declarationTemplate": "NetworkButton ${instanceName};",
+      "methods": {}
+    },
+    "Notifier": {
+      "name": "Notifier",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Notifier"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Notifier ${instanceName} = new Notifier(${param});"
+        }
+      ],
+      "declarationTemplate": "Notifier ${instanceName};",
+      "methods": {}
+    },
+    "NotifierCommand": {
+      "name": "NotifierCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.NotifierCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "NotifierCommand ${instanceName} = new NotifierCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "NotifierCommand ${instanceName};",
+      "methods": {}
+    },
+    "NotifierSim": {
+      "name": "NotifierSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.NotifierSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "NotifierSim ${instanceName} = new NotifierSim(${param});"
+        }
+      ],
+      "declarationTemplate": "NotifierSim ${instanceName};",
+      "methods": {}
+    },
+    "OnBoardIO": {
+      "name": "OnBoardIO",
+      "package": "edu.wpi.first.wpilibj.romi",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.romi.OnBoardIO"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "OnBoardIO ${instanceName} = new OnBoardIO(${param});"
+        }
+      ],
+      "declarationTemplate": "OnBoardIO ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagFieldLayout.OriginPosition": {
+      "name": "AprilTagFieldLayout.OriginPosition",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagFieldLayout.OriginPosition"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagFieldLayout.OriginPosition ${instanceName} = new AprilTagFieldLayout.OriginPosition(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagFieldLayout.OriginPosition ${instanceName};",
+      "methods": {}
+    },
+    "ParallelCommandGroup": {
+      "name": "ParallelCommandGroup",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.ParallelCommandGroup"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ParallelCommandGroup ${instanceName} = new ParallelCommandGroup(${param});"
+        }
+      ],
+      "declarationTemplate": "ParallelCommandGroup ${instanceName};",
+      "methods": {}
+    },
+    "ParallelDeadlineGroup": {
+      "name": "ParallelDeadlineGroup",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ParallelDeadlineGroup ${instanceName} = new ParallelDeadlineGroup(${param});"
+        }
+      ],
+      "declarationTemplate": "ParallelDeadlineGroup ${instanceName};",
+      "methods": {}
+    },
+    "ParallelRaceGroup": {
+      "name": "ParallelRaceGroup",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.ParallelRaceGroup"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ParallelRaceGroup ${instanceName} = new ParallelRaceGroup(${param});"
+        }
+      ],
+      "declarationTemplate": "ParallelRaceGroup ${instanceName};",
+      "methods": {}
+    },
+    "SerialPort.Parity": {
+      "name": "SerialPort.Parity",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SerialPort.Parity"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SerialPort.Parity ${instanceName} = new SerialPort.Parity(${param});"
+        }
+      ],
+      "declarationTemplate": "SerialPort.Parity ${instanceName};",
+      "methods": {}
+    },
+    "PDPSim": {
+      "name": "PDPSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.PDPSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PDPSim ${instanceName} = new PDPSim(${param});"
+        }
+      ],
+      "declarationTemplate": "PDPSim ${instanceName};",
+      "methods": {}
+    },
+    "PWM.PeriodMultiplier": {
+      "name": "PWM.PeriodMultiplier",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PWM.PeriodMultiplier"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWM.PeriodMultiplier ${instanceName} = new PWM.PeriodMultiplier(${param});"
+        }
+      ],
+      "declarationTemplate": "PWM.PeriodMultiplier ${instanceName};",
+      "methods": {}
+    },
+    "PIDCommand": {
+      "name": "PIDCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.PIDCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PIDCommand ${instanceName} = new PIDCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "PIDCommand ${instanceName};",
+      "methods": {}
+    },
+    "PIDSubsystem": {
+      "name": "PIDSubsystem",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.PIDSubsystem"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PIDSubsystem ${instanceName} = new PIDSubsystem(${param});"
+        }
+      ],
+      "declarationTemplate": "PIDSubsystem ${instanceName};",
+      "methods": {}
+    },
+    "PneumaticHub": {
+      "name": "PneumaticHub",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PneumaticHub"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PneumaticHub ${instanceName} = new PneumaticHub(${param});"
+        }
+      ],
+      "declarationTemplate": "PneumaticHub ${instanceName};",
+      "methods": {}
+    },
+    "PneumaticsBase": {
+      "name": "PneumaticsBase",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PneumaticsBase"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PneumaticsBase ${instanceName} = new PneumaticsBase(${param});"
+        }
+      ],
+      "declarationTemplate": "PneumaticsBase ${instanceName};",
+      "methods": {}
+    },
+    "PneumaticsBaseSim": {
+      "name": "PneumaticsBaseSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.PneumaticsBaseSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PneumaticsBaseSim ${instanceName} = new PneumaticsBaseSim(${param});"
+        }
+      ],
+      "declarationTemplate": "PneumaticsBaseSim ${instanceName};",
+      "methods": {}
+    },
+    "PneumaticsControlModule": {
+      "name": "PneumaticsControlModule",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PneumaticsControlModule"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PneumaticsControlModule ${instanceName} = new PneumaticsControlModule(${param});"
+        }
+      ],
+      "declarationTemplate": "PneumaticsControlModule ${instanceName};",
+      "methods": {}
+    },
+    "PneumaticsModuleType": {
+      "name": "PneumaticsModuleType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PneumaticsModuleType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PneumaticsModuleType ${instanceName} = new PneumaticsModuleType(${param});"
+        }
+      ],
+      "declarationTemplate": "PneumaticsModuleType ${instanceName};",
+      "methods": {}
+    },
+    "I2C.Port": {
+      "name": "I2C.Port",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.I2C.Port"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "I2C.Port ${instanceName} = new I2C.Port(${param});"
+        }
+      ],
+      "declarationTemplate": "I2C.Port ${instanceName};",
+      "methods": {}
+    },
+    "SerialPort.Port": {
+      "name": "SerialPort.Port",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SerialPort.Port"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SerialPort.Port ${instanceName} = new SerialPort.Port(${param});"
+        }
+      ],
+      "declarationTemplate": "SerialPort.Port ${instanceName};",
+      "methods": {}
+    },
+    "SPI.Port": {
+      "name": "SPI.Port",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SPI.Port"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SPI.Port ${instanceName} = new SPI.Port(${param});"
+        }
+      ],
+      "declarationTemplate": "SPI.Port ${instanceName};",
+      "methods": {}
+    },
+    "Pose2d": {
+      "name": "Pose2d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Pose2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Pose2d ${instanceName} = new Pose2d(${param});"
+        }
+      ],
+      "declarationTemplate": "Pose2d ${instanceName};",
+      "methods": {}
+    },
+    "Pose2dProto": {
+      "name": "Pose2dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Pose2dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Pose2dProto ${instanceName} = new Pose2dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Pose2dProto ${instanceName};",
+      "methods": {}
+    },
+    "Pose2dStruct": {
+      "name": "Pose2dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Pose2dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Pose2dStruct ${instanceName} = new Pose2dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Pose2dStruct ${instanceName};",
+      "methods": {}
+    },
+    "Pose3d": {
+      "name": "Pose3d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Pose3d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Pose3d ${instanceName} = new Pose3d(${param});"
+        }
+      ],
+      "declarationTemplate": "Pose3d ${instanceName};",
+      "methods": {}
+    },
+    "Pose3dProto": {
+      "name": "Pose3dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Pose3dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Pose3dProto ${instanceName} = new Pose3dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Pose3dProto ${instanceName};",
+      "methods": {}
+    },
+    "Pose3dStruct": {
+      "name": "Pose3dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Pose3dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Pose3dStruct ${instanceName} = new Pose3dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Pose3dStruct ${instanceName};",
+      "methods": {}
+    },
+    "POVButton": {
+      "name": "POVButton",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.POVButton"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "POVButton ${instanceName} = new POVButton(${param});"
+        }
+      ],
+      "declarationTemplate": "POVButton ${instanceName};",
+      "methods": {}
+    },
+    "PowerDistribution": {
+      "name": "PowerDistribution",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PowerDistribution"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PowerDistribution ${instanceName} = new PowerDistribution(${param});"
+        }
+      ],
+      "declarationTemplate": "PowerDistribution ${instanceName};",
+      "methods": {}
+    },
+    "Preferences": {
+      "name": "Preferences",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Preferences"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Preferences ${instanceName} = new Preferences(${param});"
+        }
+      ],
+      "declarationTemplate": "Preferences ${instanceName};",
+      "methods": {}
+    },
+    "PrintCommand": {
+      "name": "PrintCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.PrintCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PrintCommand ${instanceName} = new PrintCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "PrintCommand ${instanceName};",
+      "methods": {}
+    },
+    "ProfiledPIDCommand": {
+      "name": "ProfiledPIDCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.ProfiledPIDCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ProfiledPIDCommand ${instanceName} = new ProfiledPIDCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "ProfiledPIDCommand ${instanceName};",
+      "methods": {}
+    },
+    "ProfiledPIDSubsystem": {
+      "name": "ProfiledPIDSubsystem",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.ProfiledPIDSubsystem"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ProfiledPIDSubsystem ${instanceName} = new ProfiledPIDSubsystem(${param});"
+        }
+      ],
+      "declarationTemplate": "ProfiledPIDSubsystem ${instanceName};",
+      "methods": {}
+    },
+    "ProxyCommand": {
+      "name": "ProxyCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.ProxyCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ProxyCommand ${instanceName} = new ProxyCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "ProxyCommand ${instanceName};",
+      "methods": {}
+    },
+    "PS4Controller": {
+      "name": "PS4Controller",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PS4Controller"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PS4Controller ${instanceName} = new PS4Controller(${param});"
+        }
+      ],
+      "declarationTemplate": "PS4Controller ${instanceName};",
+      "methods": {}
+    },
+    "PS4ControllerSim": {
+      "name": "PS4ControllerSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.PS4ControllerSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PS4ControllerSim ${instanceName} = new PS4ControllerSim(${param});"
+        }
+      ],
+      "declarationTemplate": "PS4ControllerSim ${instanceName};",
+      "methods": {}
+    },
+    "PS5Controller": {
+      "name": "PS5Controller",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PS5Controller"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PS5Controller ${instanceName} = new PS5Controller(${param});"
+        }
+      ],
+      "declarationTemplate": "PS5Controller ${instanceName};",
+      "methods": {}
+    },
+    "PS5ControllerSim": {
+      "name": "PS5ControllerSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.PS5ControllerSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PS5ControllerSim ${instanceName} = new PS5ControllerSim(${param});"
+        }
+      ],
+      "declarationTemplate": "PS5ControllerSim ${instanceName};",
+      "methods": {}
+    },
+    "PWM": {
+      "name": "PWM",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.PWM"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWM ${instanceName} = new PWM(${param});"
+        }
+      ],
+      "declarationTemplate": "PWM ${instanceName};",
+      "methods": {}
+    },
+    "PWMMotorController": {
+      "name": "PWMMotorController",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.PWMMotorController"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWMMotorController ${instanceName} = new PWMMotorController(${param});"
+        }
+      ],
+      "declarationTemplate": "PWMMotorController ${instanceName};",
+      "methods": {}
+    },
+    "PWMSim": {
+      "name": "PWMSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.PWMSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWMSim ${instanceName} = new PWMSim(${param});"
+        }
+      ],
+      "declarationTemplate": "PWMSim ${instanceName};",
+      "methods": {}
+    },
+    "PWMSparkFlex": {
+      "name": "PWMSparkFlex",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.PWMSparkFlex"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWMSparkFlex ${instanceName} = new PWMSparkFlex(${param});"
+        }
+      ],
+      "declarationTemplate": "PWMSparkFlex ${instanceName};",
+      "methods": {}
+    },
+    "PWMSparkMax": {
+      "name": "PWMSparkMax",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWMSparkMax ${instanceName} = new PWMSparkMax(${param});"
+        }
+      ],
+      "declarationTemplate": "PWMSparkMax ${instanceName};",
+      "methods": {}
+    },
+    "PWMTalonFX": {
+      "name": "PWMTalonFX",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.PWMTalonFX"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWMTalonFX ${instanceName} = new PWMTalonFX(${param});"
+        }
+      ],
+      "declarationTemplate": "PWMTalonFX ${instanceName};",
+      "methods": {}
+    },
+    "PWMTalonSRX": {
+      "name": "PWMTalonSRX",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWMTalonSRX ${instanceName} = new PWMTalonSRX(${param});"
+        }
+      ],
+      "declarationTemplate": "PWMTalonSRX ${instanceName};",
+      "methods": {}
+    },
+    "PWMVenom": {
+      "name": "PWMVenom",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.PWMVenom"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWMVenom ${instanceName} = new PWMVenom(${param});"
+        }
+      ],
+      "declarationTemplate": "PWMVenom ${instanceName};",
+      "methods": {}
+    },
+    "PWMVictorSPX": {
+      "name": "PWMVictorSPX",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "PWMVictorSPX ${instanceName} = new PWMVictorSPX(${param});"
+        }
+      ],
+      "declarationTemplate": "PWMVictorSPX ${instanceName};",
+      "methods": {}
+    },
+    "AprilTagDetector.QuadThresholdParameters": {
+      "name": "AprilTagDetector.QuadThresholdParameters",
+      "package": "edu.wpi.first.apriltag",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.apriltag.AprilTagDetector.QuadThresholdParameters"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "AprilTagDetector.QuadThresholdParameters ${instanceName} = new AprilTagDetector.QuadThresholdParameters(${param});"
+        }
+      ],
+      "declarationTemplate": "AprilTagDetector.QuadThresholdParameters ${instanceName};",
+      "methods": {}
+    },
+    "Quaternion": {
+      "name": "Quaternion",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Quaternion"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Quaternion ${instanceName} = new Quaternion(${param});"
+        }
+      ],
+      "declarationTemplate": "Quaternion ${instanceName};",
+      "methods": {}
+    },
+    "QuaternionProto": {
+      "name": "QuaternionProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.QuaternionProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "QuaternionProto ${instanceName} = new QuaternionProto(${param});"
+        }
+      ],
+      "declarationTemplate": "QuaternionProto ${instanceName};",
+      "methods": {}
+    },
+    "QuaternionStruct": {
+      "name": "QuaternionStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.QuaternionStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "QuaternionStruct ${instanceName} = new QuaternionStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "QuaternionStruct ${instanceName};",
+      "methods": {}
+    },
+    "RobotController.RadioLEDState": {
+      "name": "RobotController.RadioLEDState",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.RobotController.RadioLEDState"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RobotController.RadioLEDState ${instanceName} = new RobotController.RadioLEDState(${param});"
+        }
+      ],
+      "declarationTemplate": "RobotController.RadioLEDState ${instanceName};",
+      "methods": {}
+    },
+    "RamseteCommand": {
+      "name": "RamseteCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.RamseteCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RamseteCommand ${instanceName} = new RamseteCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "RamseteCommand ${instanceName};",
+      "methods": {}
+    },
+    "ADXL345_I2C.Range": {
+      "name": "ADXL345_I2C.Range",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL345_I2C.Range"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL345_I2C.Range ${instanceName} = new ADXL345_I2C.Range(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL345_I2C.Range ${instanceName};",
+      "methods": {}
+    },
+    "ADXL345_SPI.Range": {
+      "name": "ADXL345_SPI.Range",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL345_SPI.Range"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL345_SPI.Range ${instanceName} = new ADXL345_SPI.Range(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL345_SPI.Range ${instanceName};",
+      "methods": {}
+    },
+    "ADXL362.Range": {
+      "name": "ADXL362.Range",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.ADXL362.Range"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ADXL362.Range ${instanceName} = new ADXL362.Range(${param});"
+        }
+      ],
+      "declarationTemplate": "ADXL362.Range ${instanceName};",
+      "methods": {}
+    },
+    "BuiltInAccelerometer.Range": {
+      "name": "BuiltInAccelerometer.Range",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.BuiltInAccelerometer.Range"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "BuiltInAccelerometer.Range ${instanceName} = new BuiltInAccelerometer.Range(${param});"
+        }
+      ],
+      "declarationTemplate": "BuiltInAccelerometer.Range ${instanceName};",
+      "methods": {}
+    },
+    "Rectangle2d": {
+      "name": "Rectangle2d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Rectangle2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Rectangle2d ${instanceName} = new Rectangle2d(${param});"
+        }
+      ],
+      "declarationTemplate": "Rectangle2d ${instanceName};",
+      "methods": {}
+    },
+    "Rectangle2dProto": {
+      "name": "Rectangle2dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Rectangle2dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Rectangle2dProto ${instanceName} = new Rectangle2dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Rectangle2dProto ${instanceName};",
+      "methods": {}
+    },
+    "Rectangle2dStruct": {
+      "name": "Rectangle2dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Rectangle2dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Rectangle2dStruct ${instanceName} = new Rectangle2dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Rectangle2dStruct ${instanceName};",
+      "methods": {}
+    },
+    "Relay": {
+      "name": "Relay",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Relay"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Relay ${instanceName} = new Relay(${param});"
+        }
+      ],
+      "declarationTemplate": "Relay ${instanceName};",
+      "methods": {}
+    },
+    "RelaySim": {
+      "name": "RelaySim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.RelaySim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RelaySim ${instanceName} = new RelaySim(${param});"
+        }
+      ],
+      "declarationTemplate": "RelaySim ${instanceName};",
+      "methods": {}
+    },
+    "RepeatCommand": {
+      "name": "RepeatCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.RepeatCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RepeatCommand ${instanceName} = new RepeatCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "RepeatCommand ${instanceName};",
+      "methods": {}
+    },
+    "Resource": {
+      "name": "Resource",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Resource"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Resource ${instanceName} = new Resource(${param});"
+        }
+      ],
+      "declarationTemplate": "Resource ${instanceName};",
+      "methods": {}
+    },
+    "REVPHSim": {
+      "name": "REVPHSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.REVPHSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "REVPHSim ${instanceName} = new REVPHSim(${param});"
+        }
+      ],
+      "declarationTemplate": "REVPHSim ${instanceName};",
+      "methods": {}
+    },
+    "Color.RGBChannel": {
+      "name": "Color.RGBChannel",
+      "package": "edu.wpi.first.wpilibj.util",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.util.Color.RGBChannel"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Color.RGBChannel ${instanceName} = new Color.RGBChannel(${param});"
+        }
+      ],
+      "declarationTemplate": "Color.RGBChannel ${instanceName};",
+      "methods": {}
+    },
+    "RoboRioSim": {
+      "name": "RoboRioSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.RoboRioSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RoboRioSim ${instanceName} = new RoboRioSim(${param});"
+        }
+      ],
+      "declarationTemplate": "RoboRioSim ${instanceName};",
+      "methods": {}
+    },
+    "RobotBase": {
+      "name": "RobotBase",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.RobotBase"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RobotBase ${instanceName} = new RobotBase(${param});"
+        }
+      ],
+      "declarationTemplate": "RobotBase ${instanceName};",
+      "methods": {}
+    },
+    "RobotController": {
+      "name": "RobotController",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.RobotController"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RobotController ${instanceName} = new RobotController(${param});"
+        }
+      ],
+      "declarationTemplate": "RobotController ${instanceName};",
+      "methods": {}
+    },
+    "RobotDriveBase": {
+      "name": "RobotDriveBase",
+      "package": "edu.wpi.first.wpilibj.drive",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.drive.RobotDriveBase"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RobotDriveBase ${instanceName} = new RobotDriveBase(${param});"
+        }
+      ],
+      "declarationTemplate": "RobotDriveBase ${instanceName};",
+      "methods": {}
+    },
+    "RobotModeTriggers": {
+      "name": "RobotModeTriggers",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.RobotModeTriggers"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RobotModeTriggers ${instanceName} = new RobotModeTriggers(${param});"
+        }
+      ],
+      "declarationTemplate": "RobotModeTriggers ${instanceName};",
+      "methods": {}
+    },
+    "RobotState": {
+      "name": "RobotState",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.RobotState"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RobotState ${instanceName} = new RobotState(${param});"
+        }
+      ],
+      "declarationTemplate": "RobotState ${instanceName};",
+      "methods": {}
+    },
+    "RomiGyro": {
+      "name": "RomiGyro",
+      "package": "edu.wpi.first.wpilibj.romi",
+      "category": "imu",
+      "imports": [
+        "edu.wpi.first.wpilibj.romi.RomiGyro"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RomiGyro ${instanceName} = new RomiGyro(${param});"
+        }
+      ],
+      "declarationTemplate": "RomiGyro ${instanceName};",
+      "methods": {}
+    },
+    "RomiMotor": {
+      "name": "RomiMotor",
+      "package": "edu.wpi.first.wpilibj.romi",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.romi.RomiMotor"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RomiMotor ${instanceName} = new RomiMotor(${param});"
+        }
+      ],
+      "declarationTemplate": "RomiMotor ${instanceName};",
+      "methods": {}
+    },
+    "Rotation2d": {
+      "name": "Rotation2d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Rotation2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Rotation2d ${instanceName} = new Rotation2d(${param});"
+        }
+      ],
+      "declarationTemplate": "Rotation2d ${instanceName};",
+      "methods": {}
+    },
+    "Rotation2dProto": {
+      "name": "Rotation2dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Rotation2dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Rotation2dProto ${instanceName} = new Rotation2dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Rotation2dProto ${instanceName};",
+      "methods": {}
+    },
+    "Rotation2dStruct": {
+      "name": "Rotation2dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Rotation2dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Rotation2dStruct ${instanceName} = new Rotation2dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Rotation2dStruct ${instanceName};",
+      "methods": {}
+    },
+    "Rotation3d": {
+      "name": "Rotation3d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Rotation3d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Rotation3d ${instanceName} = new Rotation3d(${param});"
+        }
+      ],
+      "declarationTemplate": "Rotation3d ${instanceName};",
+      "methods": {}
+    },
+    "Rotation3dProto": {
+      "name": "Rotation3dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Rotation3dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Rotation3dProto ${instanceName} = new Rotation3dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Rotation3dProto ${instanceName};",
+      "methods": {}
+    },
+    "Rotation3dStruct": {
+      "name": "Rotation3dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Rotation3dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Rotation3dStruct ${instanceName} = new Rotation3dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Rotation3dStruct ${instanceName};",
+      "methods": {}
+    },
+    "GenericHID.RumbleType": {
+      "name": "GenericHID.RumbleType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.GenericHID.RumbleType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "GenericHID.RumbleType ${instanceName} = new GenericHID.RumbleType(${param});"
+        }
+      ],
+      "declarationTemplate": "GenericHID.RumbleType ${instanceName};",
+      "methods": {}
+    },
+    "RunCommand": {
+      "name": "RunCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.RunCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RunCommand ${instanceName} = new RunCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "RunCommand ${instanceName};",
+      "methods": {}
+    },
+    "RuntimeType": {
+      "name": "RuntimeType",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.RuntimeType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "RuntimeType ${instanceName} = new RuntimeType(${param});"
+        }
+      ],
+      "declarationTemplate": "RuntimeType ${instanceName};",
+      "methods": {}
+    },
+    "ScheduleCommand": {
+      "name": "ScheduleCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.ScheduleCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ScheduleCommand ${instanceName} = new ScheduleCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "ScheduleCommand ${instanceName};",
+      "methods": {}
+    },
+    "SelectCommand": {
+      "name": "SelectCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.SelectCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SelectCommand ${instanceName} = new SelectCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "SelectCommand ${instanceName};",
+      "methods": {}
+    },
+    "SendableBuilderImpl": {
+      "name": "SendableBuilderImpl",
+      "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.smartdashboard.SendableBuilderImpl"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SendableBuilderImpl ${instanceName} = new SendableBuilderImpl(${param});"
+        }
+      ],
+      "declarationTemplate": "SendableBuilderImpl ${instanceName};",
+      "methods": {}
+    },
+    "SendableCameraWrapper": {
+      "name": "SendableCameraWrapper",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.SendableCameraWrapper"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SendableCameraWrapper ${instanceName} = new SendableCameraWrapper(${param});"
+        }
+      ],
+      "declarationTemplate": "SendableCameraWrapper ${instanceName};",
+      "methods": {}
+    },
+    "SendableChooser": {
+      "name": "SendableChooser",
+      "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.smartdashboard.SendableChooser"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SendableChooser ${instanceName} = new SendableChooser(${param});"
+        }
+      ],
+      "declarationTemplate": "SendableChooser ${instanceName};",
+      "methods": {}
+    },
+    "SendableChooserSim": {
+      "name": "SendableChooserSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.SendableChooserSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SendableChooserSim ${instanceName} = new SendableChooserSim(${param});"
+        }
+      ],
+      "declarationTemplate": "SendableChooserSim ${instanceName};",
+      "methods": {}
+    },
+    "SensorUtil": {
+      "name": "SensorUtil",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SensorUtil"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SensorUtil ${instanceName} = new SensorUtil(${param});"
+        }
+      ],
+      "declarationTemplate": "SensorUtil ${instanceName};",
+      "methods": {}
+    },
+    "SequentialCommandGroup": {
+      "name": "SequentialCommandGroup",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.SequentialCommandGroup"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SequentialCommandGroup ${instanceName} = new SequentialCommandGroup(${param});"
+        }
+      ],
+      "declarationTemplate": "SequentialCommandGroup ${instanceName};",
+      "methods": {}
+    },
+    "SerialPort": {
+      "name": "SerialPort",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SerialPort"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SerialPort ${instanceName} = new SerialPort(${param});"
+        }
+      ],
+      "declarationTemplate": "SerialPort ${instanceName};",
+      "methods": {}
+    },
+    "Servo": {
+      "name": "Servo",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Servo"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Servo ${instanceName} = new Servo(${param});"
+        }
+      ],
+      "declarationTemplate": "Servo ${instanceName};",
+      "methods": {}
+    },
+    "SharpIR": {
+      "name": "SharpIR",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SharpIR"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SharpIR ${instanceName} = new SharpIR(${param});"
+        }
+      ],
+      "declarationTemplate": "SharpIR ${instanceName};",
+      "methods": {}
+    },
+    "SharpIRSim": {
+      "name": "SharpIRSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.SharpIRSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SharpIRSim ${instanceName} = new SharpIRSim(${param});"
+        }
+      ],
+      "declarationTemplate": "SharpIRSim ${instanceName};",
+      "methods": {}
+    },
+    "Shuffleboard": {
+      "name": "Shuffleboard",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.Shuffleboard"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Shuffleboard ${instanceName} = new Shuffleboard(${param});"
+        }
+      ],
+      "declarationTemplate": "Shuffleboard ${instanceName};",
+      "methods": {}
+    },
+    "ShuffleboardComponent": {
+      "name": "ShuffleboardComponent",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.ShuffleboardComponent"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ShuffleboardComponent ${instanceName} = new ShuffleboardComponent(${param});"
+        }
+      ],
+      "declarationTemplate": "ShuffleboardComponent ${instanceName};",
+      "methods": {}
+    },
+    "ShuffleboardContainer": {
+      "name": "ShuffleboardContainer",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.ShuffleboardContainer"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ShuffleboardContainer ${instanceName} = new ShuffleboardContainer(${param});"
+        }
+      ],
+      "declarationTemplate": "ShuffleboardContainer ${instanceName};",
+      "methods": {}
+    },
+    "ShuffleboardLayout": {
+      "name": "ShuffleboardLayout",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ShuffleboardLayout ${instanceName} = new ShuffleboardLayout(${param});"
+        }
+      ],
+      "declarationTemplate": "ShuffleboardLayout ${instanceName};",
+      "methods": {}
+    },
+    "ShuffleboardTab": {
+      "name": "ShuffleboardTab",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "ShuffleboardTab ${instanceName} = new ShuffleboardTab(${param});"
+        }
+      ],
+      "declarationTemplate": "ShuffleboardTab ${instanceName};",
+      "methods": {}
+    },
+    "SimDeviceSim": {
+      "name": "SimDeviceSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.SimDeviceSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SimDeviceSim ${instanceName} = new SimDeviceSim(${param});"
+        }
+      ],
+      "declarationTemplate": "SimDeviceSim ${instanceName};",
+      "methods": {}
+    },
+    "SimHooks": {
+      "name": "SimHooks",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.SimHooks"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SimHooks ${instanceName} = new SimHooks(${param});"
+        }
+      ],
+      "declarationTemplate": "SimHooks ${instanceName};",
+      "methods": {}
+    },
+    "SimpleWidget": {
+      "name": "SimpleWidget",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.SimpleWidget"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SimpleWidget ${instanceName} = new SimpleWidget(${param});"
+        }
+      ],
+      "declarationTemplate": "SimpleWidget ${instanceName};",
+      "methods": {}
+    },
+    "SingleJointedArmSim": {
+      "name": "SingleJointedArmSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.SingleJointedArmSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SingleJointedArmSim ${instanceName} = new SingleJointedArmSim(${param});"
+        }
+      ],
+      "declarationTemplate": "SingleJointedArmSim ${instanceName};",
+      "methods": {}
+    },
+    "SmartDashboard": {
+      "name": "SmartDashboard",
+      "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.smartdashboard.SmartDashboard"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SmartDashboard ${instanceName} = new SmartDashboard(${param});"
+        }
+      ],
+      "declarationTemplate": "SmartDashboard ${instanceName};",
+      "methods": {}
+    },
+    "Solenoid": {
+      "name": "Solenoid",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Solenoid"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Solenoid ${instanceName} = new Solenoid(${param});"
+        }
+      ],
+      "declarationTemplate": "Solenoid ${instanceName};",
+      "methods": {}
+    },
+    "SolenoidSim": {
+      "name": "SolenoidSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.SolenoidSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SolenoidSim ${instanceName} = new SolenoidSim(${param});"
+        }
+      ],
+      "declarationTemplate": "SolenoidSim ${instanceName};",
+      "methods": {}
+    },
+    "Spark": {
+      "name": "Spark",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.Spark"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Spark ${instanceName} = new Spark(${param});"
+        }
+      ],
+      "declarationTemplate": "Spark ${instanceName};",
+      "methods": {}
+    },
+    "SPI": {
+      "name": "SPI",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SPI"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SPI ${instanceName} = new SPI(${param});"
+        }
+      ],
+      "declarationTemplate": "SPI ${instanceName};",
+      "methods": {}
+    },
+    "SPIAccelerometerSim": {
+      "name": "SPIAccelerometerSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.SPIAccelerometerSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SPIAccelerometerSim ${instanceName} = new SPIAccelerometerSim(${param});"
+        }
+      ],
+      "declarationTemplate": "SPIAccelerometerSim ${instanceName};",
+      "methods": {}
+    },
+    "SPISim": {
+      "name": "SPISim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.SPISim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SPISim ${instanceName} = new SPISim(${param});"
+        }
+      ],
+      "declarationTemplate": "SPISim ${instanceName};",
+      "methods": {}
+    },
+    "StadiaController": {
+      "name": "StadiaController",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.StadiaController"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "StadiaController ${instanceName} = new StadiaController(${param});"
+        }
+      ],
+      "declarationTemplate": "StadiaController ${instanceName};",
+      "methods": {}
+    },
+    "StadiaControllerSim": {
+      "name": "StadiaControllerSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.StadiaControllerSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "StadiaControllerSim ${instanceName} = new StadiaControllerSim(${param});"
+        }
+      ],
+      "declarationTemplate": "StadiaControllerSim ${instanceName};",
+      "methods": {}
+    },
+    "StartEndCommand": {
+      "name": "StartEndCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.StartEndCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "StartEndCommand ${instanceName} = new StartEndCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "StartEndCommand ${instanceName};",
+      "methods": {}
+    },
+    "SysIdRoutineLog.State": {
+      "name": "SysIdRoutineLog.State",
+      "package": "edu.wpi.first.wpilibj.sysid",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.sysid.SysIdRoutineLog.State"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SysIdRoutineLog.State ${instanceName} = new SysIdRoutineLog.State(${param});"
+        }
+      ],
+      "declarationTemplate": "SysIdRoutineLog.State ${instanceName};",
+      "methods": {}
+    },
+    "SerialPort.StopBits": {
+      "name": "SerialPort.StopBits",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SerialPort.StopBits"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SerialPort.StopBits ${instanceName} = new SerialPort.StopBits(${param});"
+        }
+      ],
+      "declarationTemplate": "SerialPort.StopBits ${instanceName};",
+      "methods": {}
+    },
+    "Subsystem": {
+      "name": "Subsystem",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.Subsystem"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Subsystem ${instanceName} = new Subsystem(${param});"
+        }
+      ],
+      "declarationTemplate": "Subsystem ${instanceName};",
+      "methods": {}
+    },
+    "SubsystemBase": {
+      "name": "SubsystemBase",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.SubsystemBase"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SubsystemBase ${instanceName} = new SubsystemBase(${param});"
+        }
+      ],
+      "declarationTemplate": "SubsystemBase ${instanceName};",
+      "methods": {}
+    },
+    "SuppliedValueWidget": {
+      "name": "SuppliedValueWidget",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.SuppliedValueWidget"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SuppliedValueWidget ${instanceName} = new SuppliedValueWidget(${param});"
+        }
+      ],
+      "declarationTemplate": "SuppliedValueWidget ${instanceName};",
+      "methods": {}
+    },
+    "SwerveControllerCommand": {
+      "name": "SwerveControllerCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.SwerveControllerCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SwerveControllerCommand ${instanceName} = new SwerveControllerCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "SwerveControllerCommand ${instanceName};",
+      "methods": {}
+    },
+    "SynchronousInterrupt": {
+      "name": "SynchronousInterrupt",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SynchronousInterrupt"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SynchronousInterrupt ${instanceName} = new SynchronousInterrupt(${param});"
+        }
+      ],
+      "declarationTemplate": "SynchronousInterrupt ${instanceName};",
+      "methods": {}
+    },
+    "SysIdRoutine": {
+      "name": "SysIdRoutine",
+      "package": "edu.wpi.first.wpilibj2.command.sysid",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SysIdRoutine ${instanceName} = new SysIdRoutine(${param});"
+        }
+      ],
+      "declarationTemplate": "SysIdRoutine ${instanceName};",
+      "methods": {}
+    },
+    "SysIdRoutineLog": {
+      "name": "SysIdRoutineLog",
+      "package": "edu.wpi.first.wpilibj.sysid",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.sysid.SysIdRoutineLog"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SysIdRoutineLog ${instanceName} = new SysIdRoutineLog(${param});"
+        }
+      ],
+      "declarationTemplate": "SysIdRoutineLog ${instanceName};",
+      "methods": {}
+    },
+    "Tachometer": {
+      "name": "Tachometer",
+      "package": "edu.wpi.first.wpilibj.counter",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.counter.Tachometer"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Tachometer ${instanceName} = new Tachometer(${param});"
+        }
+      ],
+      "declarationTemplate": "Tachometer ${instanceName};",
+      "methods": {}
+    },
+    "Talon": {
+      "name": "Talon",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.Talon"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Talon ${instanceName} = new Talon(${param});"
+        }
+      ],
+      "declarationTemplate": "Talon ${instanceName};",
+      "methods": {}
+    },
+    "Threads": {
+      "name": "Threads",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Threads"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Threads ${instanceName} = new Threads(${param});"
+        }
+      ],
+      "declarationTemplate": "Threads ${instanceName};",
+      "methods": {}
+    },
+    "TimedRobot": {
+      "name": "TimedRobot",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.TimedRobot"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "TimedRobot ${instanceName} = new TimedRobot(${param});"
+        }
+      ],
+      "declarationTemplate": "TimedRobot ${instanceName};",
+      "methods": {}
+    },
+    "Timer": {
+      "name": "Timer",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Timer"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Timer ${instanceName} = new Timer(${param});"
+        }
+      ],
+      "declarationTemplate": "Timer ${instanceName};",
+      "methods": {}
+    },
+    "TimesliceRobot": {
+      "name": "TimesliceRobot",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.TimesliceRobot"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "TimesliceRobot ${instanceName} = new TimesliceRobot(${param});"
+        }
+      ],
+      "declarationTemplate": "TimesliceRobot ${instanceName};",
+      "methods": {}
+    },
+    "Tracer": {
+      "name": "Tracer",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Tracer"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Tracer ${instanceName} = new Tracer(${param});"
+        }
+      ],
+      "declarationTemplate": "Tracer ${instanceName};",
+      "methods": {}
+    },
+    "Transform2d": {
+      "name": "Transform2d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Transform2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Transform2d ${instanceName} = new Transform2d(${param});"
+        }
+      ],
+      "declarationTemplate": "Transform2d ${instanceName};",
+      "methods": {}
+    },
+    "Transform2dProto": {
+      "name": "Transform2dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Transform2dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Transform2dProto ${instanceName} = new Transform2dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Transform2dProto ${instanceName};",
+      "methods": {}
+    },
+    "Transform2dStruct": {
+      "name": "Transform2dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Transform2dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Transform2dStruct ${instanceName} = new Transform2dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Transform2dStruct ${instanceName};",
+      "methods": {}
+    },
+    "Transform3d": {
+      "name": "Transform3d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Transform3d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Transform3d ${instanceName} = new Transform3d(${param});"
+        }
+      ],
+      "declarationTemplate": "Transform3d ${instanceName};",
+      "methods": {}
+    },
+    "Transform3dProto": {
+      "name": "Transform3dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Transform3dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Transform3dProto ${instanceName} = new Transform3dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Transform3dProto ${instanceName};",
+      "methods": {}
+    },
+    "Transform3dStruct": {
+      "name": "Transform3dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Transform3dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Transform3dStruct ${instanceName} = new Transform3dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Transform3dStruct ${instanceName};",
+      "methods": {}
+    },
+    "Translation2d": {
+      "name": "Translation2d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Translation2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Translation2d ${instanceName} = new Translation2d(${param});"
+        }
+      ],
+      "declarationTemplate": "Translation2d ${instanceName};",
+      "methods": {}
+    },
+    "Translation2dProto": {
+      "name": "Translation2dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Translation2dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Translation2dProto ${instanceName} = new Translation2dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Translation2dProto ${instanceName};",
+      "methods": {}
+    },
+    "Translation2dStruct": {
+      "name": "Translation2dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Translation2dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Translation2dStruct ${instanceName} = new Translation2dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Translation2dStruct ${instanceName};",
+      "methods": {}
+    },
+    "Translation3d": {
+      "name": "Translation3d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Translation3d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Translation3d ${instanceName} = new Translation3d(${param});"
+        }
+      ],
+      "declarationTemplate": "Translation3d ${instanceName};",
+      "methods": {}
+    },
+    "Translation3dProto": {
+      "name": "Translation3dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Translation3dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Translation3dProto ${instanceName} = new Translation3dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Translation3dProto ${instanceName};",
+      "methods": {}
+    },
+    "Translation3dStruct": {
+      "name": "Translation3dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Translation3dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Translation3dStruct ${instanceName} = new Translation3dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Translation3dStruct ${instanceName};",
+      "methods": {}
+    },
+    "TrapezoidProfileCommand": {
+      "name": "TrapezoidProfileCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.TrapezoidProfileCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "TrapezoidProfileCommand ${instanceName} = new TrapezoidProfileCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "TrapezoidProfileCommand ${instanceName};",
+      "methods": {}
+    },
+    "TrapezoidProfileSubsystem": {
+      "name": "TrapezoidProfileSubsystem",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.TrapezoidProfileSubsystem"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "TrapezoidProfileSubsystem ${instanceName} = new TrapezoidProfileSubsystem(${param});"
+        }
+      ],
+      "declarationTemplate": "TrapezoidProfileSubsystem ${instanceName};",
+      "methods": {}
+    },
+    "Trigger": {
+      "name": "Trigger",
+      "package": "edu.wpi.first.wpilibj2.command.button",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.button.Trigger"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Trigger ${instanceName} = new Trigger(${param});"
+        }
+      ],
+      "declarationTemplate": "Trigger ${instanceName};",
+      "methods": {}
+    },
+    "Twist2d": {
+      "name": "Twist2d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Twist2d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Twist2d ${instanceName} = new Twist2d(${param});"
+        }
+      ],
+      "declarationTemplate": "Twist2d ${instanceName};",
+      "methods": {}
+    },
+    "Twist2dProto": {
+      "name": "Twist2dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Twist2dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Twist2dProto ${instanceName} = new Twist2dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Twist2dProto ${instanceName};",
+      "methods": {}
+    },
+    "Twist2dStruct": {
+      "name": "Twist2dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Twist2dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Twist2dStruct ${instanceName} = new Twist2dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Twist2dStruct ${instanceName};",
+      "methods": {}
+    },
+    "Twist3d": {
+      "name": "Twist3d",
+      "package": "edu.wpi.first.math.geometry",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.Twist3d"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Twist3d ${instanceName} = new Twist3d(${param});"
+        }
+      ],
+      "declarationTemplate": "Twist3d ${instanceName};",
+      "methods": {}
+    },
+    "Twist3dProto": {
+      "name": "Twist3dProto",
+      "package": "edu.wpi.first.math.geometry.proto",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.proto.Twist3dProto"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Twist3dProto ${instanceName} = new Twist3dProto(${param});"
+        }
+      ],
+      "declarationTemplate": "Twist3dProto ${instanceName};",
+      "methods": {}
+    },
+    "Twist3dStruct": {
+      "name": "Twist3dStruct",
+      "package": "edu.wpi.first.math.geometry.struct",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.math.geometry.struct.Twist3dStruct"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Twist3dStruct ${instanceName} = new Twist3dStruct(${param});"
+        }
+      ],
+      "declarationTemplate": "Twist3dStruct ${instanceName};",
+      "methods": {}
+    },
+    "Ultrasonic": {
+      "name": "Ultrasonic",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Ultrasonic"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Ultrasonic ${instanceName} = new Ultrasonic(${param});"
+        }
+      ],
+      "declarationTemplate": "Ultrasonic ${instanceName};",
+      "methods": {}
+    },
+    "UltrasonicSim": {
+      "name": "UltrasonicSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.UltrasonicSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "UltrasonicSim ${instanceName} = new UltrasonicSim(${param});"
+        }
+      ],
+      "declarationTemplate": "UltrasonicSim ${instanceName};",
+      "methods": {}
+    },
+    "UpDownCounter": {
+      "name": "UpDownCounter",
+      "package": "edu.wpi.first.wpilibj.counter",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.counter.UpDownCounter"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "UpDownCounter ${instanceName} = new UpDownCounter(${param});"
+        }
+      ],
+      "declarationTemplate": "UpDownCounter ${instanceName};",
+      "methods": {}
+    },
+    "DoubleSolenoid.Value": {
+      "name": "DoubleSolenoid.Value",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.DoubleSolenoid.Value"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DoubleSolenoid.Value ${instanceName} = new DoubleSolenoid.Value(${param});"
+        }
+      ],
+      "declarationTemplate": "DoubleSolenoid.Value ${instanceName};",
+      "methods": {}
+    },
+    "Relay.Value": {
+      "name": "Relay.Value",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Relay.Value"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Relay.Value ${instanceName} = new Relay.Value(${param});"
+        }
+      ],
+      "declarationTemplate": "Relay.Value ${instanceName};",
+      "methods": {}
+    },
+    "VictorSP": {
+      "name": "VictorSP",
+      "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.motorcontrol.VictorSP"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "VictorSP ${instanceName} = new VictorSP(${param});"
+        }
+      ],
+      "declarationTemplate": "VictorSP ${instanceName};",
+      "methods": {}
+    },
+    "WaitCommand": {
+      "name": "WaitCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.WaitCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "WaitCommand ${instanceName} = new WaitCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "WaitCommand ${instanceName};",
+      "methods": {}
+    },
+    "SynchronousInterrupt.WaitResult": {
+      "name": "SynchronousInterrupt.WaitResult",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SynchronousInterrupt.WaitResult"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SynchronousInterrupt.WaitResult ${instanceName} = new SynchronousInterrupt.WaitResult(${param});"
+        }
+      ],
+      "declarationTemplate": "SynchronousInterrupt.WaitResult ${instanceName};",
+      "methods": {}
+    },
+    "WaitUntilCommand": {
+      "name": "WaitUntilCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.WaitUntilCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "WaitUntilCommand ${instanceName} = new WaitUntilCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "WaitUntilCommand ${instanceName};",
+      "methods": {}
+    },
+    "Watchdog": {
+      "name": "Watchdog",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.Watchdog"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "Watchdog ${instanceName} = new Watchdog(${param});"
+        }
+      ],
+      "declarationTemplate": "Watchdog ${instanceName};",
+      "methods": {}
+    },
+    "DifferentialDrive.WheelSpeeds": {
+      "name": "DifferentialDrive.WheelSpeeds",
+      "package": "edu.wpi.first.wpilibj.drive",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.drive.DifferentialDrive.WheelSpeeds"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "DifferentialDrive.WheelSpeeds ${instanceName} = new DifferentialDrive.WheelSpeeds(${param});"
+        }
+      ],
+      "declarationTemplate": "DifferentialDrive.WheelSpeeds ${instanceName};",
+      "methods": {}
+    },
+    "MecanumDrive.WheelSpeeds": {
+      "name": "MecanumDrive.WheelSpeeds",
+      "package": "edu.wpi.first.wpilibj.drive",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.drive.MecanumDrive.WheelSpeeds"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "MecanumDrive.WheelSpeeds ${instanceName} = new MecanumDrive.WheelSpeeds(${param});"
+        }
+      ],
+      "declarationTemplate": "MecanumDrive.WheelSpeeds ${instanceName};",
+      "methods": {}
+    },
+    "WidgetType": {
+      "name": "WidgetType",
+      "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.shuffleboard.WidgetType"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "WidgetType ${instanceName} = new WidgetType(${param});"
+        }
+      ],
+      "declarationTemplate": "WidgetType ${instanceName};",
+      "methods": {}
+    },
+    "WPILibVersion": {
+      "name": "WPILibVersion",
+      "package": "edu.wpi.first.wpilibj.util",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.util.WPILibVersion"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "WPILibVersion ${instanceName} = new WPILibVersion(${param});"
+        }
+      ],
+      "declarationTemplate": "WPILibVersion ${instanceName};",
+      "methods": {}
+    },
+    "WrapperCommand": {
+      "name": "WrapperCommand",
+      "package": "edu.wpi.first.wpilibj2.command",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj2.command.WrapperCommand"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "WrapperCommand ${instanceName} = new WrapperCommand(${param});"
+        }
+      ],
+      "declarationTemplate": "WrapperCommand ${instanceName};",
+      "methods": {}
+    },
+    "SerialPort.WriteBufferMode": {
+      "name": "SerialPort.WriteBufferMode",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.SerialPort.WriteBufferMode"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "SerialPort.WriteBufferMode ${instanceName} = new SerialPort.WriteBufferMode(${param});"
+        }
+      ],
+      "declarationTemplate": "SerialPort.WriteBufferMode ${instanceName};",
+      "methods": {}
+    },
+    "XboxController": {
+      "name": "XboxController",
+      "package": "edu.wpi.first.wpilibj",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.XboxController"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XboxController ${instanceName} = new XboxController(${param});"
+        }
+      ],
+      "declarationTemplate": "XboxController ${instanceName};",
+      "methods": {}
+    },
+    "XboxControllerSim": {
+      "name": "XboxControllerSim",
+      "package": "edu.wpi.first.wpilibj.simulation",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.simulation.XboxControllerSim"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XboxControllerSim ${instanceName} = new XboxControllerSim(${param});"
+        }
+      ],
+      "declarationTemplate": "XboxControllerSim ${instanceName};",
+      "methods": {}
+    },
+    "XRPGyro": {
+      "name": "XRPGyro",
+      "package": "edu.wpi.first.wpilibj.xrp",
+      "category": "imu",
+      "imports": [
+        "edu.wpi.first.wpilibj.xrp.XRPGyro"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XRPGyro ${instanceName} = new XRPGyro(${param});"
+        }
+      ],
+      "declarationTemplate": "XRPGyro ${instanceName};",
+      "methods": {}
+    },
+    "XRPMotor": {
+      "name": "XRPMotor",
+      "package": "edu.wpi.first.wpilibj.xrp",
+      "category": "motor",
+      "imports": [
+        "edu.wpi.first.wpilibj.xrp.XRPMotor"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XRPMotor ${instanceName} = new XRPMotor(${param});"
+        }
+      ],
+      "declarationTemplate": "XRPMotor ${instanceName};",
+      "methods": {}
+    },
+    "XRPOnBoardIO": {
+      "name": "XRPOnBoardIO",
+      "package": "edu.wpi.first.wpilibj.xrp",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.xrp.XRPOnBoardIO"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XRPOnBoardIO ${instanceName} = new XRPOnBoardIO(${param});"
+        }
+      ],
+      "declarationTemplate": "XRPOnBoardIO ${instanceName};",
+      "methods": {}
+    },
+    "XRPRangefinder": {
+      "name": "XRPRangefinder",
+      "package": "edu.wpi.first.wpilibj.xrp",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.xrp.XRPRangefinder"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XRPRangefinder ${instanceName} = new XRPRangefinder(${param});"
+        }
+      ],
+      "declarationTemplate": "XRPRangefinder ${instanceName};",
+      "methods": {}
+    },
+    "XRPReflectanceSensor": {
+      "name": "XRPReflectanceSensor",
+      "package": "edu.wpi.first.wpilibj.xrp",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.xrp.XRPReflectanceSensor"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XRPReflectanceSensor ${instanceName} = new XRPReflectanceSensor(${param});"
+        }
+      ],
+      "declarationTemplate": "XRPReflectanceSensor ${instanceName};",
+      "methods": {}
+    },
+    "XRPServo": {
+      "name": "XRPServo",
+      "package": "edu.wpi.first.wpilibj.xrp",
+      "category": "utility",
+      "imports": [
+        "edu.wpi.first.wpilibj.xrp.XRPServo"
+      ],
+      "constructors": [
+        {
+          "parameters": [],
+          "template": "XRPServo ${instanceName} = new XRPServo(${param});"
+        }
+      ],
+      "declarationTemplate": "XRPServo ${instanceName};",
+      "methods": {}
+    }
+  }
 }
