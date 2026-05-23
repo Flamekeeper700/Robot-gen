@@ -52,17 +52,13 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
     rootData.forEach((item) => {
         let className = resolvePath(item, extractor.classNamePath);
         
-        // Resolve package identity
         let rawPackage = item.p || extractor.packageName || "";
         if (!className || !rawPackage) return;
 
-        // Skip non-class utility boundaries or nesting anomalies
         if (className.includes('/') || className.toLowerCase() === className) return;
 
-        // Strip HTML formatting tags often found inside Javadoc headers
         className = className.replace(/<[^>]*>/g, '').trim();
 
-        // GLOBAL PACKAGE FILTERING
         if (extractor.packageFilters && extractor.packageFilters.length > 0) {
             const matchesFilter = extractor.packageFilters.some(filter => rawPackage.startsWith(filter));
             if (!matchesFilter) return; 
@@ -70,7 +66,6 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
 
         const resolvedImport = `${rawPackage}.${className}`;
 
-        // Tag hardware category defaults for UI binding
         let category = "utility";
         if (className.toLowerCase().includes("motor") || className.includes("Talon") || className.includes("Spark")) {
             category = "motor";
@@ -92,26 +87,25 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
 
     console.log(`   ✅ Extracted ${matchedClassesCount} valid classes matching package rules. Stitching methods...`);
 
-    // STITCHING PHASE: Map functions out of the standalone member registry into our classes
     let methodCount = 0;
     if (Array.isArray(rawMembers)) {
         rawMembers.forEach(member => {
-            // In Javadocs, 'c' holds the class container name, and 'l' holds the method/field name
             const parentClassName = member.c;
-            const methodName = member.l;
+            const methodNameWithParams = member.l; // Signature, e.g., "drive(double,double)"
 
-            // Make sure this member belongs to a class we matched and is a valid method (not an field/enum value)
-            if (parentClassName && classes[parentClassName] && methodName && methodName.includes('(')) {
-                // Strip the parentheses signature from the key lookup name
-                const cleanMethodName = methodName.split('(')[0];
+            if (parentClassName && classes[parentClassName] && methodNameWithParams && methodNameWithParams.includes('(')) {
+                const [cleanMethodName, paramsPart] = methodNameWithParams.split('(');
                 
-                // Avoid capturing constructor methods
+                // Extract and clean parameters
+                const paramsString = paramsPart.replace(')', '');
+                const parameters = paramsString ? paramsString.split(',').map(p => p.trim()) : [];
+
                 if (cleanMethodName === parentClassName) return;
 
                 classes[parentClassName].methods[cleanMethodName] = {
-                    returnType: "void", // Default fallback
-                    parameters: [],     // Extracted dynamic parameters can be loaded here if needed
-                    template: `\${instance}.${cleanMethodName}();`
+                    returnType: "void",
+                    parameters: parameters,
+                    template: `\${instance}.${cleanMethodName}(${parameters.map((_, i) => `\${param${i+1}}`).join(', ')});`
                 };
                 methodCount++;
             }
@@ -153,28 +147,18 @@ async function main() {
             let rawMembers = [];
 
             if (source.isJavadocIndex || source.url.endsWith('type-search-index.js')) {
-                console.log(`🌐 Ingesting Javadoc Dual Endpoint Structure...`);
-                
-                // 1. Fetch Types
-                console.log(`   👉 Fetching Types: ${source.url}`);
                 const typeRes = await fetch(source.url);
                 const typeText = await typeRes.text();
                 rootData = cleanJavascriptJson(typeText);
 
-                // 2. Derive and Fetch Members (Swap out filename in URL)
                 const memberUrl = source.url.replace('type-search-index.js', 'member-search-index.js');
-                console.log(`   👉 Fetching Members: ${memberUrl}`);
                 const memberRes = await fetch(memberUrl);
                 
                 if (memberRes.ok) {
                     const memberText = await memberRes.text();
                     rawMembers = cleanJavascriptJson(memberText);
-                } else {
-                    console.warn(`   ⚠️ Warning: Member endpoint could not be found. Skipping method ingestion.`);
                 }
             } else {
-                // Handle standard direct flat JSON manifests
-                console.log(`🌐 Fetching Direct JSON Schema: ${source.url}`);
                 const res = await fetch(source.url);
                 const rawData = await res.json();
                 rootData = source.classExtractor.rootPath ? resolvePath(rawData, source.classExtractor.rootPath) : rawData;
@@ -187,24 +171,18 @@ async function main() {
                 Object.assign(masterDefinitions.classes, translatedClasses);
                 masterDefinitions.metadata.apisProcessed.push(source.name);
                 console.log(`   🎉 Successfully updated definitions for "${source.name}".`);
-            } else {
-                console.log(`   ⚠️ Filter Pass Finished: 0 classes matched package definitions.`);
             }
-
         } catch (err) {
             console.warn(`   ❌ Critical Exception executing pipeline for "${source.name}":`, err.message);
         }
     }
 
-    console.log(`\n--------------------------------------------------`);
-    
     if (!fs.existsSync(configsDir)) {
         fs.mkdirSync(configsDir, { recursive: true });
     }
 
     fs.writeFileSync(outputPath, JSON.stringify(masterDefinitions, null, 2), 'utf-8');
     console.log(`📝 Output saved cleanly to: ${outputPath}`);
-    console.log(`🏁 Complete. Target APIs processed: [${masterDefinitions.metadata.apisProcessed.join(', ')}]\n`);
 }
 
 main();
