@@ -1,0 +1,97 @@
+================================================================================
+UNIVERSAL CODESOURCE CONFIGURATION MANIFEST FIELD MANUAL
+================================================================================
+
+This document describes the function, syntax, and lookup mechanics of every 
+key inside your data-driven configuration template (`sources.json`). Use this as 
+a guide when mapping new third-party JSON schemas into your universal generator.
+
+--------------------------------------------------------------------------------
+TOP-LEVEL KEY DESCRIPTIONS
+--------------------------------------------------------------------------------
+
+1. "name"
+   - Description: A unique identifier for the target API or hardware library.
+   - Example: "TalonFX_HardwareAPI"
+   - Usage: Used for tracking logs during updates and stamped inside the 
+     metadata header of your compiled 'definitions.json'.
+
+2. "url"
+   - Description: The live, public HTTP endpoint hosting the target JSON schema.
+   - Example: "https://raw.githubusercontent.com/.../talonfx_manifest.json"
+   - Usage: The automated Node update application hits this specific web URL 
+     via network requests to collect raw data dumps.
+
+--------------------------------------------------------------------------------
+"classExtractor" KEY DESCRIPTIONS (The Extraction Blueprints)
+--------------------------------------------------------------------------------
+
+3. "rootPath"
+   - Description: The exact dot-notation path to find the structural array or 
+     object mapping group within the external raw JSON.
+   - Example: "hardware_devices" (or nested like "data.components")
+   - Target API Format: Can parse a flat array [ {...}, {...} ] or an object 
+     containing raw mapped collection keys { "device_1": {...} }.
+
+4. "classNamePath"
+   - Description: The specific property key inside the root items whose string 
+     value should name the generated Java Class.
+   - Example: "device_identifier"
+   - If the raw payload value is "TalonFX", your frontend interface will 
+     create a "TalonFX" generation wrapper element.
+
+5. "packageName"
+   - Description: The base Java package destination string.
+   - Example: "com.ctre.phoenix6.hardware"
+   - Usage: Stamped cleanly at the top of generated Java code output layouts 
+     (e.g., `package com.ctre.phoenix6.hardware;`).
+
+6. "importPath"
+   - Description: The string format template representing the full directory 
+     import mapping needed by alternative files referencing this object.
+   - Example: "com.ctre.phoenix6.hardware.${className}"
+   - Engine Mechanics: The update application locates the string literal 
+     "${className}" and swaps it out for the string value extracted by your 
+     "classNamePath" (e.g., outputs "com.ctre.phoenix6.hardware.TalonFX").
+
+7. "methodNameSource"
+   - Description: The nested key inside the class definition group indicating 
+     where the array block of functions/methods resides.
+   - Example: "available_functions"
+   - Usage: Tells the loop engine to dive one level deeper into the specific 
+     class block to start extracting individual code methods.
+
+8. "methodNamePath"
+   - Description: The internal key pointing directly to the method name string.
+   - Example: "function_name"
+   - If the raw file contains "function_name": "setControl", the loop creates 
+     a Java method block named `setControl`.
+
+9. "returnTypePath"
+   - Description: The internal key pointing to the datatype returned by the 
+     method signature.
+   - Example: "return_type"
+   - Usage: Extracts values like "void", "double", or "String". If empty or 
+     unresolvable in the raw schema, falls back to a preset primitive default.
+
+10. "parameterPath"
+    - Description: The internal key locating the parameter/argument array block 
+      associated with the parent function definition.
+    - Example: "parameters" (or "args")
+    - Expected Inner Structure: An array of entries specifying argument variables. 
+      The core script steps through this array to capture data schemas like 
+      `{ "name": "requestValue", "type": "double" }` for generating precise 
+      Java signature headers.
+
+================================================================================
+QUICK REFERENCE CHEATSHEET
+================================================================================
+Config Parameter      ==>   What it points to inside the Raw Vendor Web Schema
+--------------------------------------------------------------------------------
+"rootPath"            ==>   The array/object containing all the device modules.
+"classNamePath"       ==>   The name string of the specific hardware module.
+"methodNameSource"    ==>   The array of methods nested under the device.
+"methodNamePath"      ==>   The string naming the function itself.
+"returnTypePath"      ==>   The keyword indicating the functional return type.
+"parameterPath"       ==>   The nested array listing parameter names and types.
+================================================================================

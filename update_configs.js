@@ -1,82 +1,128 @@
 import fs from 'fs';
 import path from 'path';
+import fetch from 'node-fetch';
 
-// Simulation of fetching from a live target API documentation endpoint
-async function fetchOnlineApiSchema() {
-    // In a real scenario, replace this with your actual target URL (e.g., Javadoc JSON, openAPI spec, OpenAPI/Swagger, etc.)
-    // const response = await fetch('https://api.example.com/v1/sdk-schema');
-    // return await response.json();
-    
-    return {
-        libName: "UniversalNetworkClient",
-        version: "4.2.0",
-        exposedClasses: [
-            {
-                name: "NetworkDevice",
-                path: "org.universal.network.NetworkDevice",
-                actions: [
-                    { name: "connect", returns: "void", args: [{ name: "port", type: "int" }] },
-                    { name: "isConnected", returns: "boolean", args: [] }
-                ]
-            }
-        ]
-    };
+// Helper function to resolve nested JSON keys using string paths (e.g., "modules" or "post.parameters")
+function resolvePath(obj, pathString) {
+    if (!pathString || !obj) return obj;
+    return pathString.split('.').reduce((acc, part) => acc && acc[part], obj);
 }
 
-// Universal transformer: Maps *any* arbitrary API payload into your generator's schema
-function transformToUniversalSchema(apiData) {
-    const universalConfig = {
+// Universal dynamic translator
+function parseSourceDynamically(rawData, config) {
+    const classes = {};
+    const extractor = config.classExtractor;
+    
+    // Find where the classes/modules live in the raw response
+    const rootData = resolvePath(rawData, extractor.rootPath);
+    
+    if (!rootData) return classes;
+
+    // Handle case where root data is an Object (like OpenAPI paths)
+    if (!Array.isArray(rootData)) {
+        const className = extractor.classNamePattern || "GeneratedClient";
+        classes[className] = {
+            package: extractor.packageName,
+            imports: [extractor.importPath],
+            constructors: [{ parameters: [] }],
+            methods: {}
+        };
+
+        Object.keys(rootData).forEach(key => {
+            const cleanMethodName = key.replace(/\//g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+            if (!cleanMethodName) return;
+
+            classes[className].methods[cleanMethodName] = {
+                returnType: extractor.returnTypeDefault || "void",
+                parameters: [{ name: "payload", type: "string" }],
+                template: `\${instance}.${cleanMethodName}(\${payload});`
+            };
+        });
+        return classes;
+    }
+
+    // Handle case where root data is an Array of components (like standard SDK manifests)
+    rootData.forEach(item => {
+        const className = resolvePath(item, extractor.classNamePath);
+        if (!className) return;
+
+        const resolvedImport = extractor.importPath.replace('${className}', className);
+
+        classes[className] = {
+            package: extractor.packageName,
+            imports: [resolvedImport],
+            constructors: [{ parameters: [] }],
+            methods: {}
+        };
+
+        // Extract methods loop
+        const methodsArray = resolvePath(item, extractor.methodNameSource);
+        if (Array.isArray(methodsArray)) {
+            methodsArray.forEach(methodItem => {
+                const methodName = resolvePath(methodItem, extractor.methodNamePath);
+                if (!methodName) return;
+
+                const returnType = resolvePath(methodItem, extractor.returnTypePath) || extractor.returnTypeDefault || "void";
+                const rawParams = resolvePath(methodItem, extractor.parameterPath) || [];
+
+                classes[className].methods[methodName] = {
+                    returnType: returnType,
+                    parameters: Array.isArray(rawParams) ? rawParams.map(p => ({ name: p.name || p, type: p.type || "string" })) : [],
+                    template: `\${instance}.${methodName}();`
+                };
+            });
+        }
+    });
+
+    return classes;
+}
+
+async function main() {
+    console.log("🏁 Starting Completely Universal Auto-Parser Engine...");
+
+    const configsDir = path.join(process.cwd(), 'configs');
+    const sourcesPath = path.join(configsDir, 'sources.json');
+    const outputPath = path.join(configsDir, 'definitions.json');
+
+    if (!fs.existsSync(sourcesPath)) {
+        console.error(`❌ Error: Could not find sources manifest file at ${sourcesPath}`);
+        return;
+    }
+
+    const { sources } = JSON.parse(fs.readFileSync(sourcesPath, 'utf-8'));
+
+    const masterDefinitions = {
         metadata: {
-            libraryName: apiData.libName,
-            version: apiData.version
+            generatedAt: new Date().toISOString(),
+            apisProcessed: []
         },
         classes: {}
     };
 
-    apiData.exposedClasses.forEach(cls => {
-        const methods = {};
-        
-        cls.actions.forEach(action => {
-            // Dynamically construct string-interpolation tokens for your frontend template generator
-            const tokenParams = action.args.map(arg => `\${${arg.name}}`).join(', ');
+    // SINGLE AUTOMATED LOOP: Processes any number of URLs dynamically
+    for (const source of sources) {
+        try {
+            console.log(`📥 Automatically processing: ${source.name} from URL...`);
+            const res = await fetch(source.url);
             
-            methods[action.name] = {
-                returnType: action.returns,
-                parameters: action.args.map(arg => ({ name: arg.name, type: arg.type })),
-                template: `\${instance}.${action.name}(${tokenParams});`
-            };
-        });
+            if (!res.ok) {
+                console.warn(`⚠️ Skipped ${source.name}: Remote server responded with HTTP ${res.status}`);
+                continue;
+            }
 
-        universalConfig.classes[cls.name] = {
-            package: cls.path.substring(0, cls.path.lastIndexOf('.')),
-            imports: [cls.path],
-            constructors: [
-                { parameters: [{ name: "id", type: "int" }] }
-            ],
-            methods: methods
-        };
-    });
+            const rawData = await res.json();
+            const translatedClasses = parseSourceDynamically(rawData, source);
+            
+            Object.assign(masterDefinitions.classes, translatedClasses);
+            masterDefinitions.metadata.apisProcessed.push(source.name);
 
-    return universalConfig;
-}
-
-async function main() {
-    try {
-        console.log("Fetching latest online API definitions...");
-        const rawApiData = await fetchOnlineApiSchema();
-        
-        console.log("Normalizing data to universal schema formats...");
-        const normalizedData = transformToUniversalSchema(rawApiData);
-        
-        // Resolve path to your project's local config folder
-        const targetPath = path.join(process.cwd(), 'configs', 'definitions.json');
-        
-        fs.writeFileSync(targetPath, JSON.stringify(normalizedData, null, 2), 'utf-8');
-        console.log(`Successfully updated: ${targetPath}`);
-        
-    } catch (error) {
-        console.error("Failed to update universal configurations:", error);
+        } catch (err) {
+            console.warn(`⚠️ Failed to parse API source "${source.name}" due to network/parsing constraints:`, err.message);
+        }
     }
+
+    fs.writeFileSync(outputPath, JSON.stringify(masterDefinitions, null, 2), 'utf-8');
+    console.log(`\n✅ Finished! Auto-generated definitions file tracking: [${masterDefinitions.metadata.apisProcessed.join(', ')}]`);
 }
 
 main();
