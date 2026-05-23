@@ -1,31 +1,39 @@
 {
   "metadata": {
-    "libraryName": "ExampleUniversalAPI",
-    "version": "2026.1.0"
+    "libraryName": "UniversalNetworkClient",
+    "version": "4.2.0"
   },
   "classes": {
-    "CustomController": {
-      "package": "com.universal.api.hardware",
-      "imports": ["com.universal.api.hardware.CustomController"],
+    "NetworkDevice": {
+      "package": "org.universal.network",
+      "imports": [
+        "org.universal.network.NetworkDevice"
+      ],
       "constructors": [
         {
           "parameters": [
-            { "name": "deviceNumber", "type": "int" }
+            {
+              "name": "id",
+              "type": "int"
+            }
           ]
         }
       ],
       "methods": {
-        "setOutputs": {
+        "connect": {
           "returnType": "void",
           "parameters": [
-            { "name": "value", "type": "double" }
+            {
+              "name": "port",
+              "type": "int"
+            }
           ],
-          "template": "${instance}.setOutputs(${value});"
+          "template": "${instance}.connect(${port});"
         },
-        "getVelocity": {
-          "returnType": "double",
+        "isConnected": {
+          "returnType": "boolean",
           "parameters": [],
-          "template": "${instance}.getVelocity()"
+          "template": "${instance}.isConnected();"
         }
       }
     }
