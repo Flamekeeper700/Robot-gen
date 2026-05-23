@@ -1,41 +1,7 @@
 {
   "metadata": {
-    "libraryName": "UniversalNetworkClient",
-    "version": "4.2.0"
+    "generatedAt": "2026-05-23T00:42:49.055Z",
+    "apisProcessed": []
   },
-  "classes": {
-    "NetworkDevice": {
-      "package": "org.universal.network",
-      "imports": [
-        "org.universal.network.NetworkDevice"
-      ],
-      "constructors": [
-        {
-          "parameters": [
-            {
-              "name": "id",
-              "type": "int"
-            }
-          ]
-        }
-      ],
-      "methods": {
-        "connect": {
-          "returnType": "void",
-          "parameters": [
-            {
-              "name": "port",
-              "type": "int"
-            }
-          ],
-          "template": "${instance}.connect(${port});"
-        },
-        "isConnected": {
-          "returnType": "boolean",
-          "parameters": [],
-          "template": "${instance}.isConnected();"
-        }
-      }
-    }
-  }
+  "classes": {}
 }
