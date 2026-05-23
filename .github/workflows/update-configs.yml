@@ -3,24 +3,27 @@ name: Scheduled API Configuration Update
 on:
   schedule:
     - cron: '0 0 * * *' # Runs daily at midnight UTC
-  workflow_dispatch: # Allows you to manually trigger it from the GitHub UI
+  workflow_dispatch: # Allows manual trigger button from GitHub UI
+
+# Explicit environment flag to bypass the deprecation warnings right now
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update-assets:
     runs-on: ubuntu-latest
     
-    # Required to allow the bot to push commits back to your repo
     permissions:
       contents: write 
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5 
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24' 
 
       - name: Install Dependencies
         run: npm install
@@ -34,7 +37,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add configs/
           
-          # Check if there are actual changes before committing
           if ! git diff --cached --quiet; then
             git commit -m "chore: auto-update universal api definitions [skip ci]"
             git push
