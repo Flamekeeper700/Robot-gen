@@ -2,10 +2,10 @@
   "sources": [
     {
       "name": "WPILib_Global_API",
-      "url": "https://github.wpilib.org/allwpilib/docs/release/java/search.js",
+      "url": "https://github.wpilib.org/allwpilib/docs/release/java/type-search-index.js",
       "isJavadocIndex": true,
       "classExtractor": {
-        "rootPath": "resources",
+        "rootPath": "",
         "classNamePath": "l",
         "methodNameSource": "members",
         "methodNamePath": "n",

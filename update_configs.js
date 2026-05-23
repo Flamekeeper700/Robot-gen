@@ -14,17 +14,17 @@ function resolvePath(obj, pathString) {
 }
 
 /**
- * Custom extractor built to handle standard JSON and heavily cross-referenced Javadoc indices.
+ * Custom extractor built to handle standard JSON and Javadoc index arrays.
  */
 function parseSourceDynamically(rawData, config) {
     const classes = {};
     const extractor = config.classExtractor;
     
-    // Locate the root collection of components
-    const rootData = resolvePath(rawData, extractor.rootPath);
+    // If rootPath is blank/omitted, use rawData directly (essential for top-level array files)
+    const rootData = extractor.rootPath ? resolvePath(rawData, extractor.rootPath) : rawData;
     
-    if (!rootData) {
-        console.log(`   ❌ [Path Failure] Could not find root path "${extractor.rootPath}" in the downloaded schema.`);
+    if (!rootData || !Array.isArray(rootData)) {
+        console.log(`   ❌ [Path Failure] Target root path could not be resolved as an iterable array payload.`);
         return classes;
     }
 
@@ -40,7 +40,6 @@ function parseSourceDynamically(rawData, config) {
         // Resolve package identity
         let rawPackage = "";
         if (item.p !== undefined) {
-            // If it's a number, look it up in the packages array; otherwise use the string directly
             if (typeof item.p === 'number' && packageLookups[item.p]) {
                 rawPackage = packageLookups[item.p].p || "";
             } else {
@@ -66,8 +65,18 @@ function parseSourceDynamically(rawData, config) {
 
         const resolvedImport = `${rawPackage}.${className}`;
 
+        // Tag hardware category defaults for UI binding
+        let category = "utility";
+        if (className.toLowerCase().includes("motor") || className.includes("Talon") || className.includes("Spark")) {
+            category = "motor";
+        } else if (className.toLowerCase().includes("gyro") || className.includes("Pigeon") || className.includes("NavX")) {
+            category = "imu";
+        }
+
         classes[className] = {
+            name: className,
             package: rawPackage,
+            category: category,
             imports: [resolvedImport],
             constructors: [{ parameters: [], template: `${className} \${instanceName} = new ${className}(\${param});` }],
             declarationTemplate: `${className} \${instanceName};`,
@@ -75,7 +84,7 @@ function parseSourceDynamically(rawData, config) {
         };
         matchedClassesCount++;
 
-        // Extract methods array block
+        // Extract methods array block if present
         const methodsArray = resolvePath(item, extractor.methodNameSource);
         if (Array.isArray(methodsArray)) {
             methodsArray.forEach(methodItem => {
@@ -138,12 +147,12 @@ async function main() {
 
             let rawData;
             
-            // Handle Javadoc .js bundle asset files
+            // Handle script bundles like type-search-index.js
             if (source.isJavadocIndex || source.url.endsWith('.js')) {
                 console.log("   ℹ️ Analyzing response stream as an integrated JavaScript script index layout...");
                 const textData = await res.text();
                 
-                // Track absolute JSON outer boundaries regardless of object {} or array [] wrapping
+                // Trace precise bounds of inner array or object matching payload 
                 const firstBrace = textData.indexOf('{');
                 const firstBracket = textData.indexOf('[');
                 const lastBrace = textData.lastIndexOf('}');
@@ -155,7 +164,7 @@ async function main() {
                 const validEnd = Math.max(lastBrace, lastBracket);
                 
                 if (validStart === -1 || validEnd === -1) {
-                    console.warn("   ❌ Structural Parsing Error: script index could not find matching brace layouts.");
+                    console.warn("   ❌ Structural Parsing Error: script index could not find matching array bounds.");
                     continue;
                 }
                 
