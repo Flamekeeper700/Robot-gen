@@ -1,7 +1,7 @@
 {
   "sources": [
     {
-      "name": "WPILib_Filtered_Global",
+      "name": "WPILib_Global_API",
       "url": "https://github.wpilib.org/allwpilib/docs/release/java/search.js",
       "isJavadocIndex": true,
       "classExtractor": {
@@ -12,8 +12,9 @@
         "returnTypePath": "t",
         "parameterPath": "p",
         "packageFilters": [
+          "edu.wpi.first.wpilibj",
           "edu.wpi.first.apriltag",
-          "edu.wpi.first.wpilibj"
+          "edu.wpi.first.math.geometry"
         ]
       }
     }
