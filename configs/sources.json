@@ -1,17 +1,20 @@
 {
   "sources": [
     {
-      "name": "Live_Test_API",
-      "url": "https://jsonplaceholder.typicode.com/users",
+      "name": "WPILib_Filtered_Global",
+      "url": "https://github.wpilib.org/allwpilib/docs/release/java/search.js",
+      "isJavadocIndex": true,
       "classExtractor": {
-        "rootPath": "",
-        "classNamePath": "username",
-        "packageName": "com.universal.generated.test",
-        "importPath": "com.universal.generated.test.${className}",
-        "methodNameSource": "company",
-        "methodNamePath": "name",
-        "returnTypePath": "",
-        "parameterPath": ""
+        "rootPath": "resources",
+        "classNamePath": "l",
+        "methodNameSource": "members",
+        "methodNamePath": "n",
+        "returnTypePath": "t",
+        "parameterPath": "p",
+        "packageFilters": [
+          "edu.wpi.first.apriltag",
+          "edu.wpi.first.wpilibj"
+        ]
       }
     }
   ]
