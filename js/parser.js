@@ -1,40 +1,24 @@
-class RoboGenParser {
-    constructor() {
-        this.configs = {
-            baseTypes: null,
-            global: null,
-            objects: null,
-            templates: null
-        };
-    }
+export const ConfigParser = {
+    configs: {},
 
     async loadAllConfigs() {
         try {
-            const [baseTypes, global, objects, templates] = await Promise.all([
-                fetch('configs/baseTypes.json').then(r => r.json()),
-                fetch('configs/global.json').then(r => r.json()),
-                fetch('configs/objects.json').then(r => r.json()),
+            const [types, definitions, templates] = await Promise.all([
+                fetch('configs/types.json').then(r => r.json()),
+                fetch('configs/definitions.json').then(r => r.json()),
                 fetch('configs/templates.json').then(r => r.json())
             ]);
 
-            this.configs.baseTypes = baseTypes;
-            this.configs.global = global;
-            this.configs.objects = objects;
-            this.configs.templates = templates;
-
-            console.log("Configs successfully loaded and cached!", this.configs);
+            this.configs = { types, definitions, templates };
+            console.log("Configs loaded successfully:", this.configs);
+            return this.configs;
         } catch (error) {
-            console.error("Failed to load configuration files:", error);
+            console.error("Failed to load configs from /configs folder:", error);
+            throw error;
         }
-    }
+    },
 
-    resolveTemplate(templateArray, context) {
-        let templateString = Array.isArray(templateArray) ? templateArray.join('') : templateArray;
-        
-        return templateString.replace(/\{\{(\w+)\}\}/g, (match, key) => {
-            return context[key] !== undefined ? context[key] : match;
-        });
+    getDefinitions() {
+        return this.configs.definitions;
     }
-}
-
-export const parser = new RoboGenParser();
+};

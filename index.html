@@ -3,47 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoboGen Dashboard</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <title>Universal Code Generator</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    </head>
 <body>
     <header>
-        <h1>RoboGen Code Generator</h1>
+        <h1>Universal API Configurator</h1>
     </header>
 
-    <main class="app-container">
-        <nav class="tab-container">
-            <button class="tab-btn active" data-tab="global-tab">Global Settings</button>
-            <button class="tab-btn" data-tab="subsystem-tab">Subsystems</button>
-            <button class="tab-btn" data-tab="preview-tab">Code Preview</button>
-        </nav>
+    <main id="app-container">
+        </main>
 
-        <section class="workspace">
-            <div id="global-tab" class="tab-panel active">
-                <h2>Global Configuration</h2>
-                <div id="global-form" class="form-grid">
-                    </div>
-            </div>
-
-            <div id="subsystem-tab" class="tab-panel">
-                <h2>Subsystem Builder</h2>
-                <div class="subsystem-controls">
-                    <button id="add-subsystem-btn">+ Add Subsystem</button>
-                </div>
-                <div id="subsystems-container">
-                    </div>
-            </div>
-
-            <div id="preview-tab" class="tab-panel">
-                <h2>Generated Source Preview</h2>
-                <div class="preview-actions">
-                    <button id="export-zip-btn" class="primary-btn">Download Project ZIP</button>
-                </div>
-                <pre><code id="output-preview">Configure your options and check back here!</code></pre>
-            </div>
-        </section>
-    </main>
-
+    <script type="module" src="js/parser.js"></script>
+    <script type="module" src="js/generator.js"></script>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,9 @@
+{
+  "types": {
+    "string": { "javaType": "String", "imports": [] },
+    "int": { "javaType": "int", "imports": [] },
+    "double": { "javaType": "double", "imports": [] },
+    "boolean": { "javaType": "boolean", "imports": [] },
+    "list": { "javaType": "java.util.List", "imports": ["java.util.List"] }
+  }
+}

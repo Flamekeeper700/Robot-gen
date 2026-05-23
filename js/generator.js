@@ -1,44 +1,65 @@
-import { parser } from './parser.js';
+class CodeGenerator {
+    /**
+     * Constructs a full subsystem string using values queried out of our parser storage
+     */
+    generateSubsystemCode(subsystemName, selectedHardwareList) {
+        let imports = new Set(["import edu.wpi.first.wpilibj2.command.SubsystemBase;"]);
+        let declarations = [];
+        let initializations = [];
 
-export function generateClass(classData) {
-    const baseTemplate = parser.configs.templates.wpilibSubystem;
-    
-    let importsSet = new Set();
-    let declarationsList = [];
-    let constructorsList = [];
+        selectedHardwareList.forEach(item => {
+            // Pull the exact blueprint details from our parser lookup cache
+            const meta = window.frcParser.getClassData(item.type);
+            if (!meta) return;
 
-    classData.hardware.forEach(device => {
-        const typeDef = parser.configs.objects[device.type];
-        if (!typeDef) return;
+            // Gather required import statement lines dynamically
+            if (meta.imports) meta.imports.forEach(i => imports.add(i));
 
-        typeDef.imports.forEach(imp => importsSet.add(imp));
+            // Populate the structural code strings using replacement tags
+            let decl = meta.declarationTemplate
+                .replace("${className}", item.type)
+                .replace("${instanceName}", item.varName);
+            declarations.push(`    private final ${decl}`);
 
-        const declLine = parser.resolveTemplate(typeDef.declaration, { name: device.name });
-        declarationsList.push(`   ${declLine}`);
+            // Pick the appropriate constructor config block
+            const constructor = meta.constructors[0];
+            let init = constructor.template
+                .replace("${instanceName}", item.varName)
+                .replace("${param}", item.portId);
+            initializations.push(`        ${init}`);
+        });
 
-        const constructorDef = typeDef.constructors.find(c => c.name === device.chosenConstructor);
-        if (constructorDef) {
-            constructorDef.imports.forEach(imp => importsSet.add(imp));
+        // Assemble the actual file string layout
+        return `package frc.robot.subsystems;
 
-            const contextMap = { name: device.name, ...device.parameters };
-            const signatureLine = parser.resolveTemplate(constructorDef.signature, contextMap);
-            constructorsList.push(`        ${signatureLine}`);
-        }
-    });
+${Array.from(imports).join('\n')}
 
-    const masterContext = {
-        packageRoot: parser.configs.global.packageRoot.default,
-        className: classData.className,
-        imports: Array.from(importsSet).join('\n'),
-        constructors: constructorsList.join('\n'),
-        simCode: "// TODO: Add simulation variables"
-    };
+public class ${subsystemName} extends SubsystemBase {
+${declarations.join('\n')}
 
-    let finalCode = parser.resolveTemplate(baseTemplate.template, masterContext);
+    public ${subsystemName}() {
+${initializations.join('\n')}
+    }
+}`;
+    }
 
-    const classHeader = `public class ${classData.className} extends SubsystemBase {\n`;
-    const joinedDeclarations = declarationsList.join('\n') + '\n';
-    finalCode = finalCode.replace(classHeader, classHeader + joinedDeclarations);
+    /**
+     * Builds and downloads the final robot configuration as a single zip archive
+     */
+    async downloadProjectZip(subsystemName, hardwareList) {
+        const zip = new JSZip(); // Instantiate our CDN dependency
+        const subsystemCode = this.generateSubsystemCode(subsystemName, hardwareList);
 
-    return finalCode;
+        // Map files directly into a standard FRC project structure
+        zip.file(`src/main/java/frc/robot/subsystems/${subsystemName}.java`, subsystemCode);
+        
+        // Trigger a native browser save dialog
+        const content = await zip.generateAsync({ type: "blob" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(content);
+        link.download = "robot_code.zip";
+        link.click();
+    }
 }
+
+window.robotGenerator = new CodeGenerator();

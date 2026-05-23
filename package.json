@@ -1,0 +1,13 @@
+{
+  "name": "universal-gen-updater",
+  "version": "1.0.0",
+  "description": "API Fetcher for Universal Gen",
+  "main": "update_configs.js",
+  "type": "module",
+  "scripts": {
+    "update": "node update_configs.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2" 
+  }
+}

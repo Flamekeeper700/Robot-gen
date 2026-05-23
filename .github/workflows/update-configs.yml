@@ -1,0 +1,43 @@
+name: Scheduled API Configuration Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  workflow_dispatch: # Allows you to manually trigger it from the GitHub UI
+
+jobs:
+  update-assets:
+    runs-on: ubuntu-latest
+    
+    # Required to allow the bot to push commits back to your repo
+    permissions:
+      contents: write 
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Execute Config Update App
+        run: npm run update
+
+      - name: Commit and Push Changes if Updated
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add configs/
+          
+          # Check if there are actual changes before committing
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: auto-update universal api definitions [skip ci]"
+            git push
+          else
+            echo "No changes detected in remote APIs. Skipping commit."
+          fi

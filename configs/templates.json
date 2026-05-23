@@ -1,63 +1,20 @@
 {
-    "wpilibSubystem": {
-        "name": "standard",
-        "tags": [],
-        "requirements": [],
-        "parameters": [
-            {
-                "name": "className",
-                "type": "string",
-                "default": "className",
-                "description": "name of the subsystem class"
-            },
-            {
-                "name": "packageRoot",
-                "type": "string",
-                "default": "frc.robot",
-                "description": "root of subsystem"
-            },
-            {
-                "name": "imports",
-                "type": "marker",
-                "default": null,
-                "description": "marks where the rest of the imports should be inserted"
-            },
-            {
-                "name": "constructors",
-                "type": "marker",
-                "default": null,
-                "description": "marks where the constructors should be inserted"
-            },
-            {
-                "name": "constructors",
-                "type": "marker",
-                "default": null,
-                "description": "marks where the constructors should be inserted"
-            },
-            {
-                "name": "simCode",
-                "type": "marker",
-                "default": null,
-                "description": "marks where simulation code should be inserted"
-            }
-
-        ],
-        "template": [
-            "package {{packageRoot}}.subsystems;\n",
-            "import edu.wpi.first.wpilibj2.command.SubsystemBase;\n",
-            "{{imports}}\n",
-            "public class {{className}} extends SubsystemBase {\n",
-            "   public {{className}}() {\n",
-            "       {{constructors}}\n",
-            "   }\n",
-            "   @Override",            
-            "   public void periodic() {\n",
-            "   }\n",
-            "   @Override",
-            "   public void simulationPeriodic() {\n",
-            "       {{simCode}}\n",
-            "   }\n",
-            "}"
-        ]
-    }
+  "classTemplate": [
+    "package ${package};",
+    "",
+    "${imports}",
+    "",
+    "public class ${className} {",
+    "    // Generated Fields",
+    "    ${fields}",
+    "",
+    "    public ${className}() {",
+    "        // Initialization",
+    "        ${initialization}",
+    "    }",
+    "",
+    "    // Generated Methods",
+    "    ${methods}",
+    "}"
+  ]
 }

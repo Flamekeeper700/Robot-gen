@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "libraryName": "ExampleUniversalAPI",
+    "version": "2026.1.0"
+  },
+  "classes": {
+    "CustomController": {
+      "package": "com.universal.api.hardware",
+      "imports": ["com.universal.api.hardware.CustomController"],
+      "constructors": [
+        {
+          "parameters": [
+            { "name": "deviceNumber", "type": "int" }
+          ]
+        }
+      ],
+      "methods": {
+        "setOutputs": {
+          "returnType": "void",
+          "parameters": [
+            { "name": "value", "type": "double" }
+          ],
+          "template": "${instance}.setOutputs(${value});"
+        },
+        "getVelocity": {
+          "returnType": "double",
+          "parameters": [],
+          "template": "${instance}.getVelocity()"
+        }
+      }
+    }
+  }
+}

@@ -1,49 +1,34 @@
 ========================================
-ROBOGEN FILE STRUCTURE LEGEND
+UNIVERSAL GEN FILE STRUCTURE LEGEND
 ========================================
 
-ROBOT GEN/
+UNIVERSAL GEN/
 ├── index.html              # Main application entry point
 ├── filestructure.txt       # Legend file
+├── update_configs.js       # Node.js script for fetching/parsing APIs locally
+├── package.json            # Node project file for updater script dependencies
 │
-├── css/
-│   └── styles.css          # Styling
+├── styles/                 # Styling
+│   └── styles.css          # Main UI styles
 │
-├── js/
+├── js/                     # Frontend Application Logic
 │   ├── app.js              # UI interactions, state management, event handlers
 │   ├── generator.js        # ZIP builder, file generation, context assembly
 │   └── parser.js           # JSON loader, config caching, template helpers
 │
-└── configs/                # ALL configuration files
-    ├── global.json         # Global settings
-    ├── objects.json        # All hardware devices and other code objects (motors, sensors, PID controllers, Sim stuff, etc.)
-    ├── baseTypes.json      # All variable/basic type definitions
-    └── templates.json      # Holds base templates for main files
+├── configs/                # Automatically generated API configuration files
+│   ├── types.json          # Universal primitive to Java type mappings
+│   ├── definitions.json    # API blueprints (classes, methods, parameters)
+│   └── templates.json      # Structural skeletons for generated Java files
+│
+└── .github/
+    └── workflows/
+        └── update-configs.yml # GitHub Actions automation pipeline
 
 ========================================
-HOW TO EXTEND:
+AUTOMATION WORKFLOW:
 ========================================
-
-1. ADD NEW HARDWARE:
-   - Add entry to hardware.json with:
-     * name: Display name
-     * type: Category (motor, sensor, etc.)
-     * imports: Required Java imports
-     * templates: Declaration, config, getters
-     * methods: Hardware-specific method overrides
-
-2. ADD NEW METHODS:
-   - Add entry to methods.json with:
-     * displayName: UI label
-     * parameters: Array of {name, type, default}
-     * subsystemTemplate: Java code template
-     * commandExecute: Command execution code
-     * commandInitialize: Optional init code
-
-3. ADD NEW CONTROL PROFILES:
-   - Add entry to controls.json with:
-     * name: Profile display name
-     * defaultMethods: Array of method keys to include
-     * configFields: Array of field definitions for UI
-
-========================================
+1. GitHub Actions runs `update_configs.js` on a schedule.
+2. Script fetches remote API manifests, transforms them, and overwrites `/configs/`.
+3. GitHub Actions commits and pushes the new JSON files to the repository.
+4. Static frontend (`index.html`) reads the newly updated `/configs/` on load.
