@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universal Code Generator</title>
     <link rel="stylesheet" href="styles/styles.css">
-    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
 <body>
     <header>
         <h1>Universal API Configurator</h1>
     </header>
 
     <main id="app-container">
-        </main>
+        <div class="config-section">
+            <label for="motor-type-selector">Select Hardware:</label>
+            <select id="motor-type-selector"></select>
+            
+            <label for="current-limit">Current Limit (Amps):</label>
+            <input type="number" id="current-limit" value="40">
+            
+            <button id="generate-btn">Generate Subsystem</button>
+        </div>
+    </main>
 
     <script type="module" src="js/parser.js"></script>
     <script type="module" src="js/generator.js"></script>

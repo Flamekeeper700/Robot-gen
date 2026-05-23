@@ -69,7 +69,8 @@ function parseSourceDynamically(rawData, config) {
         classes[className] = {
             package: rawPackage,
             imports: [resolvedImport],
-            constructors: [{ parameters: [] }],
+            constructors: [{ parameters: [], template: `${className} \${instanceName} = new ${className}(\${param});` }],
+            declarationTemplate: `${className} \${instanceName};`,
             methods: {}
         };
         matchedClassesCount++;
@@ -142,16 +143,23 @@ async function main() {
                 console.log("   ℹ️ Analyzing response stream as an integrated JavaScript script index layout...");
                 const textData = await res.text();
                 
-                // Track absolute JSON outer boundaries
-                const jsonStart = textData.indexOf('{');
-                const jsonEnd = textData.lastIndexOf('}');
+                // Track absolute JSON outer boundaries regardless of object {} or array [] wrapping
+                const firstBrace = textData.indexOf('{');
+                const firstBracket = textData.indexOf('[');
+                const lastBrace = textData.lastIndexOf('}');
+                const lastBracket = textData.lastIndexOf(']');
+
+                const validStart = Math.max(firstBrace, firstBracket) > -1 
+                    ? Math.min(firstBrace > -1 ? firstBrace : Infinity, firstBracket > -1 ? firstBracket : Infinity) 
+                    : -1;
+                const validEnd = Math.max(lastBrace, lastBracket);
                 
-                if (jsonStart === -1 || jsonEnd === -1) {
+                if (validStart === -1 || validEnd === -1) {
                     console.warn("   ❌ Structural Parsing Error: script index could not find matching brace layouts.");
                     continue;
                 }
                 
-                const sanitizedJson = textData.substring(jsonStart, jsonEnd + 1);
+                const sanitizedJson = textData.substring(validStart, validEnd + 1);
                 rawData = JSON.parse(sanitizedJson);
             } else {
                 rawData = await res.json();

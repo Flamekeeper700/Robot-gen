@@ -20,5 +20,16 @@ export const ConfigParser = {
 
     getDefinitions() {
         return this.configs.definitions;
+    },
+
+    getObjectsByCategory(category) {
+        if (!this.configs.definitions || !this.configs.definitions.classes) return [];
+        // Extract classes that match the requested category tag
+        return Object.values(this.configs.definitions.classes).filter(cls => cls.category === category);
+    },
+
+    getClassData(className) {
+        if (!this.configs.definitions || !this.configs.definitions.classes) return null;
+        return this.configs.definitions.classes[className];
     }
 };
