@@ -1,18 +1,18 @@
 {
   "sources": [
     {
-    "name": "TalonFX_HardwareAPI",
-    "url": "https://raw.githubusercontent.com/universal-robotics-hardware/api-manifests/main/talonfx_manifest.json",
-    "classExtractor": {
-        "rootPath": "hardware_devices",
-        "classNamePath": "device_identifier",
-        "packageName": "com.ctre.phoenix6.hardware",
-        "importPath": "com.ctre.phoenix6.hardware.${className}",
-        "methodNameSource": "available_functions",
-        "methodNamePath": "function_name",
-        "returnTypePath": "return_type",
-        "parameterPath": "parameters"
-    }
+      "name": "Live_Test_API",
+      "url": "https://jsonplaceholder.typicode.com/users",
+      "classExtractor": {
+        "rootPath": "",
+        "classNamePath": "username",
+        "packageName": "com.universal.generated.test",
+        "importPath": "com.universal.generated.test.${className}",
+        "methodNameSource": "company",
+        "methodNamePath": "name",
+        "returnTypePath": "",
+        "parameterPath": ""
+      }
     }
   ]
 }
