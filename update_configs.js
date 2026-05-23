@@ -14,22 +14,37 @@ function resolvePath(obj, pathString) {
 }
 
 /**
- * Custom extractor built to handle standard JSON and Javadoc index arrays.
+ * Helper to strip Javascript assignment text and extract clean JSON objects or arrays.
  */
-function parseSourceDynamically(rawData, config) {
+function cleanJavascriptJson(textData) {
+    const firstBrace = textData.indexOf('{');
+    const firstBracket = textData.indexOf('[');
+    const lastBrace = textData.lastIndexOf('}');
+    const lastBracket = textData.lastIndexOf(']');
+
+    const validStart = Math.max(firstBrace, firstBracket) > -1 
+        ? Math.min(firstBrace > -1 ? firstBrace : Infinity, firstBracket > -1 ? firstBracket : Infinity) 
+        : -1;
+    const validEnd = Math.max(lastBrace, lastBracket);
+    
+    if (validStart === -1 || validEnd === -1) {
+        throw new Error("Could not find matching JSON boundaries inside the script file.");
+    }
+    
+    return JSON.parse(textData.substring(validStart, validEnd + 1));
+}
+
+/**
+ * Custom extractor built to handle standard JSON manifests and paired Javadoc indices.
+ */
+function parseSourceDynamically(rootData, config, rawMembers = []) {
     const classes = {};
     const extractor = config.classExtractor;
-    
-    // If rootPath is blank/omitted, use rawData directly (essential for top-level array files)
-    const rootData = extractor.rootPath ? resolvePath(rawData, extractor.rootPath) : rawData;
-    
+
     if (!rootData || !Array.isArray(rootData)) {
         console.log(`   ❌ [Path Failure] Target root path could not be resolved as an iterable array payload.`);
         return classes;
     }
-
-    // Capture Javadoc package maps if they exist to decode numerical lookups
-    const packageLookups = rawData.packages || [];
 
     console.log(`   ℹ️ Ingesting root collection containing ${rootData.length} entries.`);
     let matchedClassesCount = 0;
@@ -38,29 +53,19 @@ function parseSourceDynamically(rawData, config) {
         let className = resolvePath(item, extractor.classNamePath);
         
         // Resolve package identity
-        let rawPackage = "";
-        if (item.p !== undefined) {
-            if (typeof item.p === 'number' && packageLookups[item.p]) {
-                rawPackage = packageLookups[item.p].p || "";
-            } else {
-                rawPackage = item.p;
-            }
-        }
-
-        // Fallback to configured default if data map is flat
-        if (!rawPackage) rawPackage = extractor.packageName || "";
+        let rawPackage = item.p || extractor.packageName || "";
         if (!className || !rawPackage) return;
 
         // Skip non-class utility boundaries or nesting anomalies
         if (className.includes('/') || className.toLowerCase() === className) return;
 
-        // Strip HTML character formatting often found inside Javadoc index headers
+        // Strip HTML formatting tags often found inside Javadoc headers
         className = className.replace(/<[^>]*>/g, '').trim();
 
         // GLOBAL PACKAGE FILTERING
         if (extractor.packageFilters && extractor.packageFilters.length > 0) {
             const matchesFilter = extractor.packageFilters.some(filter => rawPackage.startsWith(filter));
-            if (!matchesFilter) return; // Ignore class if it falls outside our target filters
+            if (!matchesFilter) return; 
         }
 
         const resolvedImport = `${rawPackage}.${className}`;
@@ -83,30 +88,37 @@ function parseSourceDynamically(rawData, config) {
             methods: {}
         };
         matchedClassesCount++;
-
-        // Extract methods array block if present
-        const methodsArray = resolvePath(item, extractor.methodNameSource);
-        if (Array.isArray(methodsArray)) {
-            methodsArray.forEach(methodItem => {
-                const methodName = resolvePath(methodItem, extractor.methodNamePath);
-                if (!methodName) return;
-
-                const returnType = resolvePath(methodItem, extractor.returnTypePath) || extractor.returnTypeDefault || "void";
-                const rawParams = resolvePath(methodItem, extractor.parameterPath) || [];
-
-                classes[className].methods[methodName] = {
-                    returnType: returnType,
-                    parameters: Array.isArray(rawParams) ? rawParams.map(p => ({
-                        name: p.name || p,
-                        type: p.type || "String"
-                    })) : [],
-                    template: `\${instance}.${methodName}();`
-                };
-            });
-        }
     });
 
-    console.log(`   ✅ Extracted ${matchedClassesCount} valid classes matching package rules.`);
+    console.log(`   ✅ Extracted ${matchedClassesCount} valid classes matching package rules. Stitching methods...`);
+
+    // STITCHING PHASE: Map functions out of the standalone member registry into our classes
+    let methodCount = 0;
+    if (Array.isArray(rawMembers)) {
+        rawMembers.forEach(member => {
+            // In Javadocs, 'c' holds the class container name, and 'l' holds the method/field name
+            const parentClassName = member.c;
+            const methodName = member.l;
+
+            // Make sure this member belongs to a class we matched and is a valid method (not an field/enum value)
+            if (parentClassName && classes[parentClassName] && methodName && methodName.includes('(')) {
+                // Strip the parentheses signature from the key lookup name
+                const cleanMethodName = methodName.split('(')[0];
+                
+                // Avoid capturing constructor methods
+                if (cleanMethodName === parentClassName) return;
+
+                classes[parentClassName].methods[cleanMethodName] = {
+                    returnType: "void", // Default fallback
+                    parameters: [],     // Extracted dynamic parameters can be loaded here if needed
+                    template: `\${instance}.${cleanMethodName}();`
+                };
+                methodCount++;
+            }
+        });
+        console.log(`   ⚡ Successfully bound ${methodCount} total methods to their parent class trees.`);
+    }
+
     return classes;
 }
 
@@ -135,54 +147,46 @@ async function main() {
     for (const source of sources) {
         console.log(`\n--------------------------------------------------`);
         console.log(`📥 Processing Target Source: "${source.name}"`);
-        console.log(`🌐 Target URL: ${source.url}`);
         
         try {
-            const res = await fetch(source.url);
-            
-            if (!res.ok) {
-                console.warn(`   ❌ Network Error: Remote endpoint dropped connection with status: ${res.status}`);
-                continue;
-            }
+            let rootData = null;
+            let rawMembers = [];
 
-            let rawData;
-            
-            // Handle script bundles like type-search-index.js
-            if (source.isJavadocIndex || source.url.endsWith('.js')) {
-                console.log("   ℹ️ Analyzing response stream as an integrated JavaScript script index layout...");
-                const textData = await res.text();
+            if (source.isJavadocIndex || source.url.endsWith('type-search-index.js')) {
+                console.log(`🌐 Ingesting Javadoc Dual Endpoint Structure...`);
                 
-                // Trace precise bounds of inner array or object matching payload 
-                const firstBrace = textData.indexOf('{');
-                const firstBracket = textData.indexOf('[');
-                const lastBrace = textData.lastIndexOf('}');
-                const lastBracket = textData.lastIndexOf(']');
+                // 1. Fetch Types
+                console.log(`   👉 Fetching Types: ${source.url}`);
+                const typeRes = await fetch(source.url);
+                const typeText = await typeRes.text();
+                rootData = cleanJavascriptJson(typeText);
 
-                const validStart = Math.max(firstBrace, firstBracket) > -1 
-                    ? Math.min(firstBrace > -1 ? firstBrace : Infinity, firstBracket > -1 ? firstBracket : Infinity) 
-                    : -1;
-                const validEnd = Math.max(lastBrace, lastBracket);
+                // 2. Derive and Fetch Members (Swap out filename in URL)
+                const memberUrl = source.url.replace('type-search-index.js', 'member-search-index.js');
+                console.log(`   👉 Fetching Members: ${memberUrl}`);
+                const memberRes = await fetch(memberUrl);
                 
-                if (validStart === -1 || validEnd === -1) {
-                    console.warn("   ❌ Structural Parsing Error: script index could not find matching array bounds.");
-                    continue;
+                if (memberRes.ok) {
+                    const memberText = await memberRes.text();
+                    rawMembers = cleanJavascriptJson(memberText);
+                } else {
+                    console.warn(`   ⚠️ Warning: Member endpoint could not be found. Skipping method ingestion.`);
                 }
-                
-                const sanitizedJson = textData.substring(validStart, validEnd + 1);
-                rawData = JSON.parse(sanitizedJson);
             } else {
-                rawData = await res.json();
+                // Handle standard direct flat JSON manifests
+                console.log(`🌐 Fetching Direct JSON Schema: ${source.url}`);
+                const res = await fetch(source.url);
+                const rawData = await res.json();
+                rootData = source.classExtractor.rootPath ? resolvePath(rawData, source.classExtractor.rootPath) : rawData;
             }
 
-            console.log(`   📥 Payload compiled safely (${JSON.stringify(rawData).length} bytes).`);
-            
-            const translatedClasses = parseSourceDynamically(rawData, source);
+            const translatedClasses = parseSourceDynamically(rootData, source, rawMembers);
             const classCount = Object.keys(translatedClasses).length;
 
             if (classCount > 0) {
                 Object.assign(masterDefinitions.classes, translatedClasses);
                 masterDefinitions.metadata.apisProcessed.push(source.name);
-                console.log(`   🎉 Successfully populated ${classCount} class entries.`);
+                console.log(`   🎉 Successfully updated definitions for "${source.name}".`);
             } else {
                 console.log(`   ⚠️ Filter Pass Finished: 0 classes matched package definitions.`);
             }
