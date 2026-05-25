@@ -49,9 +49,9 @@ function generateParamTemplateString(parameters) {
 }
 
 /**
- * Custom extractor built to handle standard JSON manifests, Javadoc indices, Enums, and Interfaces.
+ * Universal dynamic parser equipped to ingest both raw Javadoc search arrays and standard JSON Vendor Manifests.
  */
-function parseSourceDynamically(rootData, config, rawMembers = []) {
+function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = false) {
     const classes = {};
     const extractor = config.classExtractor;
 
@@ -64,13 +64,14 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
     let matchedTypesCount = 0;
     
     for (const item of rootData) {
-        let className = resolvePath(item, extractor.classNamePath);
-        let rawPackage = item.p || extractor.packageName || "";
+        // Handle Javadoc naming mappings ('l' inside elements) vs explicit configuration mappings
+        let className = isJavadoc ? item.l : resolvePath(item, extractor.classNamePath);
+        let rawPackage = isJavadoc ? (item.p || extractor.packageName || "") : (resolvePath(item, extractor.packageNamePath) || extractor.packageName || "");
         
         if (!className || !rawPackage) continue;
-        if (className.includes('/')) continue; // Skip paths, focus on class names
+        if (className.includes('/')) continue; 
 
-        // Clean generics out of names (e.g., "Matrix<R,C>" -> "Matrix")
+        // Clean generic layouts
         className = className.replace(/<[^>]*>/g, '').trim();
 
         if (extractor.packageFilters?.length > 0) {
@@ -80,18 +81,17 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
 
         const resolvedImport = `${rawPackage}.${className}`;
 
-        // Initial structural guess
+        // Establish core structural details
         let structuralType = "class"; 
-        if (item.g || className.endsWith("Listener") || className.endsWith("Interface")) {
+        if (item.g || className.endsWith("Listener") || className.endsWith("Interface") || item.type === "interface") {
             structuralType = "interface";
         }
 
-        // Determine functional category tags
         let category = "utility";
         const lowerName = className.toLowerCase();
-        if (lowerName.includes("motor") || className.includes("Talon") || className.includes("Spark")) {
+        if (lowerName.includes("motor") || className.includes("Talon") || className.includes("Spark") || className.includes("FX") || className.includes("SRX")) {
             category = "motor";
-        } else if (lowerName.includes("gyro") || className.includes("Pigeon") || className.includes("NavX")) {
+        } else if (lowerName.includes("gyro") || className.includes("Pigeon") || className.includes("NavX") || className.includes("CANcoder")) {
             category = "imu";
         }
 
@@ -104,24 +104,25 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
             constructors: [], 
             declarationTemplate: `${className} \${instanceName};`,
             methods: {},
-            fields: [] // Temporary holding for non-method members (fields/enum options)
+            fields: [] 
         };
         matchedTypesCount++;
     }
 
-    console.log(`   ✅ Extracted ${matchedTypesCount} valid types. Stitching members...`);
+    console.log(`   ✅ Instantiated ${matchedTypesCount} type configurations. Binding members...`);
 
     let methodCount = 0;
     let constructorCount = 0;
 
-    if (Array.isArray(rawMembers)) {
+    // Process tracking components via structural arrays
+    if (isJavadoc && Array.isArray(rawMembers)) {
         for (const member of rawMembers) {
             const parentClassName = member.c;
-            const signature = member.l; // e.g. "drive(double,double)" or "kForward"
+            const signature = member.l;
 
             if (!parentClassName || !classes[parentClassName]) continue;
 
-            // Catch fields and potential enum constants (no parenthesis)
+            // Extract Fields & potential Enum options
             if (signature && !signature.includes('(')) {
                 if (!classes[parentClassName].fields.includes(signature)) {
                     classes[parentClassName].fields.push(signature);
@@ -129,13 +130,12 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
                 continue;
             }
 
-            // Process typical executable elements (Methods / Constructors)
+            // Extract Methods & Constructors
             if (signature?.includes('(')) {
                 const [cleanName, paramsPart] = signature.split('(');
                 const parameters = parseSignatureParams(paramsPart.replace(')', ''));
                 const paramTemplate = generateParamTemplateString(parameters);
 
-                // If signature matches parent class name, it's a constructor
                 if (cleanName === parentClassName && classes[parentClassName].type === "class") {
                     classes[parentClassName].constructors.push({
                         parameters: parameters,
@@ -143,7 +143,6 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
                     });
                     constructorCount++;
                 } else {
-                    // Standard method signature
                     classes[parentClassName].methods[cleanName] = {
                         returnType: "void",
                         parameters: parameters,
@@ -153,34 +152,53 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
                 }
             }
         }
+    } else if (!isJavadoc) {
+        // If it's a standalone JSON manifest (Vendor manifest data), iterate internal parameters
+        for (const target of rootData) {
+            const name = resolvePath(target, extractor.classNamePath);
+            if (!name || !classes[name]) continue;
+
+            // Check if configurations have designated raw methods mapped directly inside the JSON
+            const discoveredMethods = resolvePath(target, extractor.methodsPath) || [];
+            if (Array.isArray(discoveredMethods)) {
+                for (const method of discoveredMethods) {
+                    const methodName = typeof method === 'string' ? method : method.name;
+                    if (!methodName) continue;
+                    
+                    const parameters = method.parameters ? method.parameters.map(p => p.type || p) : [];
+                    const paramTemplate = generateParamTemplateString(parameters);
+
+                    classes[name].methods[methodName] = {
+                        returnType: method.returnType || "void",
+                        parameters: parameters,
+                        template: `\${instance}.${methodName}(${paramTemplate});`
+                    };
+                    methodCount++;
+                }
+            }
+        }
     }
 
-    // Post-processing logic to solidify Enums and clean up Classes
+    // Post Processing & Enum conversion utilizing the native compiler heuristic
     for (const className of Object.keys(classes)) {
         const typeRef = classes[className];
-
-        // Foolproof heuristic: The Java compiler always injects values() and valueOf() into Enums
         const isJavaEnum = typeRef.methods["values"] && typeRef.methods["valueOf"];
 
         if (isJavaEnum) {
             typeRef.type = "enum";
-            typeRef.enumValues = [...typeRef.fields]; // Lock in the extracted constants
-            
-            // Clean up the noise for the GUI
-            typeRef.constructors = []; 
-            delete typeRef.fields; 
+            typeRef.enumValues = [...typeRef.fields];
+            typeRef.constructors = [];
+            delete typeRef.fields;
             delete typeRef.methods["values"];
             delete typeRef.methods["valueOf"];
-            
         } else {
-            // It's a standard class/interface. Check for default constructors.
             if (typeRef.type === "class" && typeRef.constructors.length === 0) {
+                // Fallback default constructor parameters configuration
                 typeRef.constructors.push({
                     parameters: [],
                     template: `${className} \${instanceName} = new ${className}();`
                 });
             }
-            // Discard the temporary field tracking so it doesn't clutter your JSON
             delete typeRef.fields;
         }
     }
@@ -218,8 +236,10 @@ async function main() {
         try {
             let rootData = null;
             let rawMembers = [];
+            let isJavadocIndex = false;
 
             if (source.isJavadocIndex || source.url.endsWith('type-search-index.js')) {
+                isJavadocIndex = true;
                 const typeRes = await fetch(source.url);
                 const typeText = await typeRes.text();
                 rootData = cleanJavascriptJson(typeText);
@@ -237,7 +257,7 @@ async function main() {
                 rootData = source.classExtractor.rootPath ? resolvePath(rawData, source.classExtractor.rootPath) : rawData;
             }
 
-            const translatedClasses = parseSourceDynamically(rootData, source, rawMembers);
+            const translatedClasses = parseSourceDynamically(rootData, source, rawMembers, isJavadocIndex);
             if (Object.keys(translatedClasses).length > 0) {
                 Object.assign(masterDefinitions.classes, translatedClasses);
                 masterDefinitions.metadata.apisProcessed.push(source.name);
