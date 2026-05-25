@@ -11,11 +11,7 @@
         "methodNamePath": "n",
         "returnTypePath": "t",
         "parameterPath": "p",
-        "packageFilters": [
-          "edu.wpi.first.wpilibj",
-          "edu.wpi.first.apriltag",
-          "edu.wpi.first.math.geometry"
-        ]
+        "packageFilters": []
       }
     },
     {
@@ -29,11 +25,7 @@
         "methodNamePath": "n",
         "returnTypePath": "t",
         "parameterPath": "p",
-        "packageFilters": [
-          "edu.wpi.first.wpilibj",
-          "edu.wpi.first.apriltag",
-          "edu.wpi.first.math.geometry"
-        ]
+        "packageFilters": []
       }
     }
   ]
