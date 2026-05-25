@@ -8,8 +8,7 @@ import fetch from 'node-fetch';
 function resolvePath(obj, pathString) {
     if (!pathString || !obj) return obj;
     return pathString.split('.').reduce((acc, part) => {
-        if (acc && part in acc) return acc[part];
-        return undefined;
+        return acc && part in acc ? acc[part] : undefined;
     }, obj);
 }
 
@@ -35,6 +34,23 @@ function cleanJavascriptJson(textData) {
 }
 
 /**
+ * Helper to clean and split parameter strings from method/constructor signatures.
+ * e.g., "double, double" -> ["double", "double"]
+ */
+function parseSignatureParams(paramsString) {
+    if (!paramsString) return [];
+    return paramsString.split(',').map(p => p.trim()).filter(Boolean);
+}
+
+/**
+ * Generates comma-separated template placeholders for parameters.
+ * e.g., ["double", "int"] -> "${param1}, ${param2}"
+ */
+function generateParamTemplateString(parameters) {
+    return parameters.map((_, i) => `\${param${i + 1}}`).join(', ');
+}
+
+/**
  * Custom extractor built to handle standard JSON manifests and paired Javadoc indices.
  */
 function parseSourceDynamically(rootData, config, rawMembers = []) {
@@ -49,27 +65,29 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
     console.log(`   ℹ️ Ingesting root collection containing ${rootData.length} entries.`);
     let matchedClassesCount = 0;
     
-    rootData.forEach((item) => {
+    for (const item of rootData) {
         let className = resolvePath(item, extractor.classNamePath);
-        
         let rawPackage = item.p || extractor.packageName || "";
-        if (!className || !rawPackage) return;
+        
+        if (!className || !rawPackage) continue;
+        if (className.includes('/') || className.toLowerCase() === className) continue;
 
-        if (className.includes('/') || className.toLowerCase() === className) return;
-
+        // Clean generics out of class names
         className = className.replace(/<[^>]*>/g, '').trim();
 
-        if (extractor.packageFilters && extractor.packageFilters.length > 0) {
+        if (extractor.packageFilters?.length > 0) {
             const matchesFilter = extractor.packageFilters.some(filter => rawPackage.startsWith(filter));
-            if (!matchesFilter) return; 
+            if (!matchesFilter) continue; 
         }
 
         const resolvedImport = `${rawPackage}.${className}`;
 
+        // Assign categorized tags based on name rules
         let category = "utility";
-        if (className.toLowerCase().includes("motor") || className.includes("Talon") || className.includes("Spark")) {
+        const lowerName = className.toLowerCase();
+        if (lowerName.includes("motor") || className.includes("Talon") || className.includes("Spark")) {
             category = "motor";
-        } else if (className.toLowerCase().includes("gyro") || className.includes("Pigeon") || className.includes("NavX")) {
+        } else if (lowerName.includes("gyro") || className.includes("Pigeon") || className.includes("NavX")) {
             category = "imu";
         }
 
@@ -78,41 +96,59 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
             package: rawPackage,
             category: category,
             imports: [resolvedImport],
-            constructors: [{ parameters: [], template: `${className} \${instanceName} = new ${className}(\${param});` }],
+            constructors: [], // Populated dynamically below
             declarationTemplate: `${className} \${instanceName};`,
             methods: {}
         };
         matchedClassesCount++;
-    });
+    }
 
-    console.log(`   ✅ Extracted ${matchedClassesCount} valid classes matching package rules. Stitching methods...`);
+    console.log(`   ✅ Extracted ${matchedClassesCount} valid classes. Stitching constructors and methods...`);
 
     let methodCount = 0;
+    let constructorCount = 0;
+
     if (Array.isArray(rawMembers)) {
-        rawMembers.forEach(member => {
+        for (const member of rawMembers) {
             const parentClassName = member.c;
-            const methodNameWithParams = member.l; // Signature, e.g., "drive(double,double)"
+            const signature = member.l; // Format: "drive(double,double)" or "SparkMax(int)"
 
-            if (parentClassName && classes[parentClassName] && methodNameWithParams && methodNameWithParams.includes('(')) {
-                const [cleanMethodName, paramsPart] = methodNameWithParams.split('(');
-                
-                // Extract and clean parameters
-                const paramsString = paramsPart.replace(')', '');
-                const parameters = paramsString ? paramsString.split(',').map(p => p.trim()) : [];
+            if (!parentClassName || !classes[parentClassName] || !signature?.includes('(')) continue;
 
-                if (cleanMethodName === parentClassName) return;
+            const [cleanName, paramsPart] = signature.split('(');
+            const parameters = parseSignatureParams(paramsPart.replace(')', ''));
+            const paramTemplate = generateParamTemplateString(parameters);
 
-                classes[parentClassName].methods[cleanMethodName] = {
+            // Check if this signature is actually a constructor
+            if (cleanName === parentClassName) {
+                classes[parentClassName].constructors.push({
+                    parameters: parameters,
+                    template: `${parentClassName} \${instanceName} = new ${parentClassName}(${paramTemplate});`
+                });
+                constructorCount++;
+            } else {
+                // Otherwise, it's a standard method execution
+                classes[parentClassName].methods[cleanName] = {
                     returnType: "void",
                     parameters: parameters,
-                    template: `\${instance}.${cleanMethodName}(${parameters.map((_, i) => `\${param${i+1}}`).join(', ')});`
+                    template: `\${instance}.${cleanName}(${paramTemplate});`
                 };
                 methodCount++;
             }
-        });
-        console.log(`   ⚡ Successfully bound ${methodCount} total methods to their parent class trees.`);
+        }
     }
 
+    // Fallback default constructor if no explicit constructors were bound
+    for (const className of Object.keys(classes)) {
+        if (classes[className].constructors.length === 0) {
+            classes[className].constructors.push({
+                parameters: [],
+                template: `${className} \${instanceName} = new ${className}();`
+            });
+        }
+    }
+
+    console.log(`   ⚡ Bound ${constructorCount} constructors and ${methodCount} total methods to parent trees.`);
     return classes;
 }
 
@@ -165,9 +201,7 @@ async function main() {
             }
 
             const translatedClasses = parseSourceDynamically(rootData, source, rawMembers);
-            const classCount = Object.keys(translatedClasses).length;
-
-            if (classCount > 0) {
+            if (Object.keys(translatedClasses).length > 0) {
                 Object.assign(masterDefinitions.classes, translatedClasses);
                 masterDefinitions.metadata.apisProcessed.push(source.name);
                 console.log(`   🎉 Successfully updated definitions for "${source.name}".`);
@@ -182,7 +216,7 @@ async function main() {
     }
 
     fs.writeFileSync(outputPath, JSON.stringify(masterDefinitions, null, 2), 'utf-8');
-    console.log(`📝 Output saved cleanly to: ${outputPath}`);
+    console.log(`\n📝 Output saved cleanly to: ${outputPath}`);
 }
 
 main();
