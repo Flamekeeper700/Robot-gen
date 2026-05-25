@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-25T23:25:39.393Z",
+    "generatedAt": "2026-05-25T23:42:19.415Z",
     "apisProcessed": [
       "WPILib_Global_API"
     ]
@@ -1395,32 +1395,19 @@
     "Alert.AlertType": {
       "name": "Alert.AlertType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Alert.AlertType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "Alert.AlertType ${instanceName} = new Alert.AlertType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "Alert.AlertType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kError",
+        "kInfo",
+        "kWarning"
+      ]
     },
     "ADXL345_I2C.AllAxes": {
       "name": "ADXL345_I2C.AllAxes",
@@ -1494,32 +1481,18 @@
     "DriverStation.Alliance": {
       "name": "DriverStation.Alliance",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DriverStation.Alliance"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "DriverStation.Alliance ${instanceName} = new DriverStation.Alliance();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "DriverStation.Alliance ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "Blue",
+        "Red"
+      ]
     },
     "AnalogAccelerometer": {
       "name": "AnalogAccelerometer",
@@ -2739,37 +2712,25 @@
     "AnalogTriggerOutput.AnalogTriggerType": {
       "name": "AnalogTriggerOutput.AnalogTriggerType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogTriggerOutput.AnalogTriggerType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "AnalogTriggerOutput.AnalogTriggerType ${instanceName} = new AnalogTriggerOutput.AnalogTriggerType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "AnalogTriggerOutput.AnalogTriggerType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kFallingPulse",
+        "kInWindow",
+        "kRisingPulse",
+        "kState"
+      ]
     },
     "AprilTag": {
       "name": "AprilTag",
       "package": "edu.wpi.first.apriltag",
-      "type": "enum",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTag"
@@ -2816,10 +2777,7 @@
           "parameters": [],
           "template": "${instance}.toString();"
         }
-      },
-      "enumValues": [
-        "ID"
-      ]
+      }
     },
     "AprilTagDetection": {
       "name": "AprilTagDetection",
@@ -3090,37 +3048,32 @@
     "AprilTagFields": {
       "name": "AprilTagFields",
       "package": "edu.wpi.first.apriltag",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagFields"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "AprilTagFields ${instanceName} = new AprilTagFields();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "AprilTagFields ${instanceName};",
       "methods": {
         "loadAprilTagLayoutField": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.loadAprilTagLayoutField();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "k2022RapidReact",
+        "k2023ChargedUp",
+        "k2024Crescendo",
+        "k2025ReefscapeAndyMark",
+        "k2025ReefscapeWelded",
+        "k2026RebuiltAndymark",
+        "k2026RebuiltWelded",
+        "kBaseResourceDir",
+        "kDefaultField",
+        "m_resourceFile"
+      ]
     },
     "AprilTagJNI": {
       "name": "AprilTagJNI",
@@ -3416,262 +3369,182 @@
     "ADXL345_I2C.Axes": {
       "name": "ADXL345_I2C.Axes",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_I2C.Axes"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADXL345_I2C.Axes ${instanceName} = new ADXL345_I2C.Axes();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADXL345_I2C.Axes ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kX",
+        "kY",
+        "kZ",
+        "value"
+      ]
     },
     "ADXL345_SPI.Axes": {
       "name": "ADXL345_SPI.Axes",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_SPI.Axes"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADXL345_SPI.Axes ${instanceName} = new ADXL345_SPI.Axes();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADXL345_SPI.Axes ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kX",
+        "kY",
+        "kZ",
+        "value"
+      ]
     },
     "ADXL362.Axes": {
       "name": "ADXL362.Axes",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL362.Axes"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADXL362.Axes ${instanceName} = new ADXL362.Axes();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADXL362.Axes ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kX",
+        "kY",
+        "kZ",
+        "value"
+      ]
     },
     "PS4Controller.Axis": {
       "name": "PS4Controller.Axis",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS4Controller.Axis"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "PS4Controller.Axis ${instanceName} = new PS4Controller.Axis();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "PS4Controller.Axis ${instanceName};",
       "methods": {
         "toString": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.toString();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kL2",
+        "kLeftX",
+        "kLeftY",
+        "kR2",
+        "kRightX",
+        "kRightY",
+        "value"
+      ]
     },
     "PS5Controller.Axis": {
       "name": "PS5Controller.Axis",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS5Controller.Axis"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "PS5Controller.Axis ${instanceName} = new PS5Controller.Axis();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "PS5Controller.Axis ${instanceName};",
       "methods": {
         "toString": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.toString();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kL2",
+        "kLeftX",
+        "kLeftY",
+        "kR2",
+        "kRightX",
+        "kRightY",
+        "value"
+      ]
     },
     "StadiaController.Axis": {
       "name": "StadiaController.Axis",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.StadiaController.Axis"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "StadiaController.Axis ${instanceName} = new StadiaController.Axis();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "StadiaController.Axis ${instanceName};",
       "methods": {
         "toString": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.toString();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kLeftX",
+        "kLeftY",
+        "kRightX",
+        "kRightY",
+        "value"
+      ]
     },
     "XboxController.Axis": {
       "name": "XboxController.Axis",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.XboxController.Axis"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "XboxController.Axis ${instanceName} = new XboxController.Axis();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "XboxController.Axis ${instanceName};",
       "methods": {
         "toString": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.toString();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kLeftTrigger",
+        "kLeftX",
+        "kLeftY",
+        "kRightTrigger",
+        "kRightX",
+        "kRightY",
+        "value"
+      ]
     },
     "Joystick.AxisType": {
       "name": "Joystick.AxisType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Joystick.AxisType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "Joystick.AxisType ${instanceName} = new Joystick.AxisType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "Joystick.AxisType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kThrottle",
+        "kTwist",
+        "kX",
+        "kY",
+        "kZ",
+        "value"
+      ]
     },
     "BatterySim": {
       "name": "BatterySim",
@@ -3976,302 +3849,275 @@
     "BuiltInLayouts": {
       "name": "BuiltInLayouts",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "BuiltInLayouts ${instanceName} = new BuiltInLayouts();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "BuiltInLayouts ${instanceName};",
       "methods": {
         "getLayoutName": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.getLayoutName();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kGrid",
+        "kList"
+      ]
     },
     "BuiltInWidgets": {
       "name": "BuiltInWidgets",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "BuiltInWidgets ${instanceName} = new BuiltInWidgets();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "BuiltInWidgets ${instanceName};",
       "methods": {
         "getWidgetName": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.getWidgetName();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "k3AxisAccelerometer",
+        "kAccelerometer",
+        "kBooleanBox",
+        "kCameraStream",
+        "kComboBoxChooser",
+        "kCommand",
+        "kDial",
+        "kDifferentialDrive",
+        "kEncoder",
+        "kField",
+        "kGraph",
+        "kGyro",
+        "kMecanumDrive",
+        "kMotorController",
+        "kNumberBar",
+        "kNumberSlider",
+        "kPIDCommand",
+        "kPIDController",
+        "kPowerDistribution",
+        "kRelay",
+        "kSplitButtonChooser",
+        "kTextView",
+        "kToggleButton",
+        "kToggleSwitch",
+        "kVoltageView"
+      ]
     },
     "PS4Controller.Button": {
       "name": "PS4Controller.Button",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS4Controller.Button"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "PS4Controller.Button ${instanceName} = new PS4Controller.Button();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "PS4Controller.Button ${instanceName};",
       "methods": {
         "toString": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.toString();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kCircle",
+        "kCross",
+        "kL1",
+        "kL2",
+        "kL3",
+        "kOptions",
+        "kPS",
+        "kR1",
+        "kR2",
+        "kR3",
+        "kShare",
+        "kSquare",
+        "kTouchpad",
+        "kTriangle",
+        "value"
+      ]
     },
     "PS5Controller.Button": {
       "name": "PS5Controller.Button",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS5Controller.Button"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "PS5Controller.Button ${instanceName} = new PS5Controller.Button();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "PS5Controller.Button ${instanceName};",
       "methods": {
         "toString": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.toString();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kCircle",
+        "kCreate",
+        "kCross",
+        "kL1",
+        "kL2",
+        "kL3",
+        "kOptions",
+        "kPS",
+        "kR1",
+        "kR2",
+        "kR3",
+        "kSquare",
+        "kTouchpad",
+        "kTriangle",
+        "value"
+      ]
     },
     "StadiaController.Button": {
       "name": "StadiaController.Button",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.StadiaController.Button"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "StadiaController.Button ${instanceName} = new StadiaController.Button();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "StadiaController.Button ${instanceName};",
       "methods": {
         "toString": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.toString();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kA",
+        "kB",
+        "kEllipses",
+        "kFrame",
+        "kGoogle",
+        "kHamburger",
+        "kLeftBumper",
+        "kLeftStick",
+        "kLeftTrigger",
+        "kRightBumper",
+        "kRightStick",
+        "kRightTrigger",
+        "kStadia",
+        "kX",
+        "kY",
+        "value"
+      ]
     },
     "XboxController.Button": {
       "name": "XboxController.Button",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.XboxController.Button"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "XboxController.Button ${instanceName} = new XboxController.Button();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "XboxController.Button ${instanceName};",
       "methods": {
         "toString": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.toString();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kA",
+        "kB",
+        "kBack",
+        "kLeftBumper",
+        "kLeftStick",
+        "kRightBumper",
+        "kRightStick",
+        "kStart",
+        "kX",
+        "kY",
+        "value"
+      ]
     },
     "Joystick.ButtonType": {
       "name": "Joystick.ButtonType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Joystick.ButtonType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "Joystick.ButtonType ${instanceName} = new Joystick.ButtonType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "Joystick.ButtonType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kTop",
+        "kTrigger",
+        "value"
+      ]
     },
     "ADIS16448_IMU.CalibrationTime": {
       "name": "ADIS16448_IMU.CalibrationTime",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16448_IMU.CalibrationTime"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADIS16448_IMU.CalibrationTime ${instanceName} = new ADIS16448_IMU.CalibrationTime();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADIS16448_IMU.CalibrationTime ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "_128ms",
+        "_16s",
+        "_1s",
+        "_256ms",
+        "_2s",
+        "_32ms",
+        "_32s",
+        "_4s",
+        "_512ms",
+        "_64ms",
+        "_64s",
+        "_8s"
+      ]
     },
     "ADIS16470_IMU.CalibrationTime": {
       "name": "ADIS16470_IMU.CalibrationTime",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16470_IMU.CalibrationTime"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADIS16470_IMU.CalibrationTime ${instanceName} = new ADIS16470_IMU.CalibrationTime();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADIS16470_IMU.CalibrationTime ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "_128ms",
+        "_16s",
+        "_1s",
+        "_256ms",
+        "_2s",
+        "_32ms",
+        "_32s",
+        "_4s",
+        "_512ms",
+        "_64ms",
+        "_64s",
+        "_8s"
+      ]
     },
     "CallbackStore": {
       "name": "CallbackStore",
@@ -4450,20 +4296,7 @@
       ],
       "constructors": [],
       "declarationTemplate": "OnBoardIO.ChannelMode ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      },
+      "methods": {},
       "enumValues": [
         "INPUT",
         "OUTPUT"
@@ -4648,17 +4481,12 @@
     "AddressableLED.ColorOrder": {
       "name": "AddressableLED.ColorOrder",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AddressableLED.ColorOrder"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "AddressableLED.ColorOrder ${instanceName} = new AddressableLED.ColorOrder();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "AddressableLED.ColorOrder ${instanceName};",
       "methods": {
         "fromValue": {
@@ -4667,20 +4495,17 @@
             "int"
           ],
           "template": "${instance}.fromValue(${param1});"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kBGR",
+        "kBRG",
+        "kGBR",
+        "kGRB",
+        "kRBG",
+        "kRGB",
+        "value"
+      ]
     },
     "Command": {
       "name": "Command",
@@ -6313,17 +6138,12 @@
     "CompressorConfigType": {
       "name": "CompressorConfigType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.CompressorConfigType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "CompressorConfigType ${instanceName} = new CompressorConfigType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "CompressorConfigType ${instanceName};",
       "methods": {
         "fromValue": {
@@ -6337,20 +6157,15 @@
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.getValue();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "Analog",
+        "Digital",
+        "Disabled",
+        "Hybrid",
+        "value"
+      ]
     },
     "ConditionalCommand": {
       "name": "ConditionalCommand",
@@ -8058,62 +7873,35 @@
     "Relay.Direction": {
       "name": "Relay.Direction",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Relay.Direction"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "Relay.Direction ${instanceName} = new Relay.Direction();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "Relay.Direction ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kBoth",
+        "kForward",
+        "kReverse"
+      ]
     },
     "SysIdRoutine.Direction": {
       "name": "SysIdRoutine.Direction",
       "package": "edu.wpi.first.wpilibj2.command.sysid",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Direction"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SysIdRoutine.Direction ${instanceName} = new SysIdRoutine.Direction();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SysIdRoutine.Direction ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kForward",
+        "kReverse"
+      ]
     },
     "DMA": {
       "name": "DMA",
@@ -8265,17 +8053,12 @@
     "DMASample.DMAReadStatus": {
       "name": "DMASample.DMAReadStatus",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DMASample.DMAReadStatus"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "DMASample.DMAReadStatus ${instanceName} = new DMASample.DMAReadStatus();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "DMASample.DMAReadStatus ${instanceName};",
       "methods": {
         "getValue": {
@@ -8284,20 +8067,13 @@
             "int"
           ],
           "template": "${instance}.getValue(${param1});"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kError",
+        "kOk",
+        "kTimeout"
+      ]
     },
     "DMASample": {
       "name": "DMASample",
@@ -9665,32 +9441,22 @@
     "EdgeConfiguration": {
       "name": "EdgeConfiguration",
       "package": "edu.wpi.first.wpilibj.counter",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.counter.EdgeConfiguration"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "EdgeConfiguration ${instanceName} = new EdgeConfiguration();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "EdgeConfiguration ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "falling",
+        "kBoth",
+        "kFallingEdge",
+        "kNone",
+        "kRisingEdge",
+        "rising"
+      ]
     },
     "ElevatorSim": {
       "name": "ElevatorSim",
@@ -10532,67 +10298,45 @@
     "CounterBase.EncodingType": {
       "name": "CounterBase.EncodingType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.CounterBase.EncodingType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "CounterBase.EncodingType ${instanceName} = new CounterBase.EncodingType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "CounterBase.EncodingType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "k1X",
+        "k2X",
+        "k4X",
+        "value"
+      ]
     },
     "EventImportance": {
       "name": "EventImportance",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.EventImportance"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "EventImportance ${instanceName} = new EventImportance();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "EventImportance ${instanceName};",
       "methods": {
         "getSimpleName": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.getSimpleName();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kCritical",
+        "kHigh",
+        "kLow",
+        "kNormal",
+        "kTrivial"
+      ]
     },
     "EventLoop": {
       "name": "EventLoop",
@@ -10830,32 +10574,21 @@
     "SerialPort.FlowControl": {
       "name": "SerialPort.FlowControl",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.FlowControl"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SerialPort.FlowControl ${instanceName} = new SerialPort.FlowControl();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SerialPort.FlowControl ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kDtsDsr",
+        "kNone",
+        "kRtsCts",
+        "kXonXoff",
+        "value"
+      ]
     },
     "FlywheelSim": {
       "name": "FlywheelSim",
@@ -11334,32 +11067,18 @@
     "LEDPattern.GradientType": {
       "name": "LEDPattern.GradientType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.LEDPattern.GradientType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "LEDPattern.GradientType ${instanceName} = new LEDPattern.GradientType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "LEDPattern.GradientType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kContinuous",
+        "kDiscontinuous"
+      ]
     },
     "AprilTagJNI.Helper": {
       "name": "AprilTagJNI.Helper",
@@ -11394,17 +11113,12 @@
     "GenericHID.HIDType": {
       "name": "GenericHID.HIDType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.GenericHID.HIDType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "GenericHID.HIDType ${instanceName} = new GenericHID.HIDType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "GenericHID.HIDType ${instanceName};",
       "methods": {
         "of": {
@@ -11413,20 +11127,28 @@
             "int"
           ],
           "template": "${instance}.of(${param1});"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kHID1stPerson",
+        "kHIDDriving",
+        "kHIDFlight",
+        "kHIDGamepad",
+        "kHIDJoystick",
+        "kUnknown",
+        "kXInputArcadePad",
+        "kXInputArcadeStick",
+        "kXInputDancePad",
+        "kXInputDrumKit",
+        "kXInputFlightStick",
+        "kXInputGamepad",
+        "kXInputGuitar",
+        "kXInputGuitar2",
+        "kXInputGuitar3",
+        "kXInputUnknown",
+        "kXInputWheel",
+        "value"
+      ]
     },
     "I2C": {
       "name": "I2C",
@@ -11583,62 +11305,39 @@
     "ADIS16448_IMU.IMUAxis": {
       "name": "ADIS16448_IMU.IMUAxis",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16448_IMU.IMUAxis"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADIS16448_IMU.IMUAxis ${instanceName} = new ADIS16448_IMU.IMUAxis();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADIS16448_IMU.IMUAxis ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kX",
+        "kY",
+        "kZ"
+      ]
     },
     "ADIS16470_IMU.IMUAxis": {
       "name": "ADIS16470_IMU.IMUAxis",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16470_IMU.IMUAxis"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADIS16470_IMU.IMUAxis ${instanceName} = new ADIS16470_IMU.IMUAxis();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADIS16470_IMU.IMUAxis ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kPitch",
+        "kRoll",
+        "kX",
+        "kY",
+        "kYaw",
+        "kZ"
+      ]
     },
     "LEDReader.IndexedColorIterator": {
       "name": "LEDReader.IndexedColorIterator",
@@ -11671,32 +11370,21 @@
     "Encoder.IndexingType": {
       "name": "Encoder.IndexingType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Encoder.IndexingType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "Encoder.IndexingType ${instanceName} = new Encoder.IndexingType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "Encoder.IndexingType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kResetOnFallingEdge",
+        "kResetOnRisingEdge",
+        "kResetWhileHigh",
+        "kResetWhileLow",
+        "value"
+      ]
     },
     "LEDPattern.IndexMapper": {
       "name": "LEDPattern.IndexMapper",
@@ -11789,32 +11477,18 @@
     "Command.InterruptionBehavior": {
       "name": "Command.InterruptionBehavior",
       "package": "edu.wpi.first.wpilibj2.command",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.Command.InterruptionBehavior"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "Command.InterruptionBehavior ${instanceName} = new Command.InterruptionBehavior();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "Command.InterruptionBehavior ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kCancelIncoming",
+        "kCancelSelf"
+      ]
     },
     "Relay.InvalidValueException": {
       "name": "Relay.InvalidValueException",
@@ -12247,92 +11921,63 @@
     "DifferentialDrivetrainSim.KitbotGearing": {
       "name": "DifferentialDrivetrainSim.KitbotGearing",
       "package": "edu.wpi.first.wpilibj.simulation",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotGearing"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "DifferentialDrivetrainSim.KitbotGearing ${instanceName} = new DifferentialDrivetrainSim.KitbotGearing();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "DifferentialDrivetrainSim.KitbotGearing ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "k10p71",
+        "k12p75",
+        "k5p95",
+        "k7p31",
+        "k8p45",
+        "value"
+      ]
     },
     "DifferentialDrivetrainSim.KitbotMotor": {
       "name": "DifferentialDrivetrainSim.KitbotMotor",
       "package": "edu.wpi.first.wpilibj.simulation",
-      "type": "class",
+      "type": "enum",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotMotor"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "DifferentialDrivetrainSim.KitbotMotor ${instanceName} = new DifferentialDrivetrainSim.KitbotMotor();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "DifferentialDrivetrainSim.KitbotMotor ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kDoubleFalcon500PerSide",
+        "kDoubleNEOPerSide",
+        "kDualCIMPerSide",
+        "kDualMiniCIMPerSide",
+        "kSingleCIMPerSide",
+        "kSingleFalcon500PerSide",
+        "kSingleMiniCIMPerSide",
+        "kSingleNEOPerSide",
+        "value"
+      ]
     },
     "DifferentialDrivetrainSim.KitbotWheelSize": {
       "name": "DifferentialDrivetrainSim.KitbotWheelSize",
       "package": "edu.wpi.first.wpilibj.simulation",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotWheelSize"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "DifferentialDrivetrainSim.KitbotWheelSize ${instanceName} = new DifferentialDrivetrainSim.KitbotWheelSize();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "DifferentialDrivetrainSim.KitbotWheelSize ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kEightInch",
+        "kSixInch",
+        "kTenInch",
+        "value"
+      ]
     },
     "Koors40": {
       "name": "Koors40",
@@ -12788,32 +12433,20 @@
     "DriverStation.MatchType": {
       "name": "DriverStation.MatchType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DriverStation.MatchType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "DriverStation.MatchType ${instanceName} = new DriverStation.MatchType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "DriverStation.MatchType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "Elimination",
+        "None",
+        "Practice",
+        "Qualification"
+      ]
     },
     "MecanumControllerCommand": {
       "name": "MecanumControllerCommand",
@@ -13335,92 +12968,57 @@
     "Counter.Mode": {
       "name": "Counter.Mode",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Counter.Mode"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "Counter.Mode ${instanceName} = new Counter.Mode();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "Counter.Mode ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kExternalDirection",
+        "kPulseLength",
+        "kSemiperiod",
+        "kTwoPulse",
+        "value"
+      ]
     },
     "SPI.Mode": {
       "name": "SPI.Mode",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SPI.Mode"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SPI.Mode ${instanceName} = new SPI.Mode();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SPI.Mode ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kMode0",
+        "kMode1",
+        "kMode2",
+        "kMode3",
+        "value"
+      ]
     },
     "PowerDistribution.ModuleType": {
       "name": "PowerDistribution.ModuleType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PowerDistribution.ModuleType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "PowerDistribution.ModuleType ${instanceName} = new PowerDistribution.ModuleType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "PowerDistribution.ModuleType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kCTRE",
+        "kRev",
+        "value"
+      ]
     },
     "MotorController": {
       "name": "MotorController",
@@ -13719,32 +13317,24 @@
     "RobotDriveBase.MotorType": {
       "name": "RobotDriveBase.MotorType",
       "package": "edu.wpi.first.wpilibj.drive",
-      "type": "class",
+      "type": "enum",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.drive.RobotDriveBase.MotorType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "RobotDriveBase.MotorType ${instanceName} = new RobotDriveBase.MotorType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "RobotDriveBase.MotorType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kBack",
+        "kFrontLeft",
+        "kFrontRight",
+        "kLeft",
+        "kRearLeft",
+        "kRearRight",
+        "kRight",
+        "value"
+      ]
     },
     "NetworkBooleanEvent": {
       "name": "NetworkBooleanEvent",
@@ -14033,32 +13623,18 @@
     "AprilTagFieldLayout.OriginPosition": {
       "name": "AprilTagFieldLayout.OriginPosition",
       "package": "edu.wpi.first.apriltag",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagFieldLayout.OriginPosition"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "AprilTagFieldLayout.OriginPosition ${instanceName} = new AprilTagFieldLayout.OriginPosition();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "AprilTagFieldLayout.OriginPosition ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kBlueAllianceWallRightSide",
+        "kRedAllianceWallRightSide"
+      ]
     },
     "ParallelCommandGroup": {
       "name": "ParallelCommandGroup",
@@ -14255,32 +13831,22 @@
     "SerialPort.Parity": {
       "name": "SerialPort.Parity",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.Parity"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SerialPort.Parity ${instanceName} = new SerialPort.Parity();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SerialPort.Parity ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kEven",
+        "kMark",
+        "kNone",
+        "kOdd",
+        "kSpace",
+        "value"
+      ]
     },
     "PDPSim": {
       "name": "PDPSim",
@@ -14404,32 +13970,19 @@
     "PWM.PeriodMultiplier": {
       "name": "PWM.PeriodMultiplier",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PWM.PeriodMultiplier"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "PWM.PeriodMultiplier ${instanceName} = new PWM.PeriodMultiplier();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "PWM.PeriodMultiplier ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "k1X",
+        "k2X",
+        "k4X"
+      ]
     },
     "PIDCommand": {
       "name": "PIDCommand",
@@ -15345,20 +14898,7 @@
       ],
       "constructors": [],
       "declarationTemplate": "PneumaticsModuleType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      },
+      "methods": {},
       "enumValues": [
         "CTREPCM",
         "REVPH"
@@ -15367,92 +14907,59 @@
     "I2C.Port": {
       "name": "I2C.Port",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.I2C.Port"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "I2C.Port ${instanceName} = new I2C.Port();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "I2C.Port ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kMXP",
+        "kOnboard",
+        "value"
+      ]
     },
     "SerialPort.Port": {
       "name": "SerialPort.Port",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.Port"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SerialPort.Port ${instanceName} = new SerialPort.Port();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SerialPort.Port ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kMXP",
+        "kOnboard",
+        "kUSB",
+        "kUSB1",
+        "kUSB2",
+        "value"
+      ]
     },
     "SPI.Port": {
       "name": "SPI.Port",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SPI.Port"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SPI.Port ${instanceName} = new SPI.Port();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SPI.Port ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kMXP",
+        "kOnboardCS0",
+        "kOnboardCS1",
+        "kOnboardCS2",
+        "kOnboardCS3",
+        "value"
+      ]
     },
     "Pose2d": {
       "name": "Pose2d",
@@ -18579,17 +18086,12 @@
     "RobotController.RadioLEDState": {
       "name": "RobotController.RadioLEDState",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.RobotController.RadioLEDState"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "RobotController.RadioLEDState ${instanceName} = new RobotController.RadioLEDState();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "RobotController.RadioLEDState ${instanceName};",
       "methods": {
         "fromValue": {
@@ -18598,20 +18100,15 @@
             "int"
           ],
           "template": "${instance}.fromValue(${param1});"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kGreen",
+        "kOff",
+        "kOrange",
+        "kRed",
+        "value"
+      ]
     },
     "RamseteCommand": {
       "name": "RamseteCommand",
@@ -18687,122 +18184,72 @@
     "ADXL345_I2C.Range": {
       "name": "ADXL345_I2C.Range",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_I2C.Range"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADXL345_I2C.Range ${instanceName} = new ADXL345_I2C.Range();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADXL345_I2C.Range ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "k16G",
+        "k2G",
+        "k4G",
+        "k8G"
+      ]
     },
     "ADXL345_SPI.Range": {
       "name": "ADXL345_SPI.Range",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_SPI.Range"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADXL345_SPI.Range ${instanceName} = new ADXL345_SPI.Range();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADXL345_SPI.Range ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "k16G",
+        "k2G",
+        "k4G",
+        "k8G"
+      ]
     },
     "ADXL362.Range": {
       "name": "ADXL362.Range",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL362.Range"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "ADXL362.Range ${instanceName} = new ADXL362.Range();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "ADXL362.Range ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "k2G",
+        "k4G",
+        "k8G"
+      ]
     },
     "BuiltInAccelerometer.Range": {
       "name": "BuiltInAccelerometer.Range",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.BuiltInAccelerometer.Range"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "BuiltInAccelerometer.Range ${instanceName} = new BuiltInAccelerometer.Range();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "BuiltInAccelerometer.Range ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "k2G",
+        "k4G",
+        "k8G"
+      ]
     },
     "Rectangle2d": {
       "name": "Rectangle2d",
@@ -19487,32 +18934,19 @@
     "Color.RGBChannel": {
       "name": "Color.RGBChannel",
       "package": "edu.wpi.first.wpilibj.util",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.util.Color.RGBChannel"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "Color.RGBChannel ${instanceName} = new Color.RGBChannel();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "Color.RGBChannel ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kBlue",
+        "kGreen",
+        "kRed"
+      ]
     },
     "RoboRioSim": {
       "name": "RoboRioSim",
@@ -21195,32 +20629,19 @@
     "GenericHID.RumbleType": {
       "name": "GenericHID.RumbleType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.GenericHID.RumbleType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "GenericHID.RumbleType ${instanceName} = new GenericHID.RumbleType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "GenericHID.RumbleType ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kBothRumble",
+        "kLeftRumble",
+        "kRightRumble"
+      ]
     },
     "RunCommand": {
       "name": "RunCommand",
@@ -21245,17 +20666,12 @@
     "RuntimeType": {
       "name": "RuntimeType",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.RuntimeType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "RuntimeType ${instanceName} = new RuntimeType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "RuntimeType ${instanceName};",
       "methods": {
         "getValue": {
@@ -21264,20 +20680,14 @@
             "int"
           ],
           "template": "${instance}.getValue(${param1});"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kRoboRIO",
+        "kRoboRIO2",
+        "kSimulation",
+        "value"
+      ]
     },
     "ScheduleCommand": {
       "name": "ScheduleCommand",
@@ -24715,67 +24125,45 @@
     "SysIdRoutineLog.State": {
       "name": "SysIdRoutineLog.State",
       "package": "edu.wpi.first.wpilibj.sysid",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.sysid.SysIdRoutineLog.State"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SysIdRoutineLog.State ${instanceName} = new SysIdRoutineLog.State();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SysIdRoutineLog.State ${instanceName};",
       "methods": {
         "toString": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.toString();"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kDynamicForward",
+        "kDynamicReverse",
+        "kNone",
+        "kQuasistaticForward",
+        "kQuasistaticReverse"
+      ]
     },
     "SerialPort.StopBits": {
       "name": "SerialPort.StopBits",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.StopBits"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SerialPort.StopBits ${instanceName} = new SerialPort.StopBits();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SerialPort.StopBits ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kOne",
+        "kOnePointFive",
+        "kTwo",
+        "value"
+      ]
     },
     "Subsystem": {
       "name": "Subsystem",
@@ -27420,47 +26808,29 @@
     "DoubleSolenoid.Value": {
       "name": "DoubleSolenoid.Value",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DoubleSolenoid.Value"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "DoubleSolenoid.Value ${instanceName} = new DoubleSolenoid.Value();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "DoubleSolenoid.Value ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kForward",
+        "kOff",
+        "kReverse"
+      ]
     },
     "Relay.Value": {
       "name": "Relay.Value",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Relay.Value"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "Relay.Value ${instanceName} = new Relay.Value();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "Relay.Value ${instanceName};",
       "methods": {
         "getPrettyValue": {
@@ -27474,20 +26844,14 @@
             "String"
           ],
           "template": "${instance}.getValueOf(${param1});"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kForward",
+        "kOff",
+        "kOn",
+        "kReverse"
+      ]
     },
     "VictorSP": {
       "name": "VictorSP",
@@ -27566,17 +26930,12 @@
     "SynchronousInterrupt.WaitResult": {
       "name": "SynchronousInterrupt.WaitResult",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SynchronousInterrupt.WaitResult"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SynchronousInterrupt.WaitResult ${instanceName} = new SynchronousInterrupt.WaitResult();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SynchronousInterrupt.WaitResult ${instanceName};",
       "methods": {
         "getValue": {
@@ -27586,20 +26945,15 @@
             "boolean"
           ],
           "template": "${instance}.getValue(${param1}, ${param2});"
-        },
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "kBoth",
+        "kFallingEdge",
+        "kRisingEdge",
+        "kTimeout",
+        "value"
+      ]
     },
     "WaitUntilCommand": {
       "name": "WaitUntilCommand",
@@ -27899,32 +27253,19 @@
     "SerialPort.WriteBufferMode": {
       "name": "SerialPort.WriteBufferMode",
       "package": "edu.wpi.first.wpilibj",
-      "type": "class",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.WriteBufferMode"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "SerialPort.WriteBufferMode ${instanceName} = new SerialPort.WriteBufferMode();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "SerialPort.WriteBufferMode ${instanceName};",
-      "methods": {
-        "valueOf": {
-          "returnType": "void",
-          "parameters": [
-            "String"
-          ],
-          "template": "${instance}.valueOf(${param1});"
-        },
-        "values": {
-          "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.values();"
-        }
-      }
+      "methods": {},
+      "enumValues": [
+        "kFlushOnAccess",
+        "kFlushWhenFull",
+        "value"
+      ]
     },
     "XboxController": {
       "name": "XboxController",
