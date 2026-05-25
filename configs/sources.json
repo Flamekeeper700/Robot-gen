@@ -1,8 +1,26 @@
 {
   "sources": [
     {
-      "name": "WPILib_Global_API",
+      "name": "WPILib_API",
       "url": "https://github.wpilib.org/allwpilib/docs/release/java/type-search-index.js",
+      "isJavadocIndex": true,
+      "classExtractor": {
+        "rootPath": "",
+        "classNamePath": "l",
+        "methodNameSource": "members",
+        "methodNamePath": "n",
+        "returnTypePath": "t",
+        "parameterPath": "p",
+        "packageFilters": [
+          "edu.wpi.first.wpilibj",
+          "edu.wpi.first.apriltag",
+          "edu.wpi.first.math.geometry"
+        ]
+      }
+    },
+    {
+      "name": "CTRE_API",
+      "url": "https://api.ctr-electronics.com/phoenix6/stable/java/type-search-index.js",
       "isJavadocIndex": true,
       "classExtractor": {
         "rootPath": "",
