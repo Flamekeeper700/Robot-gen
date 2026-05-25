@@ -80,8 +80,7 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
 
         const resolvedImport = `${rawPackage}.${className}`;
 
-        // Contextually determine if it is an Interface, Enum, or Class
-        // Javadoc index elements often use the "g" (annotation/interface flag) or specific string matches
+        // Initial structural guess
         let structuralType = "class"; 
         if (item.g || className.endsWith("Listener") || className.endsWith("Interface")) {
             structuralType = "interface";
@@ -99,13 +98,13 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
         classes[className] = {
             name: className,
             package: rawPackage,
-            type: structuralType, // "class", "interface", "enum" (Enums refined below if caught in members)
+            type: structuralType,
             category: category,
             imports: [resolvedImport],
             constructors: [], 
             declarationTemplate: `${className} \${instanceName};`,
             methods: {},
-            enumValues: [] // Added to catch Enum options if they exist
+            fields: [] // Temporary holding for non-method members (fields/enum options)
         };
         matchedTypesCount++;
     }
@@ -118,18 +117,14 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
     if (Array.isArray(rawMembers)) {
         for (const member of rawMembers) {
             const parentClassName = member.c;
-            const signature = member.l; // e.g. "drive(double,double)" or "Value" (for enum constants)
+            const signature = member.l; // e.g. "drive(double,double)" or "kForward"
 
             if (!parentClassName || !classes[parentClassName]) continue;
 
-            // Handle Enum constants: In type-search-index, Enum constants usually lack parenthesis '()' 
+            // Catch fields and potential enum constants (no parenthesis)
             if (signature && !signature.includes('(')) {
-                // If we see typical uppercase enum patterns or if flagged, track it as an enum value
-                if (signature === signature.toUpperCase() && isNaN(signature)) {
-                    classes[parentClassName].type = "enum";
-                    if (!classes[parentClassName].enumValues.includes(signature)) {
-                        classes[parentClassName].enumValues.push(signature);
-                    }
+                if (!classes[parentClassName].fields.includes(signature)) {
+                    classes[parentClassName].fields.push(signature);
                 }
                 continue;
             }
@@ -160,18 +155,33 @@ function parseSourceDynamically(rootData, config, rawMembers = []) {
         }
     }
 
-    // Post-processing: Default constructors ONLY for concrete classes
+    // Post-processing logic to solidify Enums and clean up Classes
     for (const className of Object.keys(classes)) {
         const typeRef = classes[className];
-        if (typeRef.type === "class" && typeRef.constructors.length === 0) {
-            typeRef.constructors.push({
-                parameters: [],
-                template: `${className} \${instanceName} = new ${className}();`
-            });
-        }
-        // Clean up empty tracking fields for non-enums to keep output json tidy
-        if (typeRef.type !== "enum") {
-            delete typeRef.enumValues;
+
+        // Foolproof heuristic: The Java compiler always injects values() and valueOf() into Enums
+        const isJavaEnum = typeRef.methods["values"] && typeRef.methods["valueOf"];
+
+        if (isJavaEnum) {
+            typeRef.type = "enum";
+            typeRef.enumValues = [...typeRef.fields]; // Lock in the extracted constants
+            
+            // Clean up the noise for the GUI
+            typeRef.constructors = []; 
+            delete typeRef.fields; 
+            delete typeRef.methods["values"];
+            delete typeRef.methods["valueOf"];
+            
+        } else {
+            // It's a standard class/interface. Check for default constructors.
+            if (typeRef.type === "class" && typeRef.constructors.length === 0) {
+                typeRef.constructors.push({
+                    parameters: [],
+                    template: `${className} \${instanceName} = new ${className}();`
+                });
+            }
+            // Discard the temporary field tracking so it doesn't clutter your JSON
+            delete typeRef.fields;
         }
     }
 
