@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-25T23:18:02.604Z",
+    "generatedAt": "2026-05-25T23:25:39.393Z",
     "apisProcessed": [
       "WPILib_Global_API"
     ]
@@ -9,6 +9,7 @@
     "AddressableLED": {
       "name": "AddressableLED",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AddressableLED"
@@ -81,6 +82,7 @@
     "AddressableLEDBuffer": {
       "name": "AddressableLEDBuffer",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AddressableLEDBuffer"
@@ -144,6 +146,7 @@
     "AddressableLEDBufferView": {
       "name": "AddressableLEDBufferView",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AddressableLEDBufferView"
@@ -234,6 +237,7 @@
     "AddressableLEDSim": {
       "name": "AddressableLEDSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.AddressableLEDSim"
@@ -375,6 +379,7 @@
     "ADIS16448_IMU": {
       "name": "ADIS16448_IMU",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16448_IMU"
@@ -558,6 +563,7 @@
     "ADIS16448_IMUSim": {
       "name": "ADIS16448_IMUSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.ADIS16448_IMUSim"
@@ -640,6 +646,7 @@
     "ADIS16470_IMU": {
       "name": "ADIS16470_IMU",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16470_IMU"
@@ -814,6 +821,7 @@
     "ADIS16470_IMUSim": {
       "name": "ADIS16470_IMUSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.ADIS16470_IMUSim"
@@ -896,6 +904,7 @@
     "ADXL345_I2C": {
       "name": "ADXL345_I2C",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_I2C"
@@ -980,6 +989,7 @@
     "ADXL345_SPI": {
       "name": "ADXL345_SPI",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_SPI"
@@ -1051,6 +1061,7 @@
     "ADXL345Sim": {
       "name": "ADXL345Sim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.ADXL345Sim"
@@ -1097,6 +1108,7 @@
     "ADXL362": {
       "name": "ADXL362",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL362"
@@ -1174,6 +1186,7 @@
     "ADXL362Sim": {
       "name": "ADXL362Sim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.ADXL362Sim"
@@ -1214,6 +1227,7 @@
     "ADXRS450_Gyro": {
       "name": "ADXRS450_Gyro",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "imu",
       "imports": [
         "edu.wpi.first.wpilibj.ADXRS450_Gyro"
@@ -1284,6 +1298,7 @@
     "ADXRS450_GyroSim": {
       "name": "ADXRS450_GyroSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "imu",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.ADXRS450_GyroSim"
@@ -1317,6 +1332,7 @@
     "Alert": {
       "name": "Alert",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Alert"
@@ -1379,6 +1395,7 @@
     "Alert.AlertType": {
       "name": "Alert.AlertType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Alert.AlertType"
@@ -1408,6 +1425,7 @@
     "ADXL345_I2C.AllAxes": {
       "name": "ADXL345_I2C.AllAxes",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_I2C.AllAxes"
@@ -1430,6 +1448,7 @@
     "ADXL345_SPI.AllAxes": {
       "name": "ADXL345_SPI.AllAxes",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_SPI.AllAxes"
@@ -1452,6 +1471,7 @@
     "ADXL362.AllAxes": {
       "name": "ADXL362.AllAxes",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL362.AllAxes"
@@ -1474,6 +1494,7 @@
     "DriverStation.Alliance": {
       "name": "DriverStation.Alliance",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DriverStation.Alliance"
@@ -1503,6 +1524,7 @@
     "AnalogAccelerometer": {
       "name": "AnalogAccelerometer",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogAccelerometer"
@@ -1559,6 +1581,7 @@
     "AnalogEncoder": {
       "name": "AnalogEncoder",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogEncoder"
@@ -1637,6 +1660,7 @@
     "AnalogEncoderSim": {
       "name": "AnalogEncoderSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.AnalogEncoderSim"
@@ -1668,6 +1692,7 @@
     "AnalogGyro": {
       "name": "AnalogGyro",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "imu",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogGyro"
@@ -1775,6 +1800,7 @@
     "AnalogGyroSim": {
       "name": "AnalogGyroSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "imu",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.AnalogGyroSim"
@@ -1865,6 +1891,7 @@
     "AnalogInput": {
       "name": "AnalogInput",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogInput"
@@ -2027,6 +2054,7 @@
     "AnalogInputSim": {
       "name": "AnalogInputSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.AnalogInputSim"
@@ -2237,6 +2265,7 @@
     "AnalogOutput": {
       "name": "AnalogOutput",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogOutput"
@@ -2285,6 +2314,7 @@
     "AnalogOutputSim": {
       "name": "AnalogOutputSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.AnalogOutputSim"
@@ -2355,6 +2385,7 @@
     "AnalogPotentiometer": {
       "name": "AnalogPotentiometer",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogPotentiometer"
@@ -2427,6 +2458,7 @@
     "AnalogTrigger": {
       "name": "AnalogTrigger",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogTrigger"
@@ -2530,6 +2562,7 @@
     "AnalogTriggerOutput": {
       "name": "AnalogTriggerOutput",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogTriggerOutput"
@@ -2582,6 +2615,7 @@
     "AnalogTriggerOutput.AnalogTriggerOutputException": {
       "name": "AnalogTriggerOutput.AnalogTriggerOutputException",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogTriggerOutput.AnalogTriggerOutputException"
@@ -2606,6 +2640,7 @@
     "AnalogTriggerSim": {
       "name": "AnalogTriggerSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.AnalogTriggerSim"
@@ -2704,6 +2739,7 @@
     "AnalogTriggerOutput.AnalogTriggerType": {
       "name": "AnalogTriggerOutput.AnalogTriggerType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AnalogTriggerOutput.AnalogTriggerType"
@@ -2733,6 +2769,7 @@
     "AprilTag": {
       "name": "AprilTag",
       "package": "edu.wpi.first.apriltag",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTag"
@@ -2779,11 +2816,15 @@
           "parameters": [],
           "template": "${instance}.toString();"
         }
-      }
+      },
+      "enumValues": [
+        "ID"
+      ]
     },
     "AprilTagDetection": {
       "name": "AprilTagDetection",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagDetection"
@@ -2874,6 +2915,7 @@
     "AprilTagDetector": {
       "name": "AprilTagDetector",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagDetector"
@@ -2947,6 +2989,7 @@
     "AprilTagFieldLayout": {
       "name": "AprilTagFieldLayout",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagFieldLayout"
@@ -3047,6 +3090,7 @@
     "AprilTagFields": {
       "name": "AprilTagFields",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagFields"
@@ -3081,6 +3125,7 @@
     "AprilTagJNI": {
       "name": "AprilTagJNI",
       "package": "edu.wpi.first.apriltag.jni",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.jni.AprilTagJNI"
@@ -3232,6 +3277,7 @@
     "AprilTagPoseEstimate": {
       "name": "AprilTagPoseEstimate",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagPoseEstimate"
@@ -3259,6 +3305,7 @@
     "AprilTagPoseEstimator": {
       "name": "AprilTagPoseEstimator",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagPoseEstimator"
@@ -3314,6 +3361,7 @@
     "AsynchronousInterrupt": {
       "name": "AsynchronousInterrupt",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AsynchronousInterrupt"
@@ -3368,6 +3416,7 @@
     "ADXL345_I2C.Axes": {
       "name": "ADXL345_I2C.Axes",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_I2C.Axes"
@@ -3397,6 +3446,7 @@
     "ADXL345_SPI.Axes": {
       "name": "ADXL345_SPI.Axes",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_SPI.Axes"
@@ -3426,6 +3476,7 @@
     "ADXL362.Axes": {
       "name": "ADXL362.Axes",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL362.Axes"
@@ -3455,6 +3506,7 @@
     "PS4Controller.Axis": {
       "name": "PS4Controller.Axis",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS4Controller.Axis"
@@ -3489,6 +3541,7 @@
     "PS5Controller.Axis": {
       "name": "PS5Controller.Axis",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS5Controller.Axis"
@@ -3523,6 +3576,7 @@
     "StadiaController.Axis": {
       "name": "StadiaController.Axis",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.StadiaController.Axis"
@@ -3557,6 +3611,7 @@
     "XboxController.Axis": {
       "name": "XboxController.Axis",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.XboxController.Axis"
@@ -3591,6 +3646,7 @@
     "Joystick.AxisType": {
       "name": "Joystick.AxisType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Joystick.AxisType"
@@ -3620,6 +3676,7 @@
     "BatterySim": {
       "name": "BatterySim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.BatterySim"
@@ -3653,6 +3710,7 @@
     "BooleanEvent": {
       "name": "BooleanEvent",
       "package": "edu.wpi.first.wpilibj.event",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.event.BooleanEvent"
@@ -3731,6 +3789,7 @@
     "BuiltInAccelerometer": {
       "name": "BuiltInAccelerometer",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.BuiltInAccelerometer"
@@ -3788,6 +3847,7 @@
     "BuiltInAccelerometerSim": {
       "name": "BuiltInAccelerometerSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.BuiltInAccelerometerSim"
@@ -3916,6 +3976,7 @@
     "BuiltInLayouts": {
       "name": "BuiltInLayouts",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts"
@@ -3950,6 +4011,7 @@
     "BuiltInWidgets": {
       "name": "BuiltInWidgets",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets"
@@ -3984,6 +4046,7 @@
     "PS4Controller.Button": {
       "name": "PS4Controller.Button",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS4Controller.Button"
@@ -4018,6 +4081,7 @@
     "PS5Controller.Button": {
       "name": "PS5Controller.Button",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS5Controller.Button"
@@ -4052,6 +4116,7 @@
     "StadiaController.Button": {
       "name": "StadiaController.Button",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.StadiaController.Button"
@@ -4086,6 +4151,7 @@
     "XboxController.Button": {
       "name": "XboxController.Button",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.XboxController.Button"
@@ -4120,6 +4186,7 @@
     "Joystick.ButtonType": {
       "name": "Joystick.ButtonType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Joystick.ButtonType"
@@ -4149,6 +4216,7 @@
     "ADIS16448_IMU.CalibrationTime": {
       "name": "ADIS16448_IMU.CalibrationTime",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16448_IMU.CalibrationTime"
@@ -4178,6 +4246,7 @@
     "ADIS16470_IMU.CalibrationTime": {
       "name": "ADIS16470_IMU.CalibrationTime",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16470_IMU.CalibrationTime"
@@ -4207,6 +4276,7 @@
     "CallbackStore": {
       "name": "CallbackStore",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.CallbackStore"
@@ -4253,6 +4323,7 @@
     "CAN": {
       "name": "CAN",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.CAN"
@@ -4372,16 +4443,12 @@
     "OnBoardIO.ChannelMode": {
       "name": "OnBoardIO.ChannelMode",
       "package": "edu.wpi.first.wpilibj.romi",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.romi.OnBoardIO.ChannelMode"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "OnBoardIO.ChannelMode ${instanceName} = new OnBoardIO.ChannelMode();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "OnBoardIO.ChannelMode ${instanceName};",
       "methods": {
         "valueOf": {
@@ -4396,11 +4463,16 @@
           "parameters": [],
           "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "INPUT",
+        "OUTPUT"
+      ]
     },
     "Color": {
       "name": "Color",
       "package": "edu.wpi.first.wpilibj.util",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.util.Color"
@@ -4516,6 +4588,7 @@
     "Color8Bit": {
       "name": "Color8Bit",
       "package": "edu.wpi.first.wpilibj.util",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.util.Color8Bit"
@@ -4575,6 +4648,7 @@
     "AddressableLED.ColorOrder": {
       "name": "AddressableLED.ColorOrder",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.AddressableLED.ColorOrder"
@@ -4611,6 +4685,7 @@
     "Command": {
       "name": "Command",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.Command"
@@ -4856,6 +4931,7 @@
     "CommandGenericHID": {
       "name": "CommandGenericHID",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.CommandGenericHID"
@@ -4989,6 +5065,7 @@
     "CommandJoystick": {
       "name": "CommandJoystick",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.CommandJoystick"
@@ -5127,6 +5204,7 @@
     "CommandPS4Controller": {
       "name": "CommandPS4Controller",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.CommandPS4Controller"
@@ -5279,6 +5357,7 @@
     "CommandPS5Controller": {
       "name": "CommandPS5Controller",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.CommandPS5Controller"
@@ -5431,6 +5510,7 @@
     "Commands": {
       "name": "Commands",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.Commands"
@@ -5600,6 +5680,7 @@
     "CommandScheduler": {
       "name": "CommandScheduler",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.CommandScheduler"
@@ -5820,6 +5901,7 @@
     "CommandStadiaController": {
       "name": "CommandStadiaController",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.CommandStadiaController"
@@ -5969,6 +6051,7 @@
     "CommandXboxController": {
       "name": "CommandXboxController",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.CommandXboxController"
@@ -6109,6 +6192,7 @@
     "ComplexWidget": {
       "name": "ComplexWidget",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.ComplexWidget"
@@ -6134,6 +6218,7 @@
     "Compressor": {
       "name": "Compressor",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Compressor"
@@ -6228,6 +6313,7 @@
     "CompressorConfigType": {
       "name": "CompressorConfigType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.CompressorConfigType"
@@ -6269,6 +6355,7 @@
     "ConditionalCommand": {
       "name": "ConditionalCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.ConditionalCommand"
@@ -6329,6 +6416,7 @@
     "AprilTagDetector.Config": {
       "name": "AprilTagDetector.Config",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagDetector.Config"
@@ -6363,6 +6451,7 @@
     "AprilTagPoseEstimator.Config": {
       "name": "AprilTagPoseEstimator.Config",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagPoseEstimator.Config"
@@ -6403,6 +6492,7 @@
     "SysIdRoutine.Config": {
       "name": "SysIdRoutine.Config",
       "package": "edu.wpi.first.wpilibj2.command.sysid",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Config"
@@ -6430,6 +6520,7 @@
     "CoordinateAxis": {
       "name": "CoordinateAxis",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.CoordinateAxis"
@@ -6481,6 +6572,7 @@
     "CoordinateSystem": {
       "name": "CoordinateSystem",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.CoordinateSystem"
@@ -6526,6 +6618,7 @@
     "Counter": {
       "name": "Counter",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Counter"
@@ -6732,6 +6825,7 @@
     "CounterBase": {
       "name": "CounterBase",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.CounterBase"
@@ -6781,6 +6875,7 @@
     "CTREPCMSim": {
       "name": "CTREPCMSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.CTREPCMSim"
@@ -6939,6 +7034,7 @@
     "DataLogManager": {
       "name": "DataLogManager",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DataLogManager"
@@ -7001,6 +7097,7 @@
     "DCMotorSim": {
       "name": "DCMotorSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DCMotorSim"
@@ -7123,6 +7220,7 @@
     "DeferredCommand": {
       "name": "DeferredCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.DeferredCommand"
@@ -7172,6 +7270,7 @@
     "DifferentialDrive": {
       "name": "DifferentialDrive",
       "package": "edu.wpi.first.wpilibj.drive",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.drive.DifferentialDrive"
@@ -7275,6 +7374,7 @@
     "DifferentialDrivetrainSim": {
       "name": "DifferentialDrivetrainSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim"
@@ -7431,6 +7531,7 @@
     "DigitalGlitchFilter": {
       "name": "DigitalGlitchFilter",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DigitalGlitchFilter"
@@ -7498,6 +7599,7 @@
     "DigitalInput": {
       "name": "DigitalInput",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DigitalInput"
@@ -7561,6 +7663,7 @@
     "DigitalOutput": {
       "name": "DigitalOutput",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DigitalOutput"
@@ -7676,6 +7779,7 @@
     "DigitalPWMSim": {
       "name": "DigitalPWMSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DigitalPWMSim"
@@ -7774,6 +7878,7 @@
     "DigitalSource": {
       "name": "DigitalSource",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DigitalSource"
@@ -7816,6 +7921,7 @@
     "DIOSim": {
       "name": "DIOSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DIOSim"
@@ -7952,6 +8058,7 @@
     "Relay.Direction": {
       "name": "Relay.Direction",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Relay.Direction"
@@ -7981,6 +8088,7 @@
     "SysIdRoutine.Direction": {
       "name": "SysIdRoutine.Direction",
       "package": "edu.wpi.first.wpilibj2.command.sysid",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Direction"
@@ -8010,6 +8118,7 @@
     "DMA": {
       "name": "DMA",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DMA"
@@ -8156,6 +8265,7 @@
     "DMASample.DMAReadStatus": {
       "name": "DMASample.DMAReadStatus",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DMASample.DMAReadStatus"
@@ -8192,6 +8302,7 @@
     "DMASample": {
       "name": "DMASample",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DMASample"
@@ -8326,6 +8437,7 @@
     "DoubleSolenoid": {
       "name": "DoubleSolenoid",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DoubleSolenoid"
@@ -8405,6 +8517,7 @@
     "DoubleSolenoidSim": {
       "name": "DoubleSolenoidSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DoubleSolenoidSim"
@@ -8460,6 +8573,7 @@
     "DriverStation": {
       "name": "DriverStation",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DriverStation"
@@ -8750,6 +8864,7 @@
     "DriverStationModeThread": {
       "name": "DriverStationModeThread",
       "package": "edu.wpi.first.wpilibj.internal",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.internal.DriverStationModeThread"
@@ -8800,6 +8915,7 @@
     "DriverStationSim": {
       "name": "DriverStationSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DriverStationSim"
@@ -9143,6 +9259,7 @@
     "DSControlWord": {
       "name": "DSControlWord",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DSControlWord"
@@ -9215,6 +9332,7 @@
     "DutyCycle": {
       "name": "DutyCycle",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DutyCycle"
@@ -9276,6 +9394,7 @@
     "DutyCycleEncoder": {
       "name": "DutyCycleEncoder",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DutyCycleEncoder"
@@ -9397,6 +9516,7 @@
     "DutyCycleEncoderSim": {
       "name": "DutyCycleEncoderSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DutyCycleEncoderSim"
@@ -9446,6 +9566,7 @@
     "DutyCycleSim": {
       "name": "DutyCycleSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DutyCycleSim"
@@ -9544,6 +9665,7 @@
     "EdgeConfiguration": {
       "name": "EdgeConfiguration",
       "package": "edu.wpi.first.wpilibj.counter",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.counter.EdgeConfiguration"
@@ -9573,6 +9695,7 @@
     "ElevatorSim": {
       "name": "ElevatorSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.ElevatorSim"
@@ -9692,6 +9815,7 @@
     "Ellipse2d": {
       "name": "Ellipse2d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Ellipse2d"
@@ -9836,6 +9960,7 @@
     "Ellipse2dProto": {
       "name": "Ellipse2dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Ellipse2dProto"
@@ -9883,6 +10008,7 @@
     "Ellipse2dStruct": {
       "name": "Ellipse2dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Ellipse2dStruct"
@@ -9940,6 +10066,7 @@
     "Encoder": {
       "name": "Encoder",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Encoder"
@@ -10162,6 +10289,7 @@
     "EncoderSim": {
       "name": "EncoderSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.EncoderSim"
@@ -10404,6 +10532,7 @@
     "CounterBase.EncodingType": {
       "name": "CounterBase.EncodingType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.CounterBase.EncodingType"
@@ -10433,6 +10562,7 @@
     "EventImportance": {
       "name": "EventImportance",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.EventImportance"
@@ -10467,6 +10597,7 @@
     "EventLoop": {
       "name": "EventLoop",
       "package": "edu.wpi.first.wpilibj.event",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.event.EventLoop"
@@ -10501,6 +10632,7 @@
     "ExternalDirectionCounter": {
       "name": "ExternalDirectionCounter",
       "package": "edu.wpi.first.wpilibj.counter",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.counter.ExternalDirectionCounter"
@@ -10557,6 +10689,7 @@
     "Field2d": {
       "name": "Field2d",
       "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.smartdashboard.Field2d"
@@ -10610,6 +10743,7 @@
     "FieldObject2d": {
       "name": "FieldObject2d",
       "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.smartdashboard.FieldObject2d"
@@ -10663,6 +10797,7 @@
     "Filesystem": {
       "name": "Filesystem",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Filesystem"
@@ -10695,6 +10830,7 @@
     "SerialPort.FlowControl": {
       "name": "SerialPort.FlowControl",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.FlowControl"
@@ -10724,6 +10860,7 @@
     "FlywheelSim": {
       "name": "FlywheelSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.FlywheelSim"
@@ -10816,6 +10953,7 @@
     "FunctionalCommand": {
       "name": "FunctionalCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.FunctionalCommand"
@@ -10861,6 +10999,7 @@
     "GenericHID": {
       "name": "GenericHID",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.GenericHID"
@@ -11078,6 +11217,7 @@
     "GenericHIDSim": {
       "name": "GenericHIDSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.GenericHIDSim"
@@ -11194,6 +11334,7 @@
     "LEDPattern.GradientType": {
       "name": "LEDPattern.GradientType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.LEDPattern.GradientType"
@@ -11223,6 +11364,7 @@
     "AprilTagJNI.Helper": {
       "name": "AprilTagJNI.Helper",
       "package": "edu.wpi.first.apriltag.jni",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.jni.AprilTagJNI.Helper"
@@ -11252,6 +11394,7 @@
     "GenericHID.HIDType": {
       "name": "GenericHID.HIDType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.GenericHID.HIDType"
@@ -11288,6 +11431,7 @@
     "I2C": {
       "name": "I2C",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.I2C"
@@ -11380,6 +11524,7 @@
     "I2CSim": {
       "name": "I2CSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.I2CSim"
@@ -11438,6 +11583,7 @@
     "ADIS16448_IMU.IMUAxis": {
       "name": "ADIS16448_IMU.IMUAxis",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16448_IMU.IMUAxis"
@@ -11467,6 +11613,7 @@
     "ADIS16470_IMU.IMUAxis": {
       "name": "ADIS16470_IMU.IMUAxis",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADIS16470_IMU.IMUAxis"
@@ -11496,6 +11643,7 @@
     "LEDReader.IndexedColorIterator": {
       "name": "LEDReader.IndexedColorIterator",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.LEDReader.IndexedColorIterator"
@@ -11523,6 +11671,7 @@
     "Encoder.IndexingType": {
       "name": "Encoder.IndexingType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Encoder.IndexingType"
@@ -11552,6 +11701,7 @@
     "LEDPattern.IndexMapper": {
       "name": "LEDPattern.IndexMapper",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.LEDPattern.IndexMapper"
@@ -11577,6 +11727,7 @@
     "InstantCommand": {
       "name": "InstantCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.InstantCommand"
@@ -11600,6 +11751,7 @@
     "InternalButton": {
       "name": "InternalButton",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.InternalButton"
@@ -11637,6 +11789,7 @@
     "Command.InterruptionBehavior": {
       "name": "Command.InterruptionBehavior",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.Command.InterruptionBehavior"
@@ -11666,6 +11819,7 @@
     "Relay.InvalidValueException": {
       "name": "Relay.InvalidValueException",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Relay.InvalidValueException"
@@ -11690,6 +11844,7 @@
     "IterativeRobotBase": {
       "name": "IterativeRobotBase",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.IterativeRobotBase"
@@ -11833,6 +11988,7 @@
     "Joystick": {
       "name": "Joystick",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Joystick"
@@ -11996,6 +12152,7 @@
     "JoystickButton": {
       "name": "JoystickButton",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.JoystickButton"
@@ -12015,6 +12172,7 @@
     "JoystickSim": {
       "name": "JoystickSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.JoystickSim"
@@ -12089,6 +12247,7 @@
     "DifferentialDrivetrainSim.KitbotGearing": {
       "name": "DifferentialDrivetrainSim.KitbotGearing",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotGearing"
@@ -12118,6 +12277,7 @@
     "DifferentialDrivetrainSim.KitbotMotor": {
       "name": "DifferentialDrivetrainSim.KitbotMotor",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotMotor"
@@ -12147,6 +12307,7 @@
     "DifferentialDrivetrainSim.KitbotWheelSize": {
       "name": "DifferentialDrivetrainSim.KitbotWheelSize",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotWheelSize"
@@ -12176,6 +12337,7 @@
     "Koors40": {
       "name": "Koors40",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.Koors40"
@@ -12194,6 +12356,7 @@
     "LayoutType": {
       "name": "LayoutType",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.LayoutType"
@@ -12216,6 +12379,7 @@
     "LEDPattern": {
       "name": "LEDPattern",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.LEDPattern"
@@ -12362,6 +12526,7 @@
     "LEDReader": {
       "name": "LEDReader",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.LEDReader"
@@ -12426,6 +12591,7 @@
     "LEDWriter": {
       "name": "LEDWriter",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.LEDWriter"
@@ -12471,6 +12637,7 @@
     "LinearSystemSim": {
       "name": "LinearSystemSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.LinearSystemSim"
@@ -12548,6 +12715,7 @@
     "LiveWindow": {
       "name": "LiveWindow",
       "package": "edu.wpi.first.wpilibj.livewindow",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.livewindow.LiveWindow"
@@ -12620,6 +12788,7 @@
     "DriverStation.MatchType": {
       "name": "DriverStation.MatchType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DriverStation.MatchType"
@@ -12649,6 +12818,7 @@
     "MecanumControllerCommand": {
       "name": "MecanumControllerCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.MecanumControllerCommand"
@@ -12795,6 +12965,7 @@
     "MecanumDrive": {
       "name": "MecanumDrive",
       "package": "edu.wpi.first.wpilibj.drive",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.drive.MecanumDrive"
@@ -12877,6 +13048,7 @@
     "MecanumControllerCommand.MecanumVoltagesConsumer": {
       "name": "MecanumControllerCommand.MecanumVoltagesConsumer",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.MecanumControllerCommand.MecanumVoltagesConsumer"
@@ -12904,6 +13076,7 @@
     "SysIdRoutine.Mechanism": {
       "name": "SysIdRoutine.Mechanism",
       "package": "edu.wpi.first.wpilibj2.command.sysid",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Mechanism"
@@ -12931,6 +13104,7 @@
     "Mechanism2d": {
       "name": "Mechanism2d",
       "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.smartdashboard.Mechanism2d"
@@ -12987,6 +13161,7 @@
     "MechanismLigament2d": {
       "name": "MechanismLigament2d",
       "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.smartdashboard.MechanismLigament2d"
@@ -13078,6 +13253,7 @@
     "MechanismObject2d": {
       "name": "MechanismObject2d",
       "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.smartdashboard.MechanismObject2d"
@@ -13121,6 +13297,7 @@
     "MechanismRoot2d": {
       "name": "MechanismRoot2d",
       "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.smartdashboard.MechanismRoot2d"
@@ -13158,6 +13335,7 @@
     "Counter.Mode": {
       "name": "Counter.Mode",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Counter.Mode"
@@ -13187,6 +13365,7 @@
     "SPI.Mode": {
       "name": "SPI.Mode",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SPI.Mode"
@@ -13216,6 +13395,7 @@
     "PowerDistribution.ModuleType": {
       "name": "PowerDistribution.ModuleType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PowerDistribution.ModuleType"
@@ -13245,6 +13425,7 @@
     "MotorController": {
       "name": "MotorController",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.MotorController"
@@ -13303,6 +13484,7 @@
     "MotorControllerGroup": {
       "name": "MotorControllerGroup",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup"
@@ -13382,6 +13564,7 @@
     "SysIdRoutineLog.MotorLog": {
       "name": "SysIdRoutineLog.MotorLog",
       "package": "edu.wpi.first.wpilibj.sysid",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.sysid.SysIdRoutineLog.MotorLog"
@@ -13464,6 +13647,7 @@
     "MotorSafety": {
       "name": "MotorSafety",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.MotorSafety"
@@ -13535,6 +13719,7 @@
     "RobotDriveBase.MotorType": {
       "name": "RobotDriveBase.MotorType",
       "package": "edu.wpi.first.wpilibj.drive",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.drive.RobotDriveBase.MotorType"
@@ -13564,6 +13749,7 @@
     "NetworkBooleanEvent": {
       "name": "NetworkBooleanEvent",
       "package": "edu.wpi.first.wpilibj.event",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.event.NetworkBooleanEvent"
@@ -13615,6 +13801,7 @@
     "NetworkButton": {
       "name": "NetworkButton",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.NetworkButton"
@@ -13661,6 +13848,7 @@
     "Notifier": {
       "name": "Notifier",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Notifier"
@@ -13726,6 +13914,7 @@
     "NotifierCommand": {
       "name": "NotifierCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.NotifierCommand"
@@ -13759,6 +13948,7 @@
     "NotifierSim": {
       "name": "NotifierSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.NotifierSim"
@@ -13786,6 +13976,7 @@
     "OnBoardIO": {
       "name": "OnBoardIO",
       "package": "edu.wpi.first.wpilibj.romi",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.romi.OnBoardIO"
@@ -13842,6 +14033,7 @@
     "AprilTagFieldLayout.OriginPosition": {
       "name": "AprilTagFieldLayout.OriginPosition",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagFieldLayout.OriginPosition"
@@ -13871,6 +14063,7 @@
     "ParallelCommandGroup": {
       "name": "ParallelCommandGroup",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.ParallelCommandGroup"
@@ -13929,6 +14122,7 @@
     "ParallelDeadlineGroup": {
       "name": "ParallelDeadlineGroup",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.ParallelDeadlineGroup"
@@ -14002,6 +14196,7 @@
     "ParallelRaceGroup": {
       "name": "ParallelRaceGroup",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.ParallelRaceGroup"
@@ -14060,6 +14255,7 @@
     "SerialPort.Parity": {
       "name": "SerialPort.Parity",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.Parity"
@@ -14089,6 +14285,7 @@
     "PDPSim": {
       "name": "PDPSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.PDPSim"
@@ -14207,6 +14404,7 @@
     "PWM.PeriodMultiplier": {
       "name": "PWM.PeriodMultiplier",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PWM.PeriodMultiplier"
@@ -14236,6 +14434,7 @@
     "PIDCommand": {
       "name": "PIDCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.PIDCommand"
@@ -14291,6 +14490,7 @@
     "PIDSubsystem": {
       "name": "PIDSubsystem",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.PIDSubsystem"
@@ -14367,6 +14567,7 @@
     "PneumaticHub": {
       "name": "PneumaticHub",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PneumaticHub"
@@ -14584,6 +14785,7 @@
     "PneumaticsBase": {
       "name": "PneumaticsBase",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PneumaticsBase"
@@ -14770,6 +14972,7 @@
     "PneumaticsBaseSim": {
       "name": "PneumaticsBaseSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.PneumaticsBaseSim"
@@ -14912,6 +15115,7 @@
     "PneumaticsControlModule": {
       "name": "PneumaticsControlModule",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PneumaticsControlModule"
@@ -15134,16 +15338,12 @@
     "PneumaticsModuleType": {
       "name": "PneumaticsModuleType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "enum",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PneumaticsModuleType"
       ],
-      "constructors": [
-        {
-          "parameters": [],
-          "template": "PneumaticsModuleType ${instanceName} = new PneumaticsModuleType();"
-        }
-      ],
+      "constructors": [],
       "declarationTemplate": "PneumaticsModuleType ${instanceName};",
       "methods": {
         "valueOf": {
@@ -15158,11 +15358,16 @@
           "parameters": [],
           "template": "${instance}.values();"
         }
-      }
+      },
+      "enumValues": [
+        "CTREPCM",
+        "REVPH"
+      ]
     },
     "I2C.Port": {
       "name": "I2C.Port",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.I2C.Port"
@@ -15192,6 +15397,7 @@
     "SerialPort.Port": {
       "name": "SerialPort.Port",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.Port"
@@ -15221,6 +15427,7 @@
     "SPI.Port": {
       "name": "SPI.Port",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SPI.Port"
@@ -15250,6 +15457,7 @@
     "Pose2d": {
       "name": "Pose2d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Pose2d"
@@ -15435,6 +15643,7 @@
     "Pose2dProto": {
       "name": "Pose2dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Pose2dProto"
@@ -15487,6 +15696,7 @@
     "Pose2dStruct": {
       "name": "Pose2dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Pose2dStruct"
@@ -15549,6 +15759,7 @@
     "Pose3d": {
       "name": "Pose3d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Pose3d"
@@ -15757,6 +15968,7 @@
     "Pose3dProto": {
       "name": "Pose3dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Pose3dProto"
@@ -15809,6 +16021,7 @@
     "Pose3dStruct": {
       "name": "Pose3dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Pose3dStruct"
@@ -15871,6 +16084,7 @@
     "POVButton": {
       "name": "POVButton",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.POVButton"
@@ -15898,6 +16112,7 @@
     "PowerDistribution": {
       "name": "PowerDistribution",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PowerDistribution"
@@ -16023,6 +16238,7 @@
     "Preferences": {
       "name": "Preferences",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Preferences"
@@ -16220,6 +16436,7 @@
     "PrintCommand": {
       "name": "PrintCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.PrintCommand"
@@ -16244,6 +16461,7 @@
     "ProfiledPIDCommand": {
       "name": "ProfiledPIDCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.ProfiledPIDCommand"
@@ -16323,6 +16541,7 @@
     "ProfiledPIDSubsystem": {
       "name": "ProfiledPIDSubsystem",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.ProfiledPIDSubsystem"
@@ -16394,6 +16613,7 @@
     "ProxyCommand": {
       "name": "ProxyCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.ProxyCommand"
@@ -16453,6 +16673,7 @@
     "PS4Controller": {
       "name": "PS4Controller",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS4Controller"
@@ -16832,6 +17053,7 @@
     "PS4ControllerSim": {
       "name": "PS4ControllerSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.PS4ControllerSim"
@@ -17004,6 +17226,7 @@
     "PS5Controller": {
       "name": "PS5Controller",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PS5Controller"
@@ -17383,6 +17606,7 @@
     "PS5ControllerSim": {
       "name": "PS5ControllerSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.PS5ControllerSim"
@@ -17555,6 +17779,7 @@
     "PWM": {
       "name": "PWM",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.PWM"
@@ -17684,6 +17909,7 @@
     "PWMMotorController": {
       "name": "PWMMotorController",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.PWMMotorController"
@@ -17784,6 +18010,7 @@
     "PWMSim": {
       "name": "PWMSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.PWMSim"
@@ -17940,6 +18167,7 @@
     "PWMSparkFlex": {
       "name": "PWMSparkFlex",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.PWMSparkFlex"
@@ -17958,6 +18186,7 @@
     "PWMSparkMax": {
       "name": "PWMSparkMax",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax"
@@ -17976,6 +18205,7 @@
     "PWMTalonFX": {
       "name": "PWMTalonFX",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.PWMTalonFX"
@@ -17994,6 +18224,7 @@
     "PWMTalonSRX": {
       "name": "PWMTalonSRX",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX"
@@ -18012,6 +18243,7 @@
     "PWMVenom": {
       "name": "PWMVenom",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.PWMVenom"
@@ -18030,6 +18262,7 @@
     "PWMVictorSPX": {
       "name": "PWMVictorSPX",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX"
@@ -18048,6 +18281,7 @@
     "AprilTagDetector.QuadThresholdParameters": {
       "name": "AprilTagDetector.QuadThresholdParameters",
       "package": "edu.wpi.first.apriltag",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.apriltag.AprilTagDetector.QuadThresholdParameters"
@@ -18082,6 +18316,7 @@
     "Quaternion": {
       "name": "Quaternion",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Quaternion"
@@ -18233,6 +18468,7 @@
     "QuaternionProto": {
       "name": "QuaternionProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.QuaternionProto"
@@ -18285,6 +18521,7 @@
     "QuaternionStruct": {
       "name": "QuaternionStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.QuaternionStruct"
@@ -18342,6 +18579,7 @@
     "RobotController.RadioLEDState": {
       "name": "RobotController.RadioLEDState",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.RobotController.RadioLEDState"
@@ -18378,6 +18616,7 @@
     "RamseteCommand": {
       "name": "RamseteCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.RamseteCommand"
@@ -18448,6 +18687,7 @@
     "ADXL345_I2C.Range": {
       "name": "ADXL345_I2C.Range",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_I2C.Range"
@@ -18477,6 +18717,7 @@
     "ADXL345_SPI.Range": {
       "name": "ADXL345_SPI.Range",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL345_SPI.Range"
@@ -18506,6 +18747,7 @@
     "ADXL362.Range": {
       "name": "ADXL362.Range",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.ADXL362.Range"
@@ -18535,6 +18777,7 @@
     "BuiltInAccelerometer.Range": {
       "name": "BuiltInAccelerometer.Range",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.BuiltInAccelerometer.Range"
@@ -18564,6 +18807,7 @@
     "Rectangle2d": {
       "name": "Rectangle2d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Rectangle2d"
@@ -18696,6 +18940,7 @@
     "Rectangle2dProto": {
       "name": "Rectangle2dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Rectangle2dProto"
@@ -18743,6 +18988,7 @@
     "Rectangle2dStruct": {
       "name": "Rectangle2dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Rectangle2dStruct"
@@ -18800,6 +19046,7 @@
     "Relay": {
       "name": "Relay",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Relay"
@@ -18872,6 +19119,7 @@
     "RelaySim": {
       "name": "RelaySim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.RelaySim"
@@ -18982,6 +19230,7 @@
     "RepeatCommand": {
       "name": "RepeatCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.RepeatCommand"
@@ -19040,6 +19289,7 @@
     "Resource": {
       "name": "Resource",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Resource"
@@ -19078,6 +19328,7 @@
     "REVPHSim": {
       "name": "REVPHSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.REVPHSim"
@@ -19236,6 +19487,7 @@
     "Color.RGBChannel": {
       "name": "Color.RGBChannel",
       "package": "edu.wpi.first.wpilibj.util",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.util.Color.RGBChannel"
@@ -19265,6 +19517,7 @@
     "RoboRioSim": {
       "name": "RoboRioSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.RoboRioSim"
@@ -19691,6 +19944,7 @@
     "RobotBase": {
       "name": "RobotBase",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.RobotBase"
@@ -19797,6 +20051,7 @@
     "RobotController": {
       "name": "RobotController",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.RobotController"
@@ -20086,6 +20341,7 @@
     "RobotDriveBase": {
       "name": "RobotDriveBase",
       "package": "edu.wpi.first.wpilibj.drive",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.drive.RobotDriveBase"
@@ -20139,6 +20395,7 @@
     "RobotModeTriggers": {
       "name": "RobotModeTriggers",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.RobotModeTriggers"
@@ -20176,6 +20433,7 @@
     "RobotState": {
       "name": "RobotState",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.RobotState"
@@ -20223,6 +20481,7 @@
     "RomiGyro": {
       "name": "RomiGyro",
       "package": "edu.wpi.first.wpilibj.romi",
+      "type": "class",
       "category": "imu",
       "imports": [
         "edu.wpi.first.wpilibj.romi.RomiGyro"
@@ -20290,6 +20549,7 @@
     "RomiMotor": {
       "name": "RomiMotor",
       "package": "edu.wpi.first.wpilibj.romi",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.romi.RomiMotor"
@@ -20314,6 +20574,7 @@
     "Rotation2d": {
       "name": "Rotation2d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Rotation2d"
@@ -20490,6 +20751,7 @@
     "Rotation2dProto": {
       "name": "Rotation2dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Rotation2dProto"
@@ -20542,6 +20804,7 @@
     "Rotation2dStruct": {
       "name": "Rotation2dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Rotation2dStruct"
@@ -20599,6 +20862,7 @@
     "Rotation3d": {
       "name": "Rotation3d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Rotation3d"
@@ -20815,6 +21079,7 @@
     "Rotation3dProto": {
       "name": "Rotation3dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Rotation3dProto"
@@ -20867,6 +21132,7 @@
     "Rotation3dStruct": {
       "name": "Rotation3dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Rotation3dStruct"
@@ -20929,6 +21195,7 @@
     "GenericHID.RumbleType": {
       "name": "GenericHID.RumbleType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.GenericHID.RumbleType"
@@ -20958,6 +21225,7 @@
     "RunCommand": {
       "name": "RunCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.RunCommand"
@@ -20977,6 +21245,7 @@
     "RuntimeType": {
       "name": "RuntimeType",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.RuntimeType"
@@ -21013,6 +21282,7 @@
     "ScheduleCommand": {
       "name": "ScheduleCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.ScheduleCommand"
@@ -21047,6 +21317,7 @@
     "SelectCommand": {
       "name": "SelectCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.SelectCommand"
@@ -21107,6 +21378,7 @@
     "SendableBuilderImpl": {
       "name": "SendableBuilderImpl",
       "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.smartdashboard.SendableBuilderImpl"
@@ -21412,6 +21684,7 @@
     "SendableCameraWrapper": {
       "name": "SendableCameraWrapper",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.SendableCameraWrapper"
@@ -21455,6 +21728,7 @@
     "SendableChooser": {
       "name": "SendableChooser",
       "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.smartdashboard.SendableChooser"
@@ -21512,6 +21786,7 @@
     "SendableChooserSim": {
       "name": "SendableChooserSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.SendableChooserSim"
@@ -21550,6 +21825,7 @@
     "SensorUtil": {
       "name": "SensorUtil",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SensorUtil"
@@ -21612,6 +21888,7 @@
     "SequentialCommandGroup": {
       "name": "SequentialCommandGroup",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.SequentialCommandGroup"
@@ -21677,6 +21954,7 @@
     "SerialPort": {
       "name": "SerialPort",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort"
@@ -21820,6 +22098,7 @@
     "Servo": {
       "name": "Servo",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Servo"
@@ -21870,6 +22149,7 @@
     "SharpIR": {
       "name": "SharpIR",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SharpIR"
@@ -21948,6 +22228,7 @@
     "SharpIRSim": {
       "name": "SharpIRSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.SharpIRSim"
@@ -21987,6 +22268,7 @@
     "Shuffleboard": {
       "name": "Shuffleboard",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.Shuffleboard"
@@ -22064,6 +22346,7 @@
     "ShuffleboardComponent": {
       "name": "ShuffleboardComponent",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.ShuffleboardComponent"
@@ -22153,6 +22436,7 @@
     "ShuffleboardContainer": {
       "name": "ShuffleboardContainer",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.ShuffleboardContainer"
@@ -22304,6 +22588,7 @@
     "ShuffleboardLayout": {
       "name": "ShuffleboardLayout",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout"
@@ -22453,6 +22738,7 @@
     "ShuffleboardTab": {
       "name": "ShuffleboardTab",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab"
@@ -22602,6 +22888,7 @@
     "SimDeviceSim": {
       "name": "SimDeviceSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.SimDeviceSim"
@@ -22762,6 +23049,7 @@
     "SimHooks": {
       "name": "SimHooks",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.SimHooks"
@@ -22835,6 +23123,7 @@
     "SimpleWidget": {
       "name": "SimpleWidget",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.SimpleWidget"
@@ -22879,6 +23168,7 @@
     "SingleJointedArmSim": {
       "name": "SingleJointedArmSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.SingleJointedArmSim"
@@ -22995,6 +23285,7 @@
     "SmartDashboard": {
       "name": "SmartDashboard",
       "package": "edu.wpi.first.wpilibj.smartdashboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.smartdashboard.SmartDashboard"
@@ -23256,6 +23547,7 @@
     "Solenoid": {
       "name": "Solenoid",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Solenoid"
@@ -23335,6 +23627,7 @@
     "SolenoidSim": {
       "name": "SolenoidSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.SolenoidSim"
@@ -23395,6 +23688,7 @@
     "Spark": {
       "name": "Spark",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.Spark"
@@ -23413,6 +23707,7 @@
     "SPI": {
       "name": "SPI",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SPI"
@@ -23644,6 +23939,7 @@
     "SPIAccelerometerSim": {
       "name": "SPIAccelerometerSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.SPIAccelerometerSim"
@@ -23768,6 +24064,7 @@
     "SPISim": {
       "name": "SPISim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.SPISim"
@@ -23831,6 +24128,7 @@
     "StadiaController": {
       "name": "StadiaController",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.StadiaController"
@@ -24237,6 +24535,7 @@
     "StadiaControllerSim": {
       "name": "StadiaControllerSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.StadiaControllerSim"
@@ -24395,6 +24694,7 @@
     "StartEndCommand": {
       "name": "StartEndCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.StartEndCommand"
@@ -24415,6 +24715,7 @@
     "SysIdRoutineLog.State": {
       "name": "SysIdRoutineLog.State",
       "package": "edu.wpi.first.wpilibj.sysid",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.sysid.SysIdRoutineLog.State"
@@ -24449,6 +24750,7 @@
     "SerialPort.StopBits": {
       "name": "SerialPort.StopBits",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.StopBits"
@@ -24478,6 +24780,7 @@
     "Subsystem": {
       "name": "Subsystem",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.Subsystem"
@@ -24587,6 +24890,7 @@
     "SubsystemBase": {
       "name": "SubsystemBase",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.SubsystemBase"
@@ -24649,6 +24953,7 @@
     "SuppliedValueWidget": {
       "name": "SuppliedValueWidget",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.SuppliedValueWidget"
@@ -24679,6 +24984,7 @@
     "SwerveControllerCommand": {
       "name": "SwerveControllerCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.SwerveControllerCommand"
@@ -24764,6 +25070,7 @@
     "SynchronousInterrupt": {
       "name": "SynchronousInterrupt",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SynchronousInterrupt"
@@ -24819,6 +25126,7 @@
     "SysIdRoutine": {
       "name": "SysIdRoutine",
       "package": "edu.wpi.first.wpilibj2.command.sysid",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine"
@@ -24853,6 +25161,7 @@
     "SysIdRoutineLog": {
       "name": "SysIdRoutineLog",
       "package": "edu.wpi.first.wpilibj.sysid",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.sysid.SysIdRoutineLog"
@@ -24886,6 +25195,7 @@
     "Tachometer": {
       "name": "Tachometer",
       "package": "edu.wpi.first.wpilibj.counter",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.counter.Tachometer"
@@ -24980,6 +25290,7 @@
     "Talon": {
       "name": "Talon",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.Talon"
@@ -24998,6 +25309,7 @@
     "Threads": {
       "name": "Threads",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Threads"
@@ -25033,6 +25345,7 @@
     "TimedRobot": {
       "name": "TimedRobot",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.TimedRobot"
@@ -25097,6 +25410,7 @@
     "Timer": {
       "name": "Timer",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Timer"
@@ -25180,6 +25494,7 @@
     "TimesliceRobot": {
       "name": "TimesliceRobot",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.TimesliceRobot"
@@ -25208,6 +25523,7 @@
     "Tracer": {
       "name": "Tracer",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Tracer"
@@ -25249,6 +25565,7 @@
     "Transform2d": {
       "name": "Transform2d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Transform2d"
@@ -25381,6 +25698,7 @@
     "Transform2dProto": {
       "name": "Transform2dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Transform2dProto"
@@ -25433,6 +25751,7 @@
     "Transform2dStruct": {
       "name": "Transform2dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Transform2dStruct"
@@ -25495,6 +25814,7 @@
     "Transform3d": {
       "name": "Transform3d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Transform3d"
@@ -25645,6 +25965,7 @@
     "Transform3dProto": {
       "name": "Transform3dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Transform3dProto"
@@ -25697,6 +26018,7 @@
     "Transform3dStruct": {
       "name": "Transform3dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Transform3dStruct"
@@ -25759,6 +26081,7 @@
     "Translation2d": {
       "name": "Translation2d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Translation2d"
@@ -25951,6 +26274,7 @@
     "Translation2dProto": {
       "name": "Translation2dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Translation2dProto"
@@ -26003,6 +26327,7 @@
     "Translation2dStruct": {
       "name": "Translation2dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Translation2dStruct"
@@ -26060,6 +26385,7 @@
     "Translation3d": {
       "name": "Translation3d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Translation3d"
@@ -26270,6 +26596,7 @@
     "Translation3dProto": {
       "name": "Translation3dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Translation3dProto"
@@ -26322,6 +26649,7 @@
     "Translation3dStruct": {
       "name": "Translation3dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Translation3dStruct"
@@ -26379,6 +26707,7 @@
     "TrapezoidProfileCommand": {
       "name": "TrapezoidProfileCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.TrapezoidProfileCommand"
@@ -26424,6 +26753,7 @@
     "TrapezoidProfileSubsystem": {
       "name": "TrapezoidProfileSubsystem",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.TrapezoidProfileSubsystem"
@@ -26487,6 +26817,7 @@
     "Trigger": {
       "name": "Trigger",
       "package": "edu.wpi.first.wpilibj2.command.button",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.button.Trigger"
@@ -26602,6 +26933,7 @@
     "Twist2d": {
       "name": "Twist2d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Twist2d"
@@ -26644,6 +26976,7 @@
     "Twist2dProto": {
       "name": "Twist2dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Twist2dProto"
@@ -26691,6 +27024,7 @@
     "Twist2dStruct": {
       "name": "Twist2dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Twist2dStruct"
@@ -26743,6 +27077,7 @@
     "Twist3d": {
       "name": "Twist3d",
       "package": "edu.wpi.first.math.geometry",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.Twist3d"
@@ -26788,6 +27123,7 @@
     "Twist3dProto": {
       "name": "Twist3dProto",
       "package": "edu.wpi.first.math.geometry.proto",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.proto.Twist3dProto"
@@ -26835,6 +27171,7 @@
     "Twist3dStruct": {
       "name": "Twist3dStruct",
       "package": "edu.wpi.first.math.geometry.struct",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.math.geometry.struct.Twist3dStruct"
@@ -26887,6 +27224,7 @@
     "Ultrasonic": {
       "name": "Ultrasonic",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Ultrasonic"
@@ -26970,6 +27308,7 @@
     "UltrasonicSim": {
       "name": "UltrasonicSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.UltrasonicSim"
@@ -27017,6 +27356,7 @@
     "UpDownCounter": {
       "name": "UpDownCounter",
       "package": "edu.wpi.first.wpilibj.counter",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.counter.UpDownCounter"
@@ -27080,6 +27420,7 @@
     "DoubleSolenoid.Value": {
       "name": "DoubleSolenoid.Value",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.DoubleSolenoid.Value"
@@ -27109,6 +27450,7 @@
     "Relay.Value": {
       "name": "Relay.Value",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Relay.Value"
@@ -27150,6 +27492,7 @@
     "VictorSP": {
       "name": "VictorSP",
       "package": "edu.wpi.first.wpilibj.motorcontrol",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.motorcontrol.VictorSP"
@@ -27168,6 +27511,7 @@
     "WaitCommand": {
       "name": "WaitCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.WaitCommand"
@@ -27222,6 +27566,7 @@
     "SynchronousInterrupt.WaitResult": {
       "name": "SynchronousInterrupt.WaitResult",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SynchronousInterrupt.WaitResult"
@@ -27259,6 +27604,7 @@
     "WaitUntilCommand": {
       "name": "WaitUntilCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.WaitUntilCommand"
@@ -27294,6 +27640,7 @@
     "Watchdog": {
       "name": "Watchdog",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.Watchdog"
@@ -27401,6 +27748,7 @@
     "DifferentialDrive.WheelSpeeds": {
       "name": "DifferentialDrive.WheelSpeeds",
       "package": "edu.wpi.first.wpilibj.drive",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.drive.DifferentialDrive.WheelSpeeds"
@@ -27426,6 +27774,7 @@
     "MecanumDrive.WheelSpeeds": {
       "name": "MecanumDrive.WheelSpeeds",
       "package": "edu.wpi.first.wpilibj.drive",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.drive.MecanumDrive.WheelSpeeds"
@@ -27453,6 +27802,7 @@
     "WidgetType": {
       "name": "WidgetType",
       "package": "edu.wpi.first.wpilibj.shuffleboard",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.shuffleboard.WidgetType"
@@ -27475,6 +27825,7 @@
     "WPILibVersion": {
       "name": "WPILibVersion",
       "package": "edu.wpi.first.wpilibj.util",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.util.WPILibVersion"
@@ -27491,6 +27842,7 @@
     "WrapperCommand": {
       "name": "WrapperCommand",
       "package": "edu.wpi.first.wpilibj2.command",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj2.command.WrapperCommand"
@@ -27547,6 +27899,7 @@
     "SerialPort.WriteBufferMode": {
       "name": "SerialPort.WriteBufferMode",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.SerialPort.WriteBufferMode"
@@ -27576,6 +27929,7 @@
     "XboxController": {
       "name": "XboxController",
       "package": "edu.wpi.first.wpilibj",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.XboxController"
@@ -27896,6 +28250,7 @@
     "XboxControllerSim": {
       "name": "XboxControllerSim",
       "package": "edu.wpi.first.wpilibj.simulation",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.simulation.XboxControllerSim"
@@ -28047,6 +28402,7 @@
     "XRPGyro": {
       "name": "XRPGyro",
       "package": "edu.wpi.first.wpilibj.xrp",
+      "type": "class",
       "category": "imu",
       "imports": [
         "edu.wpi.first.wpilibj.xrp.XRPGyro"
@@ -28119,6 +28475,7 @@
     "XRPMotor": {
       "name": "XRPMotor",
       "package": "edu.wpi.first.wpilibj.xrp",
+      "type": "class",
       "category": "motor",
       "imports": [
         "edu.wpi.first.wpilibj.xrp.XRPMotor"
@@ -28172,6 +28529,7 @@
     "XRPOnBoardIO": {
       "name": "XRPOnBoardIO",
       "package": "edu.wpi.first.wpilibj.xrp",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.xrp.XRPOnBoardIO"
@@ -28206,6 +28564,7 @@
     "XRPRangefinder": {
       "name": "XRPRangefinder",
       "package": "edu.wpi.first.wpilibj.xrp",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.xrp.XRPRangefinder"
@@ -28233,6 +28592,7 @@
     "XRPReflectanceSensor": {
       "name": "XRPReflectanceSensor",
       "package": "edu.wpi.first.wpilibj.xrp",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.xrp.XRPReflectanceSensor"
@@ -28260,6 +28620,7 @@
     "XRPServo": {
       "name": "XRPServo",
       "package": "edu.wpi.first.wpilibj.xrp",
+      "type": "class",
       "category": "utility",
       "imports": [
         "edu.wpi.first.wpilibj.xrp.XRPServo"
