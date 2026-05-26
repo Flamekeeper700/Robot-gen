@@ -27,6 +27,20 @@
         "parameterPath": "p",
         "packageFilters": []
       }
+    },
+    {
+      "name": "REV_API",
+      "url": "https://codedocs.revrobotics.com/java/type-search-index.js",
+      "isJavadocIndex": true,
+      "classExtractor": {
+        "rootPath": "",
+        "classNamePath": "l",
+        "methodNameSource": "members",
+        "methodNamePath": "n",
+        "returnTypePath": "t",
+        "parameterPath": "p",
+        "packageFilters": []
+      }
     }
   ]
 }

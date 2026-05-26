@@ -1,64 +1,79 @@
-import { ConfigParser } from './parser.js';
-import { robotGenerator } from './generator.js';
+import { Generator } from './generator.js';
 
-document.addEventListener("DOMContentLoaded", async () => {
-    console.log("Initializing Robot Gen Engine...");
+let tabCount = 1;
 
-    // 1. Download and parse the entire FRC API completely client-side
-    const apiData = await ConfigParser.loadAllConfigs();
-
-    if (!apiData) {
-        alert("Critical Error loading FRC Code references.");
-        return;
-    }
-
-    // 2. Setup your dynamic tab/dropdown views using the freshly pulled definitions
-    renderHardwareDropdowns();
-    setupEventListeners();
-});
-
-function renderHardwareDropdowns() {
-    // Dynamically retrieve all cached motor options from our parsed dataset
-    const motorObjects = ConfigParser.getObjectsByCategory("motor");
-    const selectEl = document.getElementById("motor-type-selector");
-    
-    if(!selectEl || motorObjects.length === 0) {
-        // Fallback for demonstration if definitions.json isn't populated yet
-        if(selectEl) {
-            selectEl.innerHTML = `
-                <option value="TalonFX" data-pkg="com.ctre.phoenix6.hardware">TalonFX (com.ctre)</option>
-                <option value="CANSparkMax" data-pkg="com.revrobotics">CANSparkMax (com.rev)</option>
-            `;
+document.addEventListener("DOMContentLoaded", () => {
+    // Tab switching logic
+    document.getElementById('subsystem-tabs').addEventListener('click', (e) => {
+        if (e.target.classList.contains('tab-btn') && !e.target.classList.contains('add-btn')) {
+            // Deactivate all
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Activate clicked
+            e.target.classList.add('active');
+            const targetId = e.target.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
         }
-        return;
-    }
+    });
 
-    selectEl.innerHTML = motorObjects.map(motor => 
-        `<option value="${motor.name}" data-pkg="${motor.package}">${motor.name} (${motor.package})</option>`
-    ).join('');
-}
+    // Add new tab logic
+    document.getElementById('add-subsystem-btn').addEventListener('click', () => {
+        const tabsContainer = document.getElementById('subsystem-tabs');
+        const contentsContainer = document.getElementById('tab-contents');
+        
+        const newTabBtn = document.createElement('button');
+        newTabBtn.className = 'tab-btn';
+        newTabBtn.setAttribute('data-target', `tab-${tabCount}`);
+        newTabBtn.innerText = `Subsystem ${tabCount + 1}`;
+        tabsContainer.insertBefore(newTabBtn, document.getElementById('add-subsystem-btn'));
 
-function setupEventListeners() {
-    const generateBtn = document.getElementById("generate-btn");
-    
-    if (generateBtn) {
-        generateBtn.addEventListener("click", () => {
-            const selector = document.getElementById("motor-type-selector");
-            const motorType = selector.value;
-            const motorPkg = selector.selectedOptions[0].dataset.pkg;
-            const limit = document.getElementById("current-limit").value;
+        const newContent = document.getElementById('tab-0').cloneNode(true);
+        newContent.id = `tab-${tabCount}`;
+        newContent.classList.remove('active');
+        
+        // Reset inputs in cloned tab
+        newContent.querySelector('.class-name-input').value = `Subsystem${tabCount + 1}`;
+        contentsContainer.appendChild(newContent);
+        
+        tabCount++;
+    });
 
-            const isCTRE = motorPkg && motorPkg.includes("com.ctre");
-
-            const hardwareConfig = {
-                type: motorType,
-                varName: "primaryMotor",
-                portId: "1",
-                limit: limit,
-                isCTRE: isCTRE
-            };
-
-            robotGenerator.downloadProjectZip("DriveSubsystem", [hardwareConfig]);
+    // Project Generation Trigger
+    document.getElementById('generate-btn').addEventListener('click', async () => {
+        const framework = document.getElementById('framework-selector').value;
+        const subsystemConfigs = [];
+        
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            subsystemConfigs.push({
+                className: tab.querySelector('.class-name-input').value,
+                hardware: tab.querySelector('.api-type-selector').value,
+                limit: tab.querySelector('.current-limit').value
+            });
         });
-    }
-}
+
+        // Initialize generator (Parser outputs would be passed here)
+        const gen = new Generator({}, {
+            classTemplate: [
+                "package ${package};",
+                "",
+                "${imports}",
+                "",
+                "public class ${className} {",
+                "    // Generated Fields",
+                "    ${fields}",
+                "",
+                "    public ${className}() {",
+                "        // Initialization",
+                "        ${initialization}",
+                "    }",
+                "",
+                "    // Generated Methods",
+                "    ${methods}",
+                "}"
+            ]
+        }, {});
+        
+        await gen.generateProjectZip(subsystemConfigs, framework);
+    });
+});

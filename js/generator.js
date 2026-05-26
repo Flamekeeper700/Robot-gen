@@ -1,80 +1,68 @@
-import { ConfigParser } from './parser.js';
-
-export class CodeGenerator {
-    /**
-     * Constructs a full subsystem string using values queried out of our parser storage
-     */
-    generateSubsystemCode(subsystemName, selectedHardwareList) {
-        let imports = new Set(["import edu.wpi.first.wpilibj2.command.SubsystemBase;"]);
-        let declarations = [];
-        let initializations = [];
-
-        selectedHardwareList.forEach(item => {
-            // Pull the exact blueprint details from our parser lookup cache
-            const meta = ConfigParser.getClassData(item.type);
-            
-            // If pulling from live definitions, use dynamic meta. 
-            // Fallback templates below ensure the engine doesn't crash during development.
-            if (meta && meta.imports) {
-                meta.imports.forEach(i => imports.add(i));
-            } else {
-                imports.add(`import ${item.type === 'TalonFX' ? 'com.ctre.phoenix6.hardware.TalonFX' : 'com.revrobotics.CANSparkMax'};`);
-                if (item.isCTRE) {
-                    imports.add("import com.ctre.phoenix6.configs.CurrentLimitsConfigs;");
-                }
-            }
-
-            // Populate the structural code strings
-            let decl = meta ? meta.declarationTemplate
-                .replace("${className}", item.type)
-                .replace("${instanceName}", item.varName) : `${item.type} ${item.varName};`;
-            declarations.push(`    private final ${decl}`);
-
-            // Pick the appropriate constructor config block
-            let init = meta ? meta.constructors[0].template
-                .replace("${instanceName}", item.varName)
-                .replace("${param}", item.portId) : `${item.varName} = new ${item.type}(${item.portId});`;
-            initializations.push(`        ${init}`);
-
-            // Enforce appropriate current limit bounds
-            if (item.limit) {
-                if (item.isCTRE) {
-                    initializations.push(`        CurrentLimitsConfigs currentLimits = new CurrentLimitsConfigs();`);
-                    initializations.push(`        currentLimits.SupplyCurrentLimitEnable = true;`);
-                    initializations.push(`        currentLimits.SupplyCurrentLimit = ${item.limit};`);
-                    initializations.push(`        ${item.varName}.getConfigurator().apply(currentLimits);`);
-                } else {
-                    initializations.push(`        ${item.varName}.setSmartCurrentLimit(${item.limit});`);
-                }
-            }
-        });
-
-        // Assemble the actual file string layout
-        return `package frc.robot.subsystems;\n\n${Array.from(imports).join('\n')}\n\npublic class ${subsystemName} extends SubsystemBase {\n${declarations.join('\n')}\n\n    public ${subsystemName}() {\n${initializations.join('\n')}\n    }\n}`;
+export class Generator {
+    constructor(definitions, templates, types) {
+        this.definitions = definitions;
+        this.templates = templates;
+        this.types = types;
     }
 
     /**
-     * Builds and downloads the final robot configuration as a single zip archive
+     * Universal class generator. Replaces the old subsystem-only generator
+     * so it can be used for RobotContainer, Constants, and framework files.
      */
-    async downloadProjectZip(subsystemName, hardwareList) {
-        if (typeof JSZip === 'undefined') {
-            alert("Error: JSZip library failed to load.");
-            return;
+    generateClass(className, packageName, imports, fields, init, methods, framework) {
+        let template = this.templates.classTemplate.join('\n');
+        
+        // Inject framework-specific architecture
+        let classDefinition = `public class ${className}`;
+        let frameworkImports = [...imports];
+
+        if (framework === "command-v3") {
+            frameworkImports.push("import edu.wpi.first.wpilibj2.command.SubsystemBase;");
+            classDefinition += " extends SubsystemBase";
         }
 
-        const zip = new JSZip();
-        const subsystemCode = this.generateSubsystemCode(subsystemName, hardwareList);
-
-        // Map files directly into a standard FRC project structure
-        zip.file(`src/main/java/frc/robot/subsystems/${subsystemName}.java`, subsystemCode);
+        template = template.replace('${package}', packageName);
+        template = template.replace('${imports}', frameworkImports.join('\n'));
+        template = template.replace('public class ${className}', classDefinition);
+        template = template.replace(/\$\{className\}/g, className);
         
-        // Trigger a native browser save dialog
+        template = template.replace('${fields}', fields.join('\n    '));
+        template = template.replace('${initialization}', init.join('\n        '));
+        template = template.replace('${methods}', methods.join('\n    '));
+        
+        return template;
+    }
+
+    async generateProjectZip(subsystemConfigs, framework) {
+        const zip = new JSZip();
+        const basePkg = "frc.robot";
+        const srcFolder = zip.folder(`src/main/java/frc/robot/subsystems`);
+
+        // Iterate over the tab configurations to generate separate files
+        for (const config of subsystemConfigs) {
+            // Context assembly would pull from definitions.json based on config.hardware
+            const imports = ["import com.ctre.phoenix6.hardware.TalonFX;"]; // Example populated from parser
+            const fields = [`private final TalonFX motor = new TalonFX(1);`];
+            const inits = [`motor.getConfigurator().apply(new TalonFXConfiguration());`];
+            
+            const classCode = this.generateClass(
+                config.className,
+                `${basePkg}.subsystems`,
+                imports,
+                fields,
+                inits,
+                [], 
+                framework
+            );
+            
+            srcFolder.file(`${config.className}.java`, classCode);
+        }
+
         const content = await zip.generateAsync({ type: "blob" });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(content);
-        link.download = "robot_code.zip";
-        link.click();
+        const url = URL.createObjectURL(content);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "ROBOGEN_Export.zip";
+        a.click();
     }
 }
-
-export const robotGenerator = new CodeGenerator();

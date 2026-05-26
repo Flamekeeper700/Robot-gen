@@ -1,171 +1,111 @@
+:root {
+    --bg-dark: #1e1e24;
+    --bg-panel: #2b2b36;
+    --accent: #4CAF50;
+    --text-main: #f8f8f2;
+    --border: #444;
+}
+
 body {
-    font-family: system-ui, -apple-system, sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
     margin: 0;
     padding: 20px;
-}
-
-.app-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Tab Management Navigation Header Layout */
-.tab-container {
     display: flex;
-    border-bottom: 2px solid #2d2d2d;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
     margin-bottom: 20px;
+}
+
+/* Tabs Styling */
+.tabs {
+    display: flex;
     gap: 5px;
+    margin-bottom: -1px;
 }
 
 .tab-btn {
-    background: #1a1a1a;
+    background: var(--bg-dark);
     color: #888;
-    border: 1px solid #2d2d2d;
+    border: 1px solid var(--border);
     border-bottom: none;
-    padding: 12px 24px;
+    padding: 10px 20px;
     cursor: pointer;
+    border-radius: 8px 8px 0 0;
     font-weight: bold;
-    border-radius: 6px 6px 0 0;
     transition: all 0.2s ease;
 }
 
 .tab-btn:hover {
-    color: #fff;
-    background: #252525;
+    background: #333;
+    color: var(--text-main);
 }
 
 .tab-btn.active {
-    background: #2d2d2d;
-    color: #00ff66;
-    border-color: #2d2d2d;
+    background: var(--bg-panel);
+    color: var(--accent);
+    border-color: var(--border);
 }
 
-/* Visibility Switching Controls */
-.tab-panel {
+.add-btn {
+    background: #3a3a48;
+    color: white;
+}
+
+/* Config Section Container */
+#tab-contents {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 0 8px 8px 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.tab-content {
     display: none;
-}
-
-.tab-panel.active {
-    display: block;
-}
-
-/* Configuration Grid Formatting */
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.field-desc {
-    margin: 0 0 5px 0;
-    font-size: 0.85em;
-    color: #aaa;
-}
-
-input[type="text"], input[type="number"], select {
-    background: #2d2d2d;
-    color: #fff;
-    border: 1px solid #444;
-    padding: 8px;
-    border-radius: 4px;
-}
-
-pre {
-    background: #1e1e1e;
-    padding: 15px;
-    border-radius: 6px;
-    overflow-x: auto;
-    border: 1px solid #2d2d2d;
-}
-
-/* Subsystem Card UI Layout */
-.subsystem-card {
-    background: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-}
-
-.subsystem-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.subsystem-name-input {
-    font-size: 1.25em;
-    font-weight: bold;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #444;
-    color: #fff;
-    padding: 5px;
-}
-
-.subsystem-name-input:focus {
-    outline: none;
-    border-bottom-color: #00ff66;
-}
-
-/* Hardware List Inside Subsystems */
-.hardware-list {
-    display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 15px;
 }
 
-.hardware-row {
-    background: #252525;
-    border-left: 4px solid #00ff66;
-    padding: 15px;
+.tab-content.active {
+    display: flex;
+}
+
+input, select {
+    padding: 10px;
     border-radius: 4px;
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-    gap: 15px;
-    align-items: center;
+    border: 1px solid var(--border);
+    background: #1a1a1e;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Buttons */
-.btn-delete {
-    background: #cc3333;
+.primary-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: var(--accent);
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 1.1em;
     cursor: pointer;
-}
-
-.btn-delete:hover {
-    background: #ff3333;
-}
-
-.primary-btn, #add-subsystem-btn {
-    background: #00ff66;
-    color: #121212;
-    border: none;
-    padding: 10px 20px;
     font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-.primary-btn:hover, #add-subsystem-btn:hover {
-    background: #00cc55;
+.primary-btn:hover {
+    background: #45a049;
 }

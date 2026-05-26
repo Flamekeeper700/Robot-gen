@@ -3,26 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Code Generator</title>
+    <title>ROBOGEN - Universal Code Generator</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>Universal API Configurator</h1>
+        <h1>ROBOGEN API Configurator</h1>
+        <div class="framework-select">
+            <label for="framework-selector">Target Framework:</label>
+            <select id="framework-selector">
+                <option value="command-v3">WPILib Command-Based (v3 Architecture)</option>
+                <option value="timed">WPILib TimedRobot</option>
+                <option value="custom">Custom JSON Framework</option>
+            </select>
+        </div>
     </header>
 
     <main id="app-container">
-        <div class="config-section">
-            <label for="motor-type-selector">Select Hardware:</label>
-            <select id="motor-type-selector"></select>
-            
-            <label for="current-limit">Current Limit (Amps):</label>
-            <input type="number" id="current-limit" value="40">
-            
-            <button id="generate-btn">Generate Subsystem</button>
+        <div class="tabs" id="subsystem-tabs">
+            <button class="tab-btn active" data-target="tab-0">Subsystem 1</button>
+            <button class="tab-btn add-btn" id="add-subsystem-btn">+</button>
+        </div>
+        
+        <div id="tab-contents">
+            <div id="tab-0" class="tab-content active config-section">
+                <label>Class Name:</label>
+                <input type="text" class="class-name-input" value="DriveSubsystem">
+                
+                <label>Select Hardware / API:</label>
+                <select class="api-type-selector"></select>
+                
+                <label>Current Limit (Amps):</label>
+                <input type="number" class="current-limit" value="40">
+            </div>
         </div>
     </main>
+
+    <footer>
+        <button id="generate-btn" class="primary-btn">Generate Project</button>
+    </footer>
 
     <script type="module" src="js/parser.js"></script>
     <script type="module" src="js/generator.js"></script>
