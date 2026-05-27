@@ -9,44 +9,67 @@ import java.util.jar.JarFile;
 public class Reflector {
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.out.println("Usage: java Reflector.java <path-to-jar> <output-json-path> [package-filter]");
+            System.out.println("Usage: java Reflector.java <jar-paths-separated-by-delimiter> <output-json-path> [package-filters-separated-by-comma]");
             System.exit(1);
         }
 
-        String jarPath = args[0];
+        String[] jarPaths = args[0].split(System.getProperty("path.separator"));
         String outputPath = args[1];
-        String packageFilter = args.length > 2 ? args[2] : "";
+        String[] filters = args.length > 2 && !args[2].isEmpty() ? args[2].split(",") : new String[0];
 
         StringBuilder json = new StringBuilder("{\n  \"classes\": {\n");
         boolean firstClass = true;
 
-        try (JarFile jarFile = new JarFile(jarPath);
-             URLClassLoader cl = new URLClassLoader(new URL[]{new URL("jar:file:" + jarPath + "!/")})) {
-            
-            Enumeration<JarEntry> entries = jarFile.entries();
-            while (entries.hasMoreElements()) {
-                JarEntry entry = entries.nextElement();
-                if (entry.isDirectory() || !entry.getName().endsWith(".class") || entry.getName().contains("$")) {
-                    continue; // Skip directories, inner classes, and non-class files
-                }
+        try {
+            // Build a unified ClassLoader containing ALL discovered JAR files for cross-referencing
+            URL[] urls = new URL[jarPaths.length];
+            for (int i = 0; i < jarPaths.length; i++) {
+                urls[i] = new URL("jar:file:" + jarPaths[i] + "!/");
+            }
 
-                // Convert file path to binary class name
-                String className = entry.getName().replace('/', '.').substring(0, entry.getName().length() - 6);
-                
-                if (!packageFilter.isEmpty() && !className.startsWith(packageFilter)) {
-                    continue;
-                }
+            try (URLClassLoader cl = new URLClassLoader(urls)) {
+                // Iterate through each JAR to read its contents
+                for (String jarPath : jarPaths) {
+                    if (jarPath.trim().isEmpty()) continue;
+                    
+                    try (JarFile jarFile = new JarFile(jarPath)) {
+                        Enumeration<JarEntry> entries = jarFile.entries();
+                        
+                        while (entries.hasMoreElements()) {
+                            JarEntry entry = entries.nextElement();
+                            if (entry.isDirectory() || !entry.getName().endsWith(".class") || entry.getName().contains("$")) {
+                                continue; 
+                            }
 
-                try {
-                    Class<?> clazz = cl.loadClass(className);
-                    if (!Modifier.isPublic(clazz.getModifiers())) continue;
+                            String className = entry.getName().replace('/', '.').substring(0, entry.getName().length() - 6);
+                            
+                            // Check filters if any are configured
+                            if (filters.length > 0) {
+                                boolean matches = false;
+                                for (String filter : filters) {
+                                    if (className.startsWith(filter)) {
+                                        matches = true;
+                                        break;
+                                    }
+                                }
+                                if (!matches) continue;
+                            }
 
-                    if (!firstClass) json.append(",\n");
-                    firstClass = false;
+                            try {
+                                Class<?> clazz = cl.loadClass(className);
+                                if (!Modifier.isPublic(clazz.getModifiers())) continue;
 
-                    appendClassJson(json, clazz);
-                } catch (Throwable e) {
-                    // Skip classes that fail to load due to missing dependencies
+                                if (!firstClass) json.append(",\n");
+                                firstClass = false;
+
+                                appendClassJson(json, clazz);
+                            } catch (Throwable e) {
+                                // Handled internally to catch lingering edge mismatches
+                            }
+                        }
+                    } catch (Exception e) {
+                        System.err.println("⚠️ Error processing JAR file: " + jarPath + " - " + e.getMessage());
+                    }
                 }
             }
 
@@ -54,7 +77,7 @@ public class Reflector {
 
             try (FileWriter writer = new FileWriter(outputPath)) {
                 writer.write(json.toString());
-                System.out.println("✅ Successfully reflected JAR data to: " + outputPath);
+                System.out.println("   ✅ Successfully wrote definition configurations.");
             }
 
         } catch (Exception e) {
@@ -66,7 +89,6 @@ public class Reflector {
         String simpleName = clazz.getSimpleName();
         String type = clazz.isEnum() ? "enum" : (clazz.isInterface() ? "interface" : "class");
         
-        // Determine category matching your current rules
         String category = "utility";
         String lowerName = simpleName.toLowerCase();
         if (lowerName.contains("motor") || simpleName.contains("Talon") || simpleName.contains("Spark") || simpleName.contains("FX") || simpleName.contains("SRX")) {
@@ -77,12 +99,12 @@ public class Reflector {
 
         json.append("    \"").append(simpleName).append("\": {\n");
         json.append("      \"name\": \"").append(simpleName).append("\",\n");
-        json.append("      \"package\": \"").append(clazz.getPackage().getName()).append("\",\n");
+        json.append("      \"package\": \"").append(clazz.getPackage() != null ? clazz.getPackage().getName() : "").append("\",\n");
         json.append("      \"type\": \"").append(type).append("\",\n");
         json.append("      \"category\": \"").append(category).append("\",\n");
         json.append("      \"imports\": [\"").append(clazz.getName()).append("\"],\n");
 
-        // Extract Constructors
+        // Constructors
         json.append("      \"constructors\": [\n");
         Constructor<?>[] constructors = clazz.getConstructors();
         for (int i = 0; i < constructors.length; i++) {
@@ -98,13 +120,12 @@ public class Reflector {
         }
         json.append("\n      ],\n");
 
-        // Extract Methods
+        // Methods
         json.append("      \"methods\": {\n");
         Method[] methods = clazz.getMethods();
         Map<String, Method> uniqueMethods = new HashMap<>();
         for (Method m : methods) {
             if (Modifier.isPublic(m.getModifiers()) && !m.getDeclaringClass().equals(Object.class)) {
-                // Keep unique signatures if overloaded, or just simple name mapping
                 uniqueMethods.put(m.getName(), m);
             }
         }
@@ -125,9 +146,9 @@ public class Reflector {
         }
         json.append("\n      },\n");
 
-        // Extract Fields (Member Variables / Constants) with full Type Safety!
+        // Fields
         json.append("      \"fields\": [\n");
-        Field[] fields = clazz.getFields(); // Gets public fields including inherited ones
+        Field[] fields = clazz.getFields();
         int fIdx = 0;
         for (Field f : fields) {
             if (Modifier.isPublic(f.getModifiers())) {
