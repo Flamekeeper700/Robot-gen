@@ -51,7 +51,7 @@ function generateParamTemplateString(parameters) {
 /**
  * Universal dynamic parser equipped to ingest both raw Javadoc search arrays and standard JSON Vendor Manifests.
  */
-function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = false) {
+function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = false, fieldOverrides = {}) {
     const classes = {};
     const extractor = config.classExtractor;
 
@@ -64,14 +64,12 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
     let matchedTypesCount = 0;
     
     for (const item of rootData) {
-        // Handle Javadoc naming mappings ('l' inside elements) vs explicit configuration mappings
         let className = isJavadoc ? item.l : resolvePath(item, extractor.classNamePath);
         let rawPackage = isJavadoc ? (item.p || extractor.packageName || "") : (resolvePath(item, extractor.packageNamePath) || extractor.packageName || "");
         
         if (!className || !rawPackage) continue;
         if (className.includes('/')) continue; 
 
-        // Clean generic layouts
         className = className.replace(/<[^>]*>/g, '').trim();
 
         if (extractor.packageFilters?.length > 0) {
@@ -81,7 +79,6 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
 
         const resolvedImport = `${rawPackage}.${className}`;
 
-        // Establish core structural details
         let structuralType = "class"; 
         if (item.g || className.endsWith("Listener") || className.endsWith("Interface") || item.type === "interface") {
             structuralType = "interface";
@@ -125,8 +122,17 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
 
             // Extract Fields & potential Enum options
             if (signature && !signature.includes('(')) {
-                if (!classes[parentClassName].fields.includes(signature)) {
-                    classes[parentClassName].fields.push(signature);
+                // Check if we have a type override for this specific field in this class
+                const overrideType = fieldOverrides[parentClassName]?.[signature] || "unknown";
+
+                const fieldObject = {
+                    name: signature,
+                    type: overrideType
+                };
+
+                const exists = classes[parentClassName].fields.some(f => f.name === signature);
+                if (!exists) {
+                    classes[parentClassName].fields.push(fieldObject);
                     fieldCount++;
                 }
                 continue;
@@ -155,7 +161,6 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
             }
         }
     } else if (!isJavadoc) {
-        // If it's a standalone JSON manifest (Vendor manifest data), iterate internal parameters
         for (const target of rootData) {
             const name = resolvePath(target, extractor.classNamePath);
             if (!name || !classes[name]) continue;
@@ -179,15 +184,17 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
                 }
             }
 
-            // Extract Fields (supports "fields" path or fallback to "properties")
+            // Extract Fields from standard JSON manifests
             const discoveredFields = resolvePath(target, extractor.fieldsPath || "fields") || resolvePath(target, "properties") || [];
             if (Array.isArray(discoveredFields)) {
                 for (const field of discoveredFields) {
                     const fieldName = typeof field === 'string' ? field : field.name;
+                    const fieldType = field.type || fieldOverrides[name]?.[fieldName] || "unknown";
                     if (!fieldName) continue;
                     
-                    if (!classes[name].fields.includes(fieldName)) {
-                        classes[name].fields.push(fieldName);
+                    const exists = classes[name].fields.some(f => f.name === fieldName);
+                    if (!exists) {
+                        classes[name].fields.push({ name: fieldName, type: fieldType });
                         fieldCount++;
                     }
                 }
@@ -195,27 +202,26 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
         }
     }
 
-    // Post Processing & Enum conversion utilizing the native compiler heuristic
+    // Post Processing & Enum conversion
     for (const className of Object.keys(classes)) {
         const typeRef = classes[className];
         const isJavaEnum = typeRef.methods["values"] && typeRef.methods["valueOf"];
 
         if (isJavaEnum) {
             typeRef.type = "enum";
-            typeRef.enumValues = [...typeRef.fields];
+            // Map objects to names for the enum value setup
+            typeRef.enumValues = typeRef.fields.map(f => f.name);
             typeRef.constructors = [];
-            delete typeRef.fields; // Safe to delete here as they have been moved to enumValues
+            delete typeRef.fields;
             delete typeRef.methods["values"];
             delete typeRef.methods["valueOf"];
         } else {
             if (typeRef.type === "class" && typeRef.constructors.length === 0) {
-                // Fallback default constructor parameters configuration
                 typeRef.constructors.push({
                     parameters: [],
                     template: `${className} \${instanceName} = new ${className}();`
                 });
             }
-            // Removed: delete typeRef.fields; -> This is what was wiping out the member variables.
         }
     }
 
@@ -228,6 +234,7 @@ async function main() {
 
     const configsDir = path.join(process.cwd(), 'configs');
     const sourcesPath = path.join(configsDir, 'sources.json');
+    const overridesPath = path.join(configsDir, 'field_overrides.json');
     const outputPath = path.join(configsDir, 'definitions.json');
 
     if (!fs.existsSync(sourcesPath)) {
@@ -237,6 +244,17 @@ async function main() {
 
     const { sources } = JSON.parse(fs.readFileSync(sourcesPath, 'utf-8'));
     
+    // Load optional overrides map if it exists
+    let fieldOverrides = {};
+    if (fs.existsSync(overridesPath)) {
+        try {
+            fieldOverrides = JSON.parse(fs.readFileSync(overridesPath, 'utf-8'));
+            console.log("   📂 Successfully loaded field type overrides map.");
+        } catch (e) {
+            console.warn("   ⚠️ Warning: field_overrides.json detected but could not be parsed.");
+        }
+    }
+
     const masterDefinitions = {
         metadata: {
             generatedAt: new Date().toISOString(),
@@ -273,7 +291,7 @@ async function main() {
                 rootData = source.classExtractor.rootPath ? resolvePath(rawData, source.classExtractor.rootPath) : rawData;
             }
 
-            const translatedClasses = parseSourceDynamically(rootData, source, rawMembers, isJavadocIndex);
+            const translatedClasses = parseSourceDynamically(rootData, source, rawMembers, isJavadocIndex, fieldOverrides);
             if (Object.keys(translatedClasses).length > 0) {
                 Object.assign(masterDefinitions.classes, translatedClasses);
                 masterDefinitions.metadata.apisProcessed.push(source.name);
