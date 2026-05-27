@@ -1,45 +1,38 @@
-name: Scheduled API Configuration Update
+name: Automated API Sync
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight UTC
-  workflow_dispatch: # Allows manual trigger button from GitHub UI
-
-# Explicit environment flag to bypass the deprecation warnings right now
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    - cron: '0 0 * * 0' # Run weekly
+  workflow_dispatch: # Allow running manually
 
 jobs:
-  update-assets:
+  sync:
     runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write 
-
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5 
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js Environment
-        uses: actions/setup-node@v5
+      - name: Set up Java JDK
+        uses: actions/setup-java@v4
         with:
-          node-version: '24' 
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install node-fetch
 
-      - name: Execute Config Update App
-        run: npm run update
+      - name: Execute Reflection Sync
+        run: node configs/update_configs.js
 
-      - name: Commit and Push Changes if Updated
+      - name: Commit and Push Updates
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add configs/
-          
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: auto-update universal api definitions [skip ci]"
-            git push
-          else
-            echo "No changes detected in remote APIs. Skipping commit."
-          fi
+          git add configs/definitions.json
+          git commit -m "chore: automated hardware definition tracking refresh [skip ci]" || exit 0
+          git push
