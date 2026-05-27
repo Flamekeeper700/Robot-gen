@@ -1,30 +1,34 @@
 import fs from 'fs';
 import path from 'path';
-import fetch from 'node-fetch';
+import os from 'os';
 import { execSync } from 'child_process';
 
-// Helper to download files securely using standard browser headers
-async function downloadFile(url, dest) {
-    const res = await fetch(url, {
-        headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+/**
+ * Traverses the hashed and nested Gradle cache directories to locate the true binary compiled .jar
+ */
+function findJarInGradleCache(groupId, artifactId, version) {
+    const cacheRoot = path.join(os.homedir(), '.gradle', 'caches', 'modules-2', 'files-2.1');
+    if (!fs.existsSync(cacheRoot)) return null;
+
+    const groupDir = path.join(cacheRoot, groupId, artifactId, version);
+    if (!fs.existsSync(groupDir)) return null;
+
+    // Recurse through the unique hashes Gradle gives directories
+    const items = fs.readdirSync(groupDir, { recursive: true });
+    for (const item of items) {
+        if (item.endsWith('.jar') && !item.endsWith('-sources.jar') && !item.endsWith('-javadoc.jar')) {
+            return path.join(groupDir, item);
         }
-    });
-    
-    if (!res.ok) throw new Error(`Server returned status ${res.status}: Failed to download ${url}`);
-    
-    const fileStream = fs.createWriteStream(dest);
-    await new Promise((resolve, reject) => {
-        res.body.pipe(fileStream);
-        res.body.on("error", reject);
-        fileStream.on("finish", resolve);
-    });
+    }
+    return null;
 }
 
 async function main() {
-    console.log("🏁 Starting Dynamic VendorDep Reflection Engine...");
+    console.log("🏁 Starting Super-Charged Local Gradle Reflection Engine...");
 
-    const vendordepsDir = path.join(process.cwd(), 'robot', 'testing', 'vendordeps');
+    // Pointed explicitly to your nested robot project structure
+    const robotProjectDir = path.join(process.cwd(), 'robot', 'testing');
+    const vendordepsDir = path.join(robotProjectDir, 'vendordeps');
     const configsDir = path.join(process.cwd(), 'configs');
     const outputPath = path.join(configsDir, 'definitions.json');
 
@@ -36,67 +40,63 @@ async function main() {
     console.log("🛠️ Compiling Reflector.java tool...");
     execSync('javac Reflector.java');
 
-    // 1. Gather all targets from the vendordeps folder dynamically
     const tasks = [];
 
+    // 1. Process all third-party vendordeps out of robot/testing/vendordeps
     if (fs.existsSync(vendordepsDir)) {
         const files = fs.readdirSync(vendordepsDir).filter(f => f.endsWith('.json'));
-        
         for (const file of files) {
             try {
                 const depData = JSON.parse(fs.readFileSync(path.join(vendordepsDir, file), 'utf-8'));
                 const javaDep = depData.javaDependencies?.[0];
-                
                 if (!javaDep) continue;
 
-                // Normalize Maven root url structure
-                let mavenRoot = depData.mavenUrls?.[0];
-                if (!mavenRoot.endsWith('/')) mavenRoot += '/';
-                
-                // Add "release/" subdirectory if not explicitly present in vendor URL string
-                if (!mavenRoot.includes('/release/')) {
-                    mavenRoot += 'release/';
+                const localJarPath = findJarInGradleCache(javaDep.groupId, javaDep.artifactId, javaDep.version);
+                if (localJarPath) {
+                    tasks.push({
+                        name: depData.name,
+                        jarPath: localJarPath,
+                        filter: javaDep.groupId.split('.').slice(0, 3).join('.')
+                    });
+                } else {
+                    console.warn(`⚠️ Could not find cached binary for ${depData.name} in Gradle cache.`);
                 }
-
-                const groupPath = javaDep.groupId.replace(/\./g, '/');
-                const artifactId = javaDep.artifactId;
-                const version = javaDep.version;
-
-                // Construct standard Maven artifact path
-                const jarUrl = `${mavenRoot}${groupPath}/${artifactId}/${version}/${artifactId}-${version}.jar`;
-
-                tasks.push({
-                    name: depData.name,
-                    jarUrl: jarUrl,
-                    filter: javaDep.groupId.split('.').slice(0, 3).join('.') // e.g., "com.revrobotics" or "com.ctre"
-                });
             } catch (e) {
-                console.warn(`⚠️ Failed to parse vendordep file: ${file}`, e.message);
+                console.warn(`⚠️ Failed to map vendordep entry: ${file}`, e.message);
             }
         }
+    } else {
+        console.error(`❌ Error: Vendordeps folder not found at: ${vendordepsDir}`);
     }
 
-    // 2. Add WPILib as a hardcoded task since it isn't a traditional standalone vendordep
-    tasks.push({
-        name: "WPILib",
-        jarUrl: "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibj/wpilibj-java/2026.1.1/wpilibj-java-2026.1.1.jar",
-        filter: "edu.wpi.first.wpilibj"
-    });
+    // 2. Discover WPILib core jar dynamically by scanning the cache root
+    const wpiCacheBase = path.join(os.homedir(), '.gradle', 'caches', 'modules-2', 'files-2.1', 'edu.wpi.first.wpilibj', 'wpilibj-java');
+    if (fs.existsSync(wpiCacheBase)) {
+        const versions = fs.readdirSync(wpiCacheBase);
+        if (versions.length > 0) {
+            // Grab the first available version matching what your project fetched
+            const wpiVersion = versions[0];
+            const wpiJar = findJarInGradleCache('edu.wpi.first.wpilibj', 'wpilibj-java', wpiVersion);
+            if (wpiJar) {
+                tasks.push({
+                    name: "WPILib",
+                    jarPath: wpiJar,
+                    filter: "edu.wpi.first.wpilibj"
+                });
+            }
+        }
+    } else {
+        console.warn("⚠️ Warning: WPILib directory cache targets not discovered yet. Run gradlew compilation first.");
+    }
 
-    // 3. Process every gathered target
+    // 3. Reflect all discovered local binaries
     for (const task of tasks) {
         console.log(`\n--------------------------------------------------`);
-        console.log(`📥 Processing: ${task.name}`);
-        console.log(`🔗 Target URL: ${task.jarUrl}`);
+        console.log(`🧠 Inspecting Local Cache Artifact: ${task.name}`);
         
-        const tempJar = path.join(process.cwd(), 'temp_target.jar');
         const tempJson = path.join(process.cwd(), 'temp_output.json');
-
         try {
-            await downloadFile(task.jarUrl, tempJar);
-            console.log(`🧠 Reflecting compiled byte data structure definitions...`);
-            
-            execSync(`java Reflector "${tempJar}" "${tempJson}" "${task.filter}"`);
+            execSync(`java Reflector "${task.jarPath}" "${tempJson}" "${task.filter}"`);
 
             if (fs.existsSync(tempJson)) {
                 const schemaData = JSON.parse(fs.readFileSync(tempJson, 'utf-8'));
@@ -104,11 +104,9 @@ async function main() {
                 masterDefinitions.metadata.apisProcessed.push(task.name);
                 console.log(`   🎉 Successfully updated definitions for "${task.name}".`);
             }
-
         } catch (err) {
-            console.error(`   ❌ Pipeline failure for ${task.name}:`, err.message);
+            console.error(`   ❌ Reflection failed for ${task.name}:`, err.message);
         } finally {
-            if (fs.existsSync(tempJar)) fs.unlinkSync(tempJar);
             if (fs.existsSync(tempJson)) fs.unlinkSync(tempJson);
         }
     }

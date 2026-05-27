@@ -17,17 +17,26 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: 'gradle' # Automatically caches downloaded vendor JARs between workflow runs
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '24' # Set to Node 24 to match the runner environment standard
+          node-version: '24' # Uses the Node 24 runtime standard
 
       - name: Install Dependencies
         run: npm install node-fetch
 
-      - name: Execute Reflection Sync
-        run: node update_configs.js
+      - name: Resolve and Download Robot Dependencies
+        # Navigates into your active testing project to download WPILib, CTRE, and REV via Gradle
+        run: |
+          cd robot/testing
+          chmod +x gradlew
+          ./gradlew compileJava --no-daemon
+
+      - name: Execute Local Reflection Sync
+        # Runs from root where Reflector.java and your configs folder sit
+        run: node configs/update_configs.js
 
       - name: Commit and Push Updates
         run: |
