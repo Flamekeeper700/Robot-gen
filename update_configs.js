@@ -20,7 +20,7 @@ function findJarInGradleCache(groupId, artifactId, version) {
 }
 
 async function main() {
-    console.log("🏁 Starting Unified Dependency Reflection Engine...");
+    console.log("🏁 Starting Universal Namespace Reflection Engine...");
 
     const robotProjectDir = path.join(process.cwd(), 'robot', 'testing');
     const vendordepsDir = path.join(robotProjectDir, 'vendordeps');
@@ -44,13 +44,25 @@ async function main() {
         for (const file of files) {
             try {
                 const depData = JSON.parse(fs.readFileSync(path.join(vendordepsDir, file), 'utf-8'));
-                const javaDep = depData.javaDependencies?.[0];
-                if (!javaDep) continue;
-
-                const localJarPath = findJarInGradleCache(javaDep.groupId, javaDep.artifactId, javaDep.version);
-                if (localJarPath) {
-                    jarPaths.push(localJarPath);
-                    filters.push(javaDep.groupId.split('.').slice(0, 3).join('.'));
+                if (!depData.javaDependencies) continue;
+                
+                let processedAny = false;
+                for (const javaDep of depData.javaDependencies) {
+                    const localJarPath = findJarInGradleCache(javaDep.groupId, javaDep.artifactId, javaDep.version);
+                    if (localJarPath) {
+                        jarPaths.push(localJarPath);
+                        
+                        // FIXED: Grab only the root organizational namespace (e.g. "com.revrobotics" or "org.littletonrobotics")
+                        // by slicing the first two segments. This prevents trailing artifact IDs from filtering out sub-packages.
+                        const rootPackage = javaDep.groupId.split('.').slice(0, 2).join('.');
+                        if (!filters.includes(rootPackage)) {
+                            filters.push(rootPackage);
+                        }
+                        processedAny = true;
+                    }
+                }
+                
+                if (processedAny) {
                     masterDefinitions.metadata.apisProcessed.push(depData.name);
                 }
             } catch (e) {
@@ -59,7 +71,7 @@ async function main() {
         }
     }
 
-    // 2. Add WPILib Core to Classpath Pipeline
+    // 2. Add WPILib Core Namespace
     const wpiCacheBase = path.join(os.homedir(), '.gradle', 'caches', 'modules-2', 'files-2.1', 'edu.wpi.first.wpilibj', 'wpilibj-java');
     if (fs.existsSync(wpiCacheBase)) {
         const versions = fs.readdirSync(wpiCacheBase);
@@ -68,7 +80,7 @@ async function main() {
             const wpiJar = findJarInGradleCache('edu.wpi.first.wpilibj', 'wpilibj-java', wpiVersion);
             if (wpiJar) {
                 jarPaths.push(wpiJar);
-                filters.push("edu.wpi.first.wpilibj");
+                filters.push("edu.wpi.first"); // Captures edu.wpi.first.wpilibj, edu.wpi.first.hal, etc.
                 masterDefinitions.metadata.apisProcessed.push("WPILib");
             }
         }
@@ -79,17 +91,17 @@ async function main() {
         return;
     }
 
-    // 3. Flatten paths using the current OS path separator delimiter (':' on Linux, ';' on Windows)
+    // 3. Flatten paths using the current OS path separator delimiter
     const pathDelimiter = os.platform() === 'win32' ? ';' : ':';
     const combinedJarClasspath = jarPaths.join(pathDelimiter);
     const combinedFilters = filters.join(',');
 
     console.log(`\n--------------------------------------------------`);
     console.log(`🧠 Executing Master Reflection Pass over ${jarPaths.length} libraries...`);
+    console.log(`🔍 Whitelisted Package Filters: ${filters.join(', ')}`);
     
     const tempJson = path.join(process.cwd(), 'temp_output.json');
     try {
-        // Run Reflector with all JARs loaded simultaneously
         execSync(`java Reflector "${combinedJarClasspath}" "${tempJson}" "${combinedFilters}"`);
 
         if (fs.existsSync(tempJson)) {
