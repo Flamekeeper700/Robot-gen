@@ -1,8 +1,14 @@
+import java.io.File;
 import java.io.FileWriter;
-import java.lang.reflect.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.*;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
@@ -24,7 +30,8 @@ public class Reflector {
             // Build a unified ClassLoader containing ALL discovered JAR files for cross-referencing
             URL[] urls = new URL[jarPaths.length];
             for (int i = 0; i < jarPaths.length; i++) {
-                urls[i] = new URL("jar:file:" + jarPaths[i] + "!/");
+                // Safely build cross-platform URLs using the File API
+                urls[i] = new File(jarPaths[i]).toURI().toURL();
             }
 
             try (URLClassLoader cl = new URLClassLoader(urls)) {
@@ -63,8 +70,12 @@ public class Reflector {
                                 firstClass = false;
 
                                 appendClassJson(json, clazz);
+                                
+                            } catch (NoClassDefFoundError | ClassNotFoundException e) {
+                                // Expected: Skips classes with missing transitive dependencies safely
                             } catch (Throwable e) {
-                                // Handled internally to catch lingering edge mismatches
+                                // Logs fatal errors (like UnsupportedClassVersionError) instead of hiding them
+                                System.err.println("⚠️ Fatal error loading " + className + ": " + e.getClass().getSimpleName());
                             }
                         }
                     } catch (Exception e) {
