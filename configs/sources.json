@@ -2,7 +2,7 @@
   "sources": [
     {
       "name": "WPILib",
-      "jarUrl": "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibj/wpilibj-java/2026.2.1/wpilibj-java-2026.2.1.jar",
+      "jarUrl": "https://frcmaven.wpi.edu/ui/native/release/edu/wpi/first/wpilibj/wpilibj-java/2026.2.2/wpilibj-java-2026.2.2.jar",
       "filter": "edu.wpi.first.wpilibj"
     },
     {
