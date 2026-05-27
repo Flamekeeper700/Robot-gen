@@ -35,13 +35,13 @@ jobs:
           ./gradlew compileJava --no-daemon
 
       - name: Execute Local Reflection Sync
-        # FIXED: Running update_configs.js directly from the root directory
-        run: node update_configs.js
+        # Runs from root where Reflector.java and your configs folder sit
+        run: node configs/update_configs.js
 
       - name: Commit and Push Updates
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add definitions.json
+          git add configs/definitions.json  # FIXED: Pointing back to the configs folder
           git commit -m "chore: automated hardware definition tracking refresh [skip ci]" || exit 0
           git push
