@@ -2,45 +2,18 @@
   "sources": [
     {
       "name": "WPILib",
-      "url": "https://github.wpilib.org/allwpilib/docs/release/java/type-search-index.js",
-      "isJavadocIndex": true,
-      "classExtractor": {
-        "rootPath": "",
-        "classNamePath": "l",
-        "methodNameSource": "members",
-        "methodNamePath": "n",
-        "returnTypePath": "t",
-        "parameterPath": "p",
-        "packageFilters": []
-      }
+      "jarUrl": "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibj/wpilibj-java/2026.2.1/wpilibj-java-2026.2.1.jar",
+      "filter": "edu.wpi.first.wpilibj"
     },
     {
       "name": "CTRE",
-      "url": "https://api.ctr-electronics.com/phoenix6/stable/java/type-search-index.js",
-      "isJavadocIndex": true,
-      "classExtractor": {
-        "rootPath": "",
-        "classNamePath": "l",
-        "methodNameSource": "members",
-        "methodNamePath": "n",
-        "returnTypePath": "t",
-        "parameterPath": "p",
-        "packageFilters": []
-      }
+      "jarUrl": "https://maven.ctr-electronics.com/release/com/ctre/phoenix6/api-java/24.2.0/api-java-24.2.0.jar",
+      "filter": "com.ctre.phoenix6"
     },
     {
       "name": "REV",
-      "url": "https://codedocs.revrobotics.com/java/type-search-index.js",
-      "isJavadocIndex": true,
-      "classExtractor": {
-        "rootPath": "",
-        "classNamePath": "l",
-        "methodNameSource": "members",
-        "methodNamePath": "n",
-        "returnTypePath": "t",
-        "parameterPath": "p",
-        "packageFilters": []
-      }
+      "jarUrl": "https://maven.revrobotics.com/release/com/revrobotics/frc/REVLib-java/2026.1.0/REVLib-java-2026.1.0.jar",
+      "filter": "com.revrobotics"
     }
   ]
 }
