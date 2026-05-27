@@ -2,7 +2,7 @@
   "sources": [
     {
       "name": "WPILib",
-      "jarUrl": "https://frcmaven.wpi.edu/ui/native/release/edu/wpi/first/wpilibj/wpilibj-java/2026.2.2/wpilibj-java-2026.2.2.jar",
+      "jarUrl": "https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpilibj/wpilibj-java/2026.1.1/wpilibj-java-2026.1.1.jar",
       "filter": "edu.wpi.first.wpilibj"
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "name": "REV",
-      "jarUrl": "https://maven.revrobotics.com/release/com/revrobotics/frc/REVLib-java/2026.1.0/REVLib-java-2026.1.0.jar",
+      "jarUrl": "https://maven.revrobotics.com/release/com/revrobotics/frc/REVLib-java/2026.0.5/REVLib-java-2026.0.5.jar",
       "filter": "com.revrobotics"
     }
   ]

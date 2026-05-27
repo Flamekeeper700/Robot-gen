@@ -4,8 +4,16 @@ import fetch from 'node-fetch';
 import { execSync } from 'child_process';
 
 async function downloadFile(url, dest) {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Failed to download ${url}`);
+    // Adding a standard browser agent header skips the automated scraper blocks 
+    // enforced by the WPILib and REV Maven gateways.
+    const res = await fetch(url, {
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        }
+    });
+    
+    if (!res.ok) throw new Error(`Server returned status ${res.status}: Failed to download ${url}`);
+    
     const fileStream = fs.createWriteStream(dest);
     await new Promise((resolve, reject) => {
         res.body.pipe(fileStream);
@@ -21,45 +29,52 @@ async function main() {
     const sourcesPath = path.join(configsDir, 'sources.json');
     const outputPath = path.join(configsDir, 'definitions.json');
 
+    if (!fs.existsSync(sourcesPath)) {
+        console.error(`❌ Dependency Error: sources.json configuration missing at: ${sourcesPath}`);
+        return;
+    }
+
     const { sources } = JSON.parse(fs.readFileSync(sourcesPath, 'utf-8'));
     const masterDefinitions = {
         metadata: { generatedAt: new Date().toISOString(), apisProcessed: [] },
         classes: {}
     };
 
-    // Compile the local java tool instantly
     console.log("🛠️ Compiling Reflector.java tool...");
     execSync('javac Reflector.java');
 
     for (const source of sources) {
-        console.log(`\n📥 Downloading JAR library for: ${source.name}`);
+        console.log(`\n--------------------------------------------------`);
+        console.log(`📥 Downloading JAR library for: ${source.name}`);
         const tempJar = path.join(process.cwd(), 'temp_target.jar');
         const tempJson = path.join(process.cwd(), 'temp_output.json');
 
         try {
             await downloadFile(source.jarUrl, tempJar);
-
             console.log(`🧠 Executing reflection analysis on binary artifacts...`);
-            // Run the Reflector tool: java Reflector <jar> <out> [filter]
+            
             execSync(`java Reflector "${tempJar}" "${tempJson}" "${source.filter || ''}"`);
 
             if (fs.existsSync(tempJson)) {
                 const schemaData = JSON.parse(fs.readFileSync(tempJson, 'utf-8'));
                 Object.assign(masterDefinitions.classes, schemaData.classes);
                 masterDefinitions.metadata.apisProcessed.push(source.name);
+                console.log(`   🎉 Successfully updated definitions for "${source.name}".`);
             }
 
         } catch (err) {
-            console.error(`❌ pipeline failure for ${source.name}:`, err.message);
+            console.error(`   ❌ Pipeline failure for ${source.name}:`, err.message);
         } finally {
-            // Clean up temporary workspace run files
             if (fs.existsSync(tempJar)) fs.unlinkSync(tempJar);
             if (fs.existsSync(tempJson)) fs.unlinkSync(tempJson);
         }
     }
 
-    // Output final product
-    fs.writeFileSync(outputPath, JSON.stringify(masterDefinitions, null, 2));
+    if (!fs.existsSync(configsDir)) {
+        fs.mkdirSync(configsDir, { recursive: true });
+    }
+
+    fs.writeFileSync(outputPath, JSON.stringify(masterDefinitions, null, 2), 'utf-8');
     console.log(`\n🎉 Process complete! Production configuration saved to: ${outputPath}`);
 }
 
