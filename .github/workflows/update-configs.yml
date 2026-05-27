@@ -27,7 +27,7 @@ jobs:
         run: npm install node-fetch
 
       - name: Execute Reflection Sync
-        run: node configs/update_configs.js
+        run: node update_configs.js
 
       - name: Commit and Push Updates
         run: |
