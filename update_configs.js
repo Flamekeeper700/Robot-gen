@@ -52,8 +52,6 @@ async function main() {
                     if (localJarPath) {
                         jarPaths.push(localJarPath);
                         
-                        // FIXED: Grab only the root organizational namespace (e.g. "com.revrobotics" or "org.littletonrobotics")
-                        // by slicing the first two segments. This prevents trailing artifact IDs from filtering out sub-packages.
                         const rootPackage = javaDep.groupId.split('.').slice(0, 2).join('.');
                         if (!filters.includes(rootPackage)) {
                             filters.push(rootPackage);
@@ -71,17 +69,32 @@ async function main() {
         }
     }
 
-    // 2. Add WPILib Core Namespace
-    const wpiCacheBase = path.join(os.homedir(), '.gradle', 'caches', 'modules-2', 'files-2.1', 'edu.wpi.first.wpilibj', 'wpilibj-java');
-    if (fs.existsSync(wpiCacheBase)) {
-        const versions = fs.readdirSync(wpiCacheBase);
-        if (versions.length > 0) {
-            const wpiVersion = versions[0];
-            const wpiJar = findJarInGradleCache('edu.wpi.first.wpilibj', 'wpilibj-java', wpiVersion);
-            if (wpiJar) {
-                jarPaths.push(wpiJar);
-                filters.push("edu.wpi.first"); // Captures edu.wpi.first.wpilibj, edu.wpi.first.hal, etc.
-                masterDefinitions.metadata.apisProcessed.push("WPILib");
+    // 2. Add ALL WPILib Core Namespaces (Math, Util, HAL, NTCore, etc.)
+    const cacheRoot = path.join(os.homedir(), '.gradle', 'caches', 'modules-2', 'files-2.1');
+    if (fs.existsSync(cacheRoot)) {
+        // Find any cached dependency groups that belong to the WPILib ecosystem
+        const groups = fs.readdirSync(cacheRoot).filter(g => g.startsWith('edu.wpi.first.'));
+        
+        for (const group of groups) {
+            const groupDir = path.join(cacheRoot, group);
+            const artifacts = fs.readdirSync(groupDir);
+            
+            for (const artifact of artifacts) {
+                // FRC libraries end in '-java'. We want to skip JNI/C++ headers to avoid cluttering the ClassLoader
+                if (artifact.endsWith('-java')) {
+                    const versions = fs.readdirSync(path.join(groupDir, artifact));
+                    if (versions.length > 0) {
+                        const version = versions[0];
+                        const wpiJar = findJarInGradleCache(group, artifact, version);
+                        if (wpiJar) {
+                            jarPaths.push(wpiJar);
+                            if (!filters.includes("edu.wpi.first")) {
+                                filters.push("edu.wpi.first");
+                                masterDefinitions.metadata.apisProcessed.push("WPILib Suite Complete");
+                            }
+                        }
+                    }
+                }
             }
         }
     }
