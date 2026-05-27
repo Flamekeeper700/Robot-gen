@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-27T17:19:04.206Z",
+    "generatedAt": "2026-05-27T17:25:02.042Z",
     "apisProcessed": [
       "AdvantageKit",
       "AndyMark AM Library",
@@ -15,6 +15,7 @@
       "StudicaLib",
       "ThriftyLib",
       "URCL",
+      "WPILib-New-Commands",
       "libgrapplefrc",
       "maplesim",
       "photonlib",
