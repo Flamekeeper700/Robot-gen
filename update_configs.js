@@ -113,6 +113,7 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
 
     let methodCount = 0;
     let constructorCount = 0;
+    let fieldCount = 0;
 
     // Process tracking components via structural arrays
     if (isJavadoc && Array.isArray(rawMembers)) {
@@ -126,6 +127,7 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
             if (signature && !signature.includes('(')) {
                 if (!classes[parentClassName].fields.includes(signature)) {
                     classes[parentClassName].fields.push(signature);
+                    fieldCount++;
                 }
                 continue;
             }
@@ -158,7 +160,7 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
             const name = resolvePath(target, extractor.classNamePath);
             if (!name || !classes[name]) continue;
 
-            // Check if configurations have designated raw methods mapped directly inside the JSON
+            // Extract Methods
             const discoveredMethods = resolvePath(target, extractor.methodsPath) || [];
             if (Array.isArray(discoveredMethods)) {
                 for (const method of discoveredMethods) {
@@ -176,6 +178,20 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
                     methodCount++;
                 }
             }
+
+            // Extract Fields (supports "fields" path or fallback to "properties")
+            const discoveredFields = resolvePath(target, extractor.fieldsPath || "fields") || resolvePath(target, "properties") || [];
+            if (Array.isArray(discoveredFields)) {
+                for (const field of discoveredFields) {
+                    const fieldName = typeof field === 'string' ? field : field.name;
+                    if (!fieldName) continue;
+                    
+                    if (!classes[name].fields.includes(fieldName)) {
+                        classes[name].fields.push(fieldName);
+                        fieldCount++;
+                    }
+                }
+            }
         }
     }
 
@@ -188,7 +204,7 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
             typeRef.type = "enum";
             typeRef.enumValues = [...typeRef.fields];
             typeRef.constructors = [];
-            delete typeRef.fields;
+            delete typeRef.fields; // Safe to delete here as they have been moved to enumValues
             delete typeRef.methods["values"];
             delete typeRef.methods["valueOf"];
         } else {
@@ -199,11 +215,11 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
                     template: `${className} \${instanceName} = new ${className}();`
                 });
             }
-            delete typeRef.fields;
+            // Removed: delete typeRef.fields; -> This is what was wiping out the member variables.
         }
     }
 
-    console.log(`   ⚡ Bound ${constructorCount} constructors and ${methodCount} total methods across structures.`);
+    console.log(`   ⚡ Bound ${constructorCount} constructors, ${methodCount} methods, and ${fieldCount} fields across structures.`);
     return classes;
 }
 

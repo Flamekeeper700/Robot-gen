@@ -1,0 +1,8 @@
+{
+    "TalonFX" : {
+        "devices" : ["krakenX60, krakenX44","falcon500"],
+        "type" : "motor",
+        "object" : "CTRE.TalonFX",
+        "configurator" : ["CTRE.TalonFXConfigurator"]
+    }
+}

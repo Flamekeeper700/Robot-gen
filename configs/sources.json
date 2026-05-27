@@ -1,7 +1,7 @@
 {
   "sources": [
     {
-      "name": "WPILib_API",
+      "name": "WPILib",
       "url": "https://github.wpilib.org/allwpilib/docs/release/java/type-search-index.js",
       "isJavadocIndex": true,
       "classExtractor": {
@@ -15,7 +15,7 @@
       }
     },
     {
-      "name": "CTRE_API",
+      "name": "CTRE",
       "url": "https://api.ctr-electronics.com/phoenix6/stable/java/type-search-index.js",
       "isJavadocIndex": true,
       "classExtractor": {
@@ -29,7 +29,7 @@
       }
     },
     {
-      "name": "REV_API",
+      "name": "REV",
       "url": "https://codedocs.revrobotics.com/java/type-search-index.js",
       "isJavadocIndex": true,
       "classExtractor": {
