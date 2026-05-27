@@ -1,8 +1,17 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-27T16:30:08.453Z",
+    "generatedAt": "2026-05-27T16:53:20.187Z",
     "apisProcessed": [
-      "CTRE-Phoenix (v5)"
+      "AdvantageKit",
+      "AndyMark AM Library",
+      "DogLog",
+      "LumynLabs",
+      "CTRE-Phoenix (v5)",
+      "REVLib",
+      "ReduxLib",
+      "ThriftyLib",
+      "libgrapplefrc",
+      "PlayingWithFusion"
     ]
   },
   "classes": {
@@ -11982,8 +11991,7 @@
         "configLOSBehavior": {
           "returnType": "ErrorCode",
           "parameters": [
-            "boolean",
-            "int"
+            "boolean"
           ]
         },
         "setStatusFramePeriod": {
@@ -12084,8 +12092,7 @@
         "configV5Enabled": {
           "returnType": "ErrorCode",
           "parameters": [
-            "boolean",
-            "int"
+            "boolean"
           ]
         },
         "getStickyFaults": {
@@ -12094,15 +12101,15 @@
             "CANdleStickyFaults"
           ]
         },
+        "getCurrent": {
+          "returnType": "double",
+          "parameters": []
+        },
         "modulateVBatOutput": {
           "returnType": "ErrorCode",
           "parameters": [
             "double"
           ]
-        },
-        "getCurrent": {
-          "returnType": "double",
-          "parameters": []
         },
         "getTemperature": {
           "returnType": "double",
@@ -14117,6 +14124,784 @@
         "onLoop": {
           "returnType": "void",
           "parameters": []
+        }
+      },
+      "fields": []
+    },
+    "MitoCANdria": {
+      "name": "MitoCANdria",
+      "package": "au.grapplerobotics",
+      "type": "class",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.MitoCANdria"
+      ],
+      "constructors": [
+        {
+          "parameters": [
+            "int"
+          ]
+        }
+      ],
+      "methods": {
+        "getChannelCurrent": {
+          "returnType": "OptionalDouble",
+          "parameters": [
+            "int"
+          ]
+        },
+        "getChannelVoltage": {
+          "returnType": "OptionalDouble",
+          "parameters": [
+            "int"
+          ]
+        },
+        "setChannelVoltage": {
+          "returnType": "void",
+          "parameters": [
+            "int",
+            "double"
+          ]
+        },
+        "getChannelEnabled": {
+          "returnType": "OptionalInt",
+          "parameters": [
+            "int"
+          ]
+        },
+        "setChannelEnabled": {
+          "returnType": "void",
+          "parameters": [
+            "int",
+            "boolean"
+          ]
+        },
+        "close": {
+          "returnType": "void",
+          "parameters": []
+        },
+        "getChannelVoltageSetpoint": {
+          "returnType": "OptionalDouble",
+          "parameters": [
+            "int"
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "MITOCANDRIA_CHANNEL_USB1",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_USB2",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_5VA",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_5VB",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_ADJ",
+          "type": "int"
+        }
+      ]
+    },
+    "GrappleJNI": {
+      "name": "GrappleJNI",
+      "package": "au.grapplerobotics",
+      "type": "class",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.GrappleJNI"
+      ],
+      "constructors": [
+        {
+          "parameters": []
+        }
+      ],
+      "methods": {
+        "forceLoad": {
+          "returnType": "void",
+          "parameters": []
+        }
+      },
+      "fields": [
+        {
+          "name": "cleaner",
+          "type": "Cleaner"
+        }
+      ]
+    },
+    "MitoCANdriaInterface": {
+      "name": "MitoCANdriaInterface",
+      "package": "au.grapplerobotics.interfaces",
+      "type": "interface",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.interfaces.MitoCANdriaInterface"
+      ],
+      "constructors": [],
+      "methods": {
+        "getChannelCurrent": {
+          "returnType": "OptionalDouble",
+          "parameters": [
+            "int"
+          ]
+        },
+        "getChannelVoltage": {
+          "returnType": "OptionalDouble",
+          "parameters": [
+            "int"
+          ]
+        },
+        "setChannelVoltage": {
+          "returnType": "void",
+          "parameters": [
+            "int",
+            "double"
+          ]
+        },
+        "getChannelEnabled": {
+          "returnType": "OptionalInt",
+          "parameters": [
+            "int"
+          ]
+        },
+        "setChannelEnabled": {
+          "returnType": "void",
+          "parameters": [
+            "int",
+            "boolean"
+          ]
+        },
+        "getChannelVoltageSetpoint": {
+          "returnType": "OptionalDouble",
+          "parameters": [
+            "int"
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "MITOCANDRIA_CHANNEL_USB1",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_USB2",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_5VA",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_5VB",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_ADJ",
+          "type": "int"
+        }
+      ]
+    },
+    "LaserCanInterface": {
+      "name": "LaserCanInterface",
+      "package": "au.grapplerobotics.interfaces",
+      "type": "interface",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.interfaces.LaserCanInterface"
+      ],
+      "constructors": [],
+      "methods": {
+        "setRangingMode": {
+          "returnType": "void",
+          "parameters": [
+            "RangingMode"
+          ]
+        },
+        "setTimingBudget": {
+          "returnType": "void",
+          "parameters": [
+            "TimingBudget"
+          ]
+        },
+        "getMeasurement": {
+          "returnType": "Measurement",
+          "parameters": []
+        },
+        "setRegionOfInterest": {
+          "returnType": "void",
+          "parameters": [
+            "RegionOfInterest"
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "LASERCAN_STATUS_VALID_MEASUREMENT",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_NOISE_ISSUE",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_WEAK_SIGNAL",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_OUT_OF_BOUNDS",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_WRAPAROUND",
+          "type": "int"
+        }
+      ]
+    },
+    "LaserCan": {
+      "name": "LaserCan",
+      "package": "au.grapplerobotics",
+      "type": "class",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.LaserCan"
+      ],
+      "constructors": [
+        {
+          "parameters": [
+            "int"
+          ]
+        }
+      ],
+      "methods": {
+        "setRangingMode": {
+          "returnType": "void",
+          "parameters": [
+            "RangingMode"
+          ]
+        },
+        "setTimingBudget": {
+          "returnType": "void",
+          "parameters": [
+            "TimingBudget"
+          ]
+        },
+        "close": {
+          "returnType": "void",
+          "parameters": []
+        },
+        "getMeasurement": {
+          "returnType": "Measurement",
+          "parameters": []
+        },
+        "setRegionOfInterest": {
+          "returnType": "void",
+          "parameters": [
+            "RegionOfInterest"
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "LASERCAN_STATUS_VALID_MEASUREMENT",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_NOISE_ISSUE",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_WEAK_SIGNAL",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_OUT_OF_BOUNDS",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_WRAPAROUND",
+          "type": "int"
+        }
+      ]
+    },
+    "CouldNotGetException": {
+      "name": "CouldNotGetException",
+      "package": "au.grapplerobotics",
+      "type": "class",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.CouldNotGetException"
+      ],
+      "constructors": [
+        {
+          "parameters": [
+            "String",
+            "int"
+          ]
+        }
+      ],
+      "methods": {
+        "printStackTrace": {
+          "returnType": "void",
+          "parameters": [
+            "PrintStream"
+          ]
+        },
+        "getStackTrace": {
+          "returnType": "StackTraceElement[]",
+          "parameters": []
+        },
+        "setStackTrace": {
+          "returnType": "void",
+          "parameters": [
+            "StackTraceElement[]"
+          ]
+        },
+        "addSuppressed": {
+          "returnType": "void",
+          "parameters": [
+            "Throwable"
+          ]
+        },
+        "getErrorCode": {
+          "returnType": "int",
+          "parameters": []
+        },
+        "getLocalizedMessage": {
+          "returnType": "String",
+          "parameters": []
+        },
+        "initCause": {
+          "returnType": "Throwable",
+          "parameters": [
+            "Throwable"
+          ]
+        },
+        "getMessage": {
+          "returnType": "String",
+          "parameters": []
+        },
+        "toString": {
+          "returnType": "String",
+          "parameters": []
+        },
+        "getSuppressed": {
+          "returnType": "Throwable[]",
+          "parameters": []
+        },
+        "getCause": {
+          "returnType": "Throwable",
+          "parameters": []
+        },
+        "fillInStackTrace": {
+          "returnType": "Throwable",
+          "parameters": []
+        }
+      },
+      "fields": [
+        {
+          "name": "GRAPPLE_ERROR_PARAM_OUT_OF_BOUNDS",
+          "type": "int"
+        },
+        {
+          "name": "GRAPPLE_ERROR_FAILED_ASSERTION",
+          "type": "int"
+        },
+        {
+          "name": "GRAPPLE_ERROR_TIMED_OUT",
+          "type": "int"
+        },
+        {
+          "name": "GRAPPLE_ERROR_GENERIC",
+          "type": "int"
+        }
+      ]
+    },
+    "ConfigurationFailedException": {
+      "name": "ConfigurationFailedException",
+      "package": "au.grapplerobotics",
+      "type": "class",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.ConfigurationFailedException"
+      ],
+      "constructors": [
+        {
+          "parameters": [
+            "String",
+            "int"
+          ]
+        }
+      ],
+      "methods": {
+        "printStackTrace": {
+          "returnType": "void",
+          "parameters": [
+            "PrintStream"
+          ]
+        },
+        "getStackTrace": {
+          "returnType": "StackTraceElement[]",
+          "parameters": []
+        },
+        "setStackTrace": {
+          "returnType": "void",
+          "parameters": [
+            "StackTraceElement[]"
+          ]
+        },
+        "addSuppressed": {
+          "returnType": "void",
+          "parameters": [
+            "Throwable"
+          ]
+        },
+        "getErrorCode": {
+          "returnType": "int",
+          "parameters": []
+        },
+        "getLocalizedMessage": {
+          "returnType": "String",
+          "parameters": []
+        },
+        "initCause": {
+          "returnType": "Throwable",
+          "parameters": [
+            "Throwable"
+          ]
+        },
+        "getMessage": {
+          "returnType": "String",
+          "parameters": []
+        },
+        "toString": {
+          "returnType": "String",
+          "parameters": []
+        },
+        "getSuppressed": {
+          "returnType": "Throwable[]",
+          "parameters": []
+        },
+        "getCause": {
+          "returnType": "Throwable",
+          "parameters": []
+        },
+        "fillInStackTrace": {
+          "returnType": "Throwable",
+          "parameters": []
+        }
+      },
+      "fields": [
+        {
+          "name": "GRAPPLE_ERROR_PARAM_OUT_OF_BOUNDS",
+          "type": "int"
+        },
+        {
+          "name": "GRAPPLE_ERROR_FAILED_ASSERTION",
+          "type": "int"
+        },
+        {
+          "name": "GRAPPLE_ERROR_TIMED_OUT",
+          "type": "int"
+        },
+        {
+          "name": "GRAPPLE_ERROR_GENERIC",
+          "type": "int"
+        }
+      ]
+    },
+    "MockMitoCANdria": {
+      "name": "MockMitoCANdria",
+      "package": "au.grapplerobotics",
+      "type": "class",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.MockMitoCANdria"
+      ],
+      "constructors": [
+        {
+          "parameters": []
+        }
+      ],
+      "methods": {
+        "getChannelCurrent": {
+          "returnType": "OptionalDouble",
+          "parameters": [
+            "int"
+          ]
+        },
+        "getChannelVoltage": {
+          "returnType": "OptionalDouble",
+          "parameters": [
+            "int"
+          ]
+        },
+        "setChannelVoltage": {
+          "returnType": "void",
+          "parameters": [
+            "int",
+            "double"
+          ]
+        },
+        "getChannelEnabled": {
+          "returnType": "OptionalInt",
+          "parameters": [
+            "int"
+          ]
+        },
+        "setChannelEnabled": {
+          "returnType": "void",
+          "parameters": [
+            "int",
+            "boolean"
+          ]
+        },
+        "setChannelCurrentSim": {
+          "returnType": "void",
+          "parameters": [
+            "int",
+            "double"
+          ]
+        },
+        "setChannelVoltageSim": {
+          "returnType": "void",
+          "parameters": [
+            "int",
+            "double"
+          ]
+        },
+        "getChannelVoltageSetpoint": {
+          "returnType": "OptionalDouble",
+          "parameters": [
+            "int"
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "MITOCANDRIA_CHANNEL_USB1",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_USB2",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_5VA",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_5VB",
+          "type": "int"
+        },
+        {
+          "name": "MITOCANDRIA_CHANNEL_ADJ",
+          "type": "int"
+        }
+      ]
+    },
+    "GrappleException": {
+      "name": "GrappleException",
+      "package": "au.grapplerobotics",
+      "type": "class",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.GrappleException"
+      ],
+      "constructors": [
+        {
+          "parameters": [
+            "String",
+            "int"
+          ]
+        }
+      ],
+      "methods": {
+        "printStackTrace": {
+          "returnType": "void",
+          "parameters": [
+            "PrintStream"
+          ]
+        },
+        "getStackTrace": {
+          "returnType": "StackTraceElement[]",
+          "parameters": []
+        },
+        "setStackTrace": {
+          "returnType": "void",
+          "parameters": [
+            "StackTraceElement[]"
+          ]
+        },
+        "addSuppressed": {
+          "returnType": "void",
+          "parameters": [
+            "Throwable"
+          ]
+        },
+        "getErrorCode": {
+          "returnType": "int",
+          "parameters": []
+        },
+        "getLocalizedMessage": {
+          "returnType": "String",
+          "parameters": []
+        },
+        "initCause": {
+          "returnType": "Throwable",
+          "parameters": [
+            "Throwable"
+          ]
+        },
+        "getMessage": {
+          "returnType": "String",
+          "parameters": []
+        },
+        "toString": {
+          "returnType": "String",
+          "parameters": []
+        },
+        "getSuppressed": {
+          "returnType": "Throwable[]",
+          "parameters": []
+        },
+        "getCause": {
+          "returnType": "Throwable",
+          "parameters": []
+        },
+        "fillInStackTrace": {
+          "returnType": "Throwable",
+          "parameters": []
+        }
+      },
+      "fields": [
+        {
+          "name": "GRAPPLE_ERROR_PARAM_OUT_OF_BOUNDS",
+          "type": "int"
+        },
+        {
+          "name": "GRAPPLE_ERROR_FAILED_ASSERTION",
+          "type": "int"
+        },
+        {
+          "name": "GRAPPLE_ERROR_TIMED_OUT",
+          "type": "int"
+        },
+        {
+          "name": "GRAPPLE_ERROR_GENERIC",
+          "type": "int"
+        }
+      ]
+    },
+    "MockLaserCan": {
+      "name": "MockLaserCan",
+      "package": "au.grapplerobotics.simulation",
+      "type": "class",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.simulation.MockLaserCan"
+      ],
+      "constructors": [
+        {
+          "parameters": []
+        }
+      ],
+      "methods": {
+        "setRangingMode": {
+          "returnType": "void",
+          "parameters": [
+            "RangingMode"
+          ]
+        },
+        "setTimingBudget": {
+          "returnType": "void",
+          "parameters": [
+            "TimingBudget"
+          ]
+        },
+        "setMeasurementFullSim": {
+          "returnType": "void",
+          "parameters": [
+            "Measurement"
+          ]
+        },
+        "getMeasurement": {
+          "returnType": "Measurement",
+          "parameters": []
+        },
+        "setRegionOfInterest": {
+          "returnType": "void",
+          "parameters": [
+            "RegionOfInterest"
+          ]
+        },
+        "setMeasurementPartialSim": {
+          "returnType": "void",
+          "parameters": [
+            "int",
+            "int",
+            "int"
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "LASERCAN_STATUS_VALID_MEASUREMENT",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_NOISE_ISSUE",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_WEAK_SIGNAL",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_OUT_OF_BOUNDS",
+          "type": "int"
+        },
+        {
+          "name": "LASERCAN_STATUS_WRAPAROUND",
+          "type": "int"
+        }
+      ]
+    },
+    "CanBridge": {
+      "name": "CanBridge",
+      "package": "au.grapplerobotics",
+      "type": "class",
+      "category": "utility",
+      "imports": [
+        "au.grapplerobotics.CanBridge"
+      ],
+      "constructors": [
+        {
+          "parameters": []
+        }
+      ],
+      "methods": {
+        "runTCP": {
+          "returnType": "void",
+          "parameters": []
+        },
+        "runWebsocketInBackground": {
+          "returnType": "void",
+          "parameters": [
+            "int"
+          ]
+        },
+        "runWebsocket": {
+          "returnType": "void",
+          "parameters": [
+            "int"
+          ]
         }
       },
       "fields": []
