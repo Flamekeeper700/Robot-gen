@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-05-26T00:15:59.483Z",
+    "generatedAt": "2026-05-27T02:02:38.055Z",
     "apisProcessed": [
       "WPILib_API",
       "CTRE_API",
@@ -79836,15 +79836,44 @@
       ],
       "declarationTemplate": "CANBus ${instanceName};",
       "methods": {
+        "clone": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.clone();"
+        },
+        "compareTo": {
+          "returnType": "void",
+          "parameters": [
+            "CANBus"
+          ],
+          "template": "${instance}.compareTo(${param1});"
+        },
+        "equals": {
+          "returnType": "void",
+          "parameters": [
+            "Object"
+          ],
+          "template": "${instance}.equals(${param1});"
+        },
         "getName": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.getName();"
         },
+        "getNameUTF8Bytes": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.getNameUTF8Bytes();"
+        },
         "getStatus": {
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.getStatus();"
+        },
+        "hashCode": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.hashCode();"
         },
         "isNetworkFD": {
           "returnType": "void",
@@ -79884,14 +79913,14 @@
         "JNI_GetStatus": {
           "returnType": "void",
           "parameters": [
-            "String"
+            "ByteBuffer"
           ],
           "template": "${instance}.JNI_GetStatus(${param1});"
         },
         "JNI_IsNetworkFD": {
           "returnType": "void",
           "parameters": [
-            "String"
+            "ByteBuffer"
           ],
           "template": "${instance}.JNI_IsNetworkFD(${param1});"
         }
@@ -79963,6 +79992,11 @@
             "SendableBuilder"
           ],
           "template": "${instance}.initSendable(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         }
       }
     },
@@ -80211,6 +80245,11 @@
             "SendableBuilder"
           ],
           "template": "${instance}.initSendable(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         }
       }
     },
@@ -80564,6 +80603,11 @@
             "SendableBuilder"
           ],
           "template": "${instance}.initSendable(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         }
       }
     },
@@ -80903,6 +80947,11 @@
             "SendableBuilder"
           ],
           "template": "${instance}.initSendable(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         }
       }
     },
@@ -81311,7 +81360,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -81379,7 +81428,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -81665,7 +81714,7 @@
         "GetConfigs": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double"
           ],
@@ -81698,7 +81747,7 @@
         "SetConfigs": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "boolean",
@@ -81771,7 +81820,7 @@
         "JNI_RequestConfigApply": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "String",
@@ -81800,7 +81849,7 @@
         "JNI_RequestControlCoastOut": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "boolean"
@@ -81810,7 +81859,7 @@
         "JNI_RequestControlColorFlowAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -81828,7 +81877,7 @@
         "JNI_RequestControlDiff_DutyCycleOut_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -81853,7 +81902,7 @@
         "JNI_RequestControlDiff_DutyCycleOut_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -81881,7 +81930,7 @@
         "JNI_RequestControlDiff_DutyCycleOut_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -81909,7 +81958,7 @@
         "JNI_RequestControlDiff_MotionMagicDutyCycle_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -81936,7 +81985,7 @@
         "JNI_RequestControlDiff_MotionMagicDutyCycle_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -81966,7 +82015,7 @@
         "JNI_RequestControlDiff_MotionMagicDutyCycle_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -81996,7 +82045,7 @@
         "JNI_RequestControlDiff_MotionMagicExpoDutyCycle_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82023,7 +82072,7 @@
         "JNI_RequestControlDiff_MotionMagicExpoDutyCycle_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82053,7 +82102,7 @@
         "JNI_RequestControlDiff_MotionMagicExpoDutyCycle_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82083,7 +82132,7 @@
         "JNI_RequestControlDiff_MotionMagicExpoTorqueCurrentFOC_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82110,7 +82159,7 @@
         "JNI_RequestControlDiff_MotionMagicExpoTorqueCurrentFOC_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82138,7 +82187,7 @@
         "JNI_RequestControlDiff_MotionMagicExpoTorqueCurrentFOC_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82166,7 +82215,7 @@
         "JNI_RequestControlDiff_MotionMagicExpoVoltage_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82193,7 +82242,7 @@
         "JNI_RequestControlDiff_MotionMagicExpoVoltage_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82223,7 +82272,7 @@
         "JNI_RequestControlDiff_MotionMagicExpoVoltage_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82253,7 +82302,7 @@
         "JNI_RequestControlDiff_MotionMagicTorqueCurrentFOC_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82280,7 +82329,7 @@
         "JNI_RequestControlDiff_MotionMagicTorqueCurrentFOC_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82308,7 +82357,7 @@
         "JNI_RequestControlDiff_MotionMagicTorqueCurrentFOC_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82336,7 +82385,7 @@
         "JNI_RequestControlDiff_MotionMagicVelocityDutyCycle_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82364,7 +82413,7 @@
         "JNI_RequestControlDiff_MotionMagicVelocityDutyCycle_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82395,7 +82444,7 @@
         "JNI_RequestControlDiff_MotionMagicVelocityDutyCycle_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82426,7 +82475,7 @@
         "JNI_RequestControlDiff_MotionMagicVelocityTorqueCurrentFOC_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82454,7 +82503,7 @@
         "JNI_RequestControlDiff_MotionMagicVelocityTorqueCurrentFOC_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82483,7 +82532,7 @@
         "JNI_RequestControlDiff_MotionMagicVelocityTorqueCurrentFOC_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82512,7 +82561,7 @@
         "JNI_RequestControlDiff_MotionMagicVelocityVoltage_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82540,7 +82589,7 @@
         "JNI_RequestControlDiff_MotionMagicVelocityVoltage_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82571,7 +82620,7 @@
         "JNI_RequestControlDiff_MotionMagicVelocityVoltage_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82602,7 +82651,7 @@
         "JNI_RequestControlDiff_MotionMagicVoltage_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82629,7 +82678,7 @@
         "JNI_RequestControlDiff_MotionMagicVoltage_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82659,7 +82708,7 @@
         "JNI_RequestControlDiff_MotionMagicVoltage_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82689,7 +82738,7 @@
         "JNI_RequestControlDiff_PositionDutyCycle_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82717,7 +82766,7 @@
         "JNI_RequestControlDiff_PositionDutyCycle_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82748,7 +82797,7 @@
         "JNI_RequestControlDiff_PositionDutyCycle_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82779,7 +82828,7 @@
         "JNI_RequestControlDiff_PositionTorqueCurrentFOC_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82807,7 +82856,7 @@
         "JNI_RequestControlDiff_PositionTorqueCurrentFOC_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82836,7 +82885,7 @@
         "JNI_RequestControlDiff_PositionTorqueCurrentFOC_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82865,7 +82914,7 @@
         "JNI_RequestControlDiff_PositionVoltage_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82893,7 +82942,7 @@
         "JNI_RequestControlDiff_PositionVoltage_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82924,7 +82973,7 @@
         "JNI_RequestControlDiff_PositionVoltage_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82955,7 +83004,7 @@
         "JNI_RequestControlDiff_TorqueCurrentFOC_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -82982,7 +83031,7 @@
         "JNI_RequestControlDiff_TorqueCurrentFOC_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83010,7 +83059,7 @@
         "JNI_RequestControlDiff_TorqueCurrentFOC_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83038,7 +83087,7 @@
         "JNI_RequestControlDiff_VelocityDutyCycle_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83066,7 +83115,7 @@
         "JNI_RequestControlDiff_VelocityDutyCycle_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83097,7 +83146,7 @@
         "JNI_RequestControlDiff_VelocityDutyCycle_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83128,7 +83177,7 @@
         "JNI_RequestControlDiff_VelocityTorqueCurrentFOC_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83156,7 +83205,7 @@
         "JNI_RequestControlDiff_VelocityTorqueCurrentFOC_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83185,7 +83234,7 @@
         "JNI_RequestControlDiff_VelocityTorqueCurrentFOC_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83214,7 +83263,7 @@
         "JNI_RequestControlDiff_VelocityVoltage_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83242,7 +83291,7 @@
         "JNI_RequestControlDiff_VelocityVoltage_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83273,7 +83322,7 @@
         "JNI_RequestControlDiff_VelocityVoltage_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83304,7 +83353,7 @@
         "JNI_RequestControlDiff_VoltageOut_Open": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83329,7 +83378,7 @@
         "JNI_RequestControlDiff_VoltageOut_Position": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83357,7 +83406,7 @@
         "JNI_RequestControlDiff_VoltageOut_Velocity": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83385,7 +83434,7 @@
         "JNI_RequestControlDifferentialDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83404,7 +83453,7 @@
         "JNI_RequestControlDifferentialFollower": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -83415,7 +83464,7 @@
         "JNI_RequestControlDifferentialMotionMagicDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83435,7 +83484,7 @@
         "JNI_RequestControlDifferentialMotionMagicExpoDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83455,7 +83504,7 @@
         "JNI_RequestControlDifferentialMotionMagicExpoVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83475,7 +83524,7 @@
         "JNI_RequestControlDifferentialMotionMagicVelocityDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83495,7 +83544,7 @@
         "JNI_RequestControlDifferentialMotionMagicVelocityVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83515,7 +83564,7 @@
         "JNI_RequestControlDifferentialMotionMagicVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83535,7 +83584,7 @@
         "JNI_RequestControlDifferentialPositionDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83555,7 +83604,7 @@
         "JNI_RequestControlDifferentialPositionVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83575,7 +83624,7 @@
         "JNI_RequestControlDifferentialStrictFollower": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int"
@@ -83585,7 +83634,7 @@
         "JNI_RequestControlDifferentialVelocityDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83605,7 +83654,7 @@
         "JNI_RequestControlDifferentialVelocityVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83625,7 +83674,7 @@
         "JNI_RequestControlDifferentialVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83644,7 +83693,7 @@
         "JNI_RequestControlDutyCycleOut": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83661,7 +83710,7 @@
         "JNI_RequestControlDynamicMotionMagicDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83683,7 +83732,7 @@
         "JNI_RequestControlDynamicMotionMagicExpoDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83705,7 +83754,7 @@
         "JNI_RequestControlDynamicMotionMagicExpoTorqueCurrentFOC": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83726,7 +83775,7 @@
         "JNI_RequestControlDynamicMotionMagicExpoVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83748,7 +83797,7 @@
         "JNI_RequestControlDynamicMotionMagicTorqueCurrentFOC": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83769,7 +83818,7 @@
         "JNI_RequestControlDynamicMotionMagicVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83791,7 +83840,7 @@
         "JNI_RequestControlEmpty": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double"
           ],
@@ -83800,7 +83849,7 @@
         "JNI_RequestControlEmptyAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int"
@@ -83810,7 +83859,7 @@
         "JNI_RequestControlFireAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -83827,7 +83876,7 @@
         "JNI_RequestControlFollower": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -83838,7 +83887,7 @@
         "JNI_RequestControlLarsonAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -83857,7 +83906,7 @@
         "JNI_RequestControlModulateVBatOut": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double"
@@ -83867,7 +83916,7 @@
         "JNI_RequestControlMotionMagicDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83886,7 +83935,7 @@
         "JNI_RequestControlMotionMagicExpoDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83905,7 +83954,7 @@
         "JNI_RequestControlMotionMagicExpoTorqueCurrentFOC": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83923,7 +83972,7 @@
         "JNI_RequestControlMotionMagicExpoVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83942,7 +83991,7 @@
         "JNI_RequestControlMotionMagicTorqueCurrentFOC": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83960,7 +84009,7 @@
         "JNI_RequestControlMotionMagicVelocityDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83980,7 +84029,7 @@
         "JNI_RequestControlMotionMagicVelocityTorqueCurrentFOC": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -83999,7 +84048,7 @@
         "JNI_RequestControlMotionMagicVelocityVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84019,7 +84068,7 @@
         "JNI_RequestControlMotionMagicVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84038,7 +84087,7 @@
         "JNI_RequestControlMusicTone": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double"
@@ -84048,7 +84097,7 @@
         "JNI_RequestControlNeutralOut": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "boolean"
@@ -84058,7 +84107,7 @@
         "JNI_RequestControlPositionDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84078,7 +84127,7 @@
         "JNI_RequestControlPositionTorqueCurrentFOC": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84097,7 +84146,7 @@
         "JNI_RequestControlPositionVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84117,7 +84166,7 @@
         "JNI_RequestControlRainbowAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -84132,7 +84181,7 @@
         "JNI_RequestControlRgbFadeAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -84146,7 +84195,7 @@
         "JNI_RequestControlSingleFadeAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -84163,7 +84212,7 @@
         "JNI_RequestControlSolidColor": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -84178,7 +84227,7 @@
         "JNI_RequestControlStaticBrake": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "boolean"
@@ -84188,7 +84237,7 @@
         "JNI_RequestControlStrictFollower": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int"
@@ -84198,7 +84247,7 @@
         "JNI_RequestControlStrobeAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -84215,7 +84264,7 @@
         "JNI_RequestControlTorqueCurrentFOC": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84233,7 +84282,7 @@
         "JNI_RequestControlTwinkleAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -84251,7 +84300,7 @@
         "JNI_RequestControlTwinkleOffAnimation": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "int",
@@ -84269,7 +84318,7 @@
         "JNI_RequestControlVelocityDutyCycle": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84289,7 +84338,7 @@
         "JNI_RequestControlVelocityTorqueCurrentFOC": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84308,7 +84357,7 @@
         "JNI_RequestControlVelocityVoltage": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84328,7 +84377,7 @@
         "JNI_RequestControlVoltageOut": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double",
@@ -84449,7 +84498,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -84721,6 +84770,11 @@
             "boolean"
           ],
           "template": "${instance}.getVersionMinor(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         },
         "setPosition": {
           "returnType": "void",
@@ -85046,6 +85100,11 @@
             "boolean"
           ],
           "template": "${instance}.getVersionMinor(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         },
         "setQuadraturePosition": {
           "returnType": "void",
@@ -85414,6 +85473,11 @@
           ],
           "template": "${instance}.getVersionMinor(${param1});"
         },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
+        },
         "setControl": {
           "returnType": "void",
           "parameters": [
@@ -85695,6 +85759,11 @@
             "boolean"
           ],
           "template": "${instance}.getVersionMinor(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         }
       }
     },
@@ -86313,6 +86382,11 @@
             "boolean"
           ],
           "template": "${instance}.getYaw(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         },
         "setYaw": {
           "returnType": "void",
@@ -87338,6 +87412,11 @@
             "boolean"
           ],
           "template": "${instance}.getVersionMinor(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         },
         "setControl": {
           "returnType": "void",
@@ -88525,6 +88604,11 @@
           ],
           "template": "${instance}.getVersionMinor(${param1});"
         },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
+        },
         "setControl": {
           "returnType": "void",
           "parameters": [
@@ -88927,10 +89011,10 @@
           "parameters": [],
           "template": "${instance}.getDeviceHash();"
         },
-        "getDeviceId": {
+        "getDeviceID": {
           "returnType": "void",
           "parameters": [],
-          "template": "${instance}.getDeviceId();"
+          "template": "${instance}.getDeviceID();"
         },
         "getModel": {
           "returnType": "void",
@@ -89165,7 +89249,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -89291,7 +89375,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -89580,7 +89664,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -89730,7 +89814,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -89880,7 +89964,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -90030,7 +90114,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -90180,7 +90264,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -90330,7 +90414,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -90578,7 +90662,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -90728,7 +90812,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -90952,7 +91036,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -91032,7 +91116,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -91182,7 +91266,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -91332,7 +91416,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -91694,7 +91778,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -91835,7 +91919,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -92013,7 +92097,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -92198,7 +92282,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -92376,7 +92460,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -92559,7 +92643,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -92733,7 +92817,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -92879,7 +92963,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -92939,7 +93023,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -93999,6 +94083,13 @@
           ],
           "template": "${instance}.withTargetDirection(${param1});"
         },
+        "withTargetDirectionPerspective": {
+          "returnType": "void",
+          "parameters": [
+            "SwerveRequest.TargetDirectionPerspectiveValue"
+          ],
+          "template": "${instance}.withTargetDirectionPerspective(${param1});"
+        },
         "withTargetRateFeedforward": {
           "returnType": "void",
           "parameters": [
@@ -94064,7 +94155,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -94176,7 +94267,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -96722,7 +96813,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -98161,7 +98252,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -98487,7 +98578,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -98623,7 +98714,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -98764,7 +98855,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -98898,7 +98989,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -99039,7 +99130,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -99173,7 +99264,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -99326,7 +99417,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -99472,7 +99563,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -99620,7 +99711,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -100027,7 +100118,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -100129,7 +100220,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -100434,7 +100525,7 @@
         "JNI_AddDevice": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "long"
           ],
           "template": "${instance}.JNI_AddDevice(${param1}, ${param2});"
@@ -100442,7 +100533,7 @@
         "JNI_AddDeviceWithTrack": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "long",
             "int"
           ],
@@ -100953,6 +101044,11 @@
             "SendableBuilder"
           ],
           "template": "${instance}.initSendable(${param1});"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         },
         "reset": {
           "returnType": "void",
@@ -101544,7 +101640,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -101697,7 +101793,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -101843,7 +101939,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -102248,7 +102344,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -102480,7 +102576,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -103877,7 +103973,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -104562,7 +104658,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -104662,7 +104758,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -104830,6 +104926,7 @@
         "InvalidCrfNoSects",
         "InvalidCrfWrongProduct",
         "InvalidDeviceDescriptor",
+        "InvalidDeviceId",
         "InvalidDeviceModel",
         "InvalidDeviceSpec",
         "InvalidFile",
@@ -105092,8 +105189,10 @@
         },
         "refreshAll": {
           "returnType": "void",
-          "parameters": [],
-          "template": "${instance}.refreshAll();"
+          "parameters": [
+            "boolean"
+          ],
+          "template": "${instance}.refreshAll(${param1});"
         },
         "setUpdateFrequencyForAll": {
           "returnType": "void",
@@ -105105,9 +105204,10 @@
         "waitForAll": {
           "returnType": "void",
           "parameters": [
-            "double"
+            "double",
+            "boolean"
           ],
-          "template": "${instance}.waitForAll(${param1});"
+          "template": "${instance}.waitForAll(${param1}, ${param2});"
         }
       }
     },
@@ -105121,8 +105221,11 @@
       ],
       "constructors": [
         {
-          "parameters": [],
-          "template": "StatusSignalJNI ${instanceName} = new StatusSignalJNI();"
+          "parameters": [
+            "ByteBuffer",
+            "int"
+          ],
+          "template": "StatusSignalJNI ${instanceName} = new StatusSignalJNI(${param1}, ${param2});"
         }
       ],
       "declarationTemplate": "StatusSignalJNI ${instanceName};",
@@ -105145,7 +105248,7 @@
         "JNI_OptimizeUpdateFrequencies": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double",
             "double"
@@ -105162,7 +105265,7 @@
         "JNI_ResetUpdateFrequencies": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "int",
             "double"
           ],
@@ -105188,7 +105291,7 @@
         "JNI_WaitForAll": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "ByteBuffer",
             "double",
             "StatusSignalJNI[]"
           ],
@@ -105337,7 +105440,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -105426,7 +105529,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -107428,6 +107531,11 @@
           "parameters": [],
           "template": "${instance}.isSafetyEnabled();"
         },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
+        },
         "set": {
           "returnType": "void",
           "parameters": [
@@ -107955,6 +108063,11 @@
           "returnType": "void",
           "parameters": [],
           "template": "${instance}.isSafetyEnabled();"
+        },
+        "none": {
+          "returnType": "void",
+          "parameters": [],
+          "template": "${instance}.none();"
         },
         "set": {
           "returnType": "void",
@@ -108736,6 +108849,23 @@
         }
       }
     },
+    "SwerveRequest.TargetDirectionPerspectiveValue": {
+      "name": "SwerveRequest.TargetDirectionPerspectiveValue",
+      "package": "com.ctre.phoenix6.swerve",
+      "type": "enum",
+      "category": "utility",
+      "imports": [
+        "com.ctre.phoenix6.swerve.SwerveRequest.TargetDirectionPerspectiveValue"
+      ],
+      "constructors": [],
+      "declarationTemplate": "SwerveRequest.TargetDirectionPerspectiveValue ${instanceName};",
+      "methods": {},
+      "enumValues": [
+        "BlueAlliance",
+        "UseForwardPerspective",
+        "value"
+      ]
+    },
     "TempSensorRequiredValue": {
       "name": "TempSensorRequiredValue",
       "package": "com.ctre.phoenix6.signals",
@@ -108996,7 +109126,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -109120,7 +109250,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -109223,7 +109353,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -109581,7 +109711,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -109734,7 +109864,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -109880,7 +110010,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
@@ -110099,7 +110229,7 @@
         "sendRequest": {
           "returnType": "void",
           "parameters": [
-            "String",
+            "CANBus",
             "int"
           ],
           "template": "${instance}.sendRequest(${param1}, ${param2});"
