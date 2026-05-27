@@ -122,17 +122,14 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
 
             // Extract Fields & potential Enum options
             if (signature && !signature.includes('(')) {
-                // Check if we have a type override for this specific field in this class
                 const overrideType = fieldOverrides[parentClassName]?.[signature] || "unknown";
-
-                const fieldObject = {
-                    name: signature,
-                    type: overrideType
-                };
 
                 const exists = classes[parentClassName].fields.some(f => f.name === signature);
                 if (!exists) {
-                    classes[parentClassName].fields.push(fieldObject);
+                    classes[parentClassName].fields.push({
+                        name: signature,
+                        type: overrideType
+                    });
                     fieldCount++;
                 }
                 continue;
@@ -184,7 +181,7 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
                 }
             }
 
-            // Extract Fields from standard JSON manifests
+            // Extract Fields
             const discoveredFields = resolvePath(target, extractor.fieldsPath || "fields") || resolvePath(target, "properties") || [];
             if (Array.isArray(discoveredFields)) {
                 for (const field of discoveredFields) {
@@ -209,7 +206,7 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
 
         if (isJavaEnum) {
             typeRef.type = "enum";
-            // Map objects to names for the enum value setup
+            // Map the objects back into a simple string array for enums specifically
             typeRef.enumValues = typeRef.fields.map(f => f.name);
             typeRef.constructors = [];
             delete typeRef.fields;
@@ -222,6 +219,7 @@ function parseSourceDynamically(rootData, config, rawMembers = [], isJavadoc = f
                     template: `${className} \${instanceName} = new ${className}();`
                 });
             }
+            // Fix: Standard classes do NOT delete typeRef.fields anymore
         }
     }
 
@@ -244,7 +242,6 @@ async function main() {
 
     const { sources } = JSON.parse(fs.readFileSync(sourcesPath, 'utf-8'));
     
-    // Load optional overrides map if it exists
     let fieldOverrides = {};
     if (fs.existsSync(overridesPath)) {
         try {
