@@ -3,20 +3,18 @@ import path from 'path';
 import os from 'os';
 import { execSync } from 'child_process';
 
-function findJarInGradleCache(groupId, artifactId, version) {
-    const cacheRoot = path.join(os.homedir(), '.gradle', 'caches', 'modules-2', 'files-2.1');
-    if (!fs.existsSync(cacheRoot)) return null;
-
-    const groupDir = path.join(cacheRoot, groupId, artifactId, version);
-    if (!fs.existsSync(groupDir)) return null;
-
-    const items = fs.readdirSync(groupDir, { recursive: true });
+// Recursively sweep directories to find every downloaded JAR
+function getAllJarsInDir(dir, jarList) {
+    if (!fs.existsSync(dir)) return;
+    const items = fs.readdirSync(dir, { withFileTypes: true });
     for (const item of items) {
-        if (item.endsWith('.jar') && !item.endsWith('-sources.jar') && !item.endsWith('-javadoc.jar')) {
-            return path.join(groupDir, item);
+        const fullPath = path.join(dir, item.name);
+        if (item.isDirectory()) {
+            getAllJarsInDir(fullPath, jarList);
+        } else if (item.isFile() && item.name.endsWith('.jar') && !item.name.endsWith('-sources.jar') && !item.name.endsWith('-javadoc.jar')) {
+            jarList.push(fullPath);
         }
     }
-    return null;
 }
 
 async function main() {
@@ -35,10 +33,9 @@ async function main() {
     console.log("🛠️ Compiling Reflector.java tool...");
     execSync('javac Reflector.java');
 
-    const jarPaths = [];
     const filters = [];
 
-    // 1. Gather all third-party libraries out of vendordeps
+    // 1. Build Filters & Metadata exclusively from Vendordeps
     if (fs.existsSync(vendordepsDir)) {
         const files = fs.readdirSync(vendordepsDir).filter(f => f.endsWith('.json'));
         for (const file of files) {
@@ -46,22 +43,13 @@ async function main() {
                 const depData = JSON.parse(fs.readFileSync(path.join(vendordepsDir, file), 'utf-8'));
                 if (!depData.javaDependencies) continue;
                 
-                let processedAny = false;
-                for (const javaDep of depData.javaDependencies) {
-                    const localJarPath = findJarInGradleCache(javaDep.groupId, javaDep.artifactId, javaDep.version);
-                    if (localJarPath) {
-                        jarPaths.push(localJarPath);
-                        
-                        const rootPackage = javaDep.groupId.split('.').slice(0, 2).join('.');
-                        if (!filters.includes(rootPackage)) {
-                            filters.push(rootPackage);
-                        }
-                        processedAny = true;
-                    }
-                }
+                masterDefinitions.metadata.apisProcessed.push(depData.name);
                 
-                if (processedAny) {
-                    masterDefinitions.metadata.apisProcessed.push(depData.name);
+                for (const javaDep of depData.javaDependencies) {
+                    const rootPackage = javaDep.groupId.split('.').slice(0, 2).join('.');
+                    if (!filters.includes(rootPackage)) {
+                        filters.push(rootPackage);
+                    }
                 }
             } catch (e) {
                 console.warn(`⚠️ Failed to parse vendordep file: ${file}`, e.message);
@@ -69,53 +57,39 @@ async function main() {
         }
     }
 
-    // 2. Add ALL WPILib Core Namespaces (Math, Util, HAL, NTCore, etc.)
-    const cacheRoot = path.join(os.homedir(), '.gradle', 'caches', 'modules-2', 'files-2.1');
-    if (fs.existsSync(cacheRoot)) {
-        // Find any cached dependency groups that belong to the WPILib ecosystem
-        const groups = fs.readdirSync(cacheRoot).filter(g => g.startsWith('edu.wpi.first.'));
-        
-        for (const group of groups) {
-            const groupDir = path.join(cacheRoot, group);
-            const artifacts = fs.readdirSync(groupDir);
-            
-            for (const artifact of artifacts) {
-                // FRC libraries end in '-java'. We want to skip JNI/C++ headers to avoid cluttering the ClassLoader
-                if (artifact.endsWith('-java')) {
-                    const versions = fs.readdirSync(path.join(groupDir, artifact));
-                    if (versions.length > 0) {
-                        const version = versions[0];
-                        const wpiJar = findJarInGradleCache(group, artifact, version);
-                        if (wpiJar) {
-                            jarPaths.push(wpiJar);
-                            if (!filters.includes("edu.wpi.first")) {
-                                filters.push("edu.wpi.first");
-                                masterDefinitions.metadata.apisProcessed.push("WPILib Suite Complete");
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    // 2. Explicitly append WPILib to Filters and Metadata
+    if (!filters.includes("edu.wpi.first")) {
+        filters.push("edu.wpi.first");
     }
+    masterDefinitions.metadata.apisProcessed.push("WPILib Suite Complete");
+
+    // 3. Vacuum up ALL resolved JARs in the Gradle Cache
+    // This ensures critical transitive dependencies like EJML (math) and Jackson (json) are present!
+    const cacheRoot = path.join(os.homedir(), '.gradle', 'caches', 'modules-2', 'files-2.1');
+    const jarPaths = [];
+    console.log("🔍 Sweeping Gradle cache for resolved dependencies...");
+    getAllJarsInDir(cacheRoot, jarPaths);
 
     if (jarPaths.length === 0) {
-        console.error("❌ No cached vendor dependency binaries were discovered. Aborting execution.");
+        console.error("❌ No cached dependency binaries were discovered in Gradle cache. Aborting execution.");
         return;
     }
 
-    // 3. Flatten paths using the current OS path separator delimiter
+    console.log(`📦 Discovered ${jarPaths.length} total JAR files to populate the ClassLoader.`);
+
+    // 4. Flatten paths using the current OS path separator delimiter
     const pathDelimiter = os.platform() === 'win32' ? ';' : ':';
     const combinedJarClasspath = jarPaths.join(pathDelimiter);
     const combinedFilters = filters.join(',');
 
     console.log(`\n--------------------------------------------------`);
-    console.log(`🧠 Executing Master Reflection Pass over ${jarPaths.length} libraries...`);
-    console.log(`🔍 Whitelisted Package Filters: ${filters.join(', ')}`);
+    console.log(`🧠 Executing Master Reflection Pass over classpaths...`);
+    console.log(`🎯 Whitelisted Package Filters: ${filters.join(', ')}`);
     
     const tempJson = path.join(process.cwd(), 'temp_output.json');
     try {
-        execSync(`java Reflector "${combinedJarClasspath}" "${tempJson}" "${combinedFilters}"`);
+        // 'stdio: inherit' ensures Java's fatal error logs print directly to the GitHub Actions console
+        execSync(`java Reflector "${combinedJarClasspath}" "${tempJson}" "${combinedFilters}"`, { stdio: 'inherit' });
 
         if (fs.existsSync(tempJson)) {
             const schemaData = JSON.parse(fs.readFileSync(tempJson, 'utf-8'));
