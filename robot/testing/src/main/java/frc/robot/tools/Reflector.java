@@ -1,3 +1,5 @@
+package frc.robot.tools;
+
 import io.github.classgraph.*;
 import java.io.FileWriter;
 import java.util.*;
