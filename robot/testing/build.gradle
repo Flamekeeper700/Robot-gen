@@ -8,6 +8,11 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
+// 1. Declare the isolated configuration block for the toolset at the top level
+configurations {
+    reflectorRuntime
+}
+
 def ROBOT_MAIN_CLASS = "frc.robot.Main"
 
 // Define my targets (RoboRIO) and artifacts (deployable files)
@@ -73,6 +78,9 @@ dependencies {
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // 2. ClassGraph attached cleanly only to our isolated custom configuration target
+    reflectorRuntime 'io.github.classgraph:classgraph:4.8.179'
 }
 
 test {
@@ -106,18 +114,17 @@ tasks.withType(JavaCompile) {
     options.compilerArgs.add '-XDstringConcat=inline'
 }
 
-// Create a custom task to run the universal generator
+// 3. Custom task utilizing the combined execution runtime definitions
 task runReflector(type: JavaExec) {
     group = "Robot-gen"
     description = "Scans all FRC libraries and generates API JSON definitions"
     
-    // Point to the class we just created
-    mainClass = "tools.Reflector" 
+    // Configured to perfectly point to the real location inside your project
+    mainClass = "frc.robot.tools.Reflector" 
     
-    // Gradle automatically provides the PERFECT classpath here (including all transitives like EJML)
-    classpath = sourceSets.main.runtimeClasspath 
+    // Standard robot dependencies + ClassGraph appended directly to execution runtime
+    classpath = sourceSets.main.runtimeClasspath + configurations.reflectorRuntime
     
-    // We will pass the arguments dynamically from the Node script
     if (project.hasProperty("reflectorArgs")) {
         args project.reflectorArgs.split("::")
     }
