@@ -1,5 +1,3 @@
-package robot.testing.src.tools;
-
 import io.github.classgraph.*;
 import java.io.FileWriter;
 import java.util.*;
