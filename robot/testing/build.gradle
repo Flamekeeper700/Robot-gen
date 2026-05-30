@@ -8,9 +8,18 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
-// 1. Declare the isolated configuration block for the toolset at the top level
+// 1. Declare an isolated configuration and custom source set for our generator tools
 configurations {
-    reflectorRuntime
+    reflectorCompile
+}
+
+sourceSets {
+    tools {
+        java {
+            // Points flatly to the src/tools folder containing your unpackaged Reflector.java
+            srcDirs = ['src/tools']
+        }
+    }
 }
 
 def ROBOT_MAIN_CLASS = "frc.robot.Main"
@@ -79,8 +88,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    // 2. ClassGraph attached cleanly only to our isolated custom configuration target
-    reflectorRuntime 'io.github.classgraph:classgraph:4.8.179'
+    // 2. Attach ClassGraph strictly to our isolated reflection compiler configuration scope
+    reflectorCompile 'io.github.classgraph:classgraph:4.8.179'
 }
 
 test {
@@ -114,17 +123,26 @@ tasks.withType(JavaCompile) {
     options.compilerArgs.add '-XDstringConcat=inline'
 }
 
-// 3. Custom task utilizing the combined execution runtime definitions
+// 3. Inform the custom toolset compiler to bind ClassGraph alongside the standard FRC libraries
+tasks.compileToolsJava {
+    classpath = sourceSets.main.compileClasspath + configurations.reflectorCompile
+}
+
+// 4. Custom task to run the universal bytecode generator
 task runReflector(type: JavaExec) {
     group = "Robot-gen"
     description = "Scans all FRC libraries and generates API JSON definitions"
     
-    // Configured to perfectly point to the real location inside your project
-    mainClass = "frc.robot.tools.Reflector" 
+    // Point directly to the root namespace since Reflector.java has no package declaration header
+    mainClass = "Reflector" 
     
-    // Standard robot dependencies + ClassGraph appended directly to execution runtime
-    classpath = sourceSets.main.runtimeClasspath + configurations.reflectorRuntime
+    // Combine compiled tools, standard robot classpath, and ClassGraph for the execution bridge
+    classpath = sourceSets.tools.output + sourceSets.main.runtimeClasspath + configurations.reflectorCompile
     
+    // Auto-compiles your tool code when running this specific target route
+    dependsOn compileToolsJava
+    
+    // Delimiter matching for arguments fed via Node orchestrator
     if (project.hasProperty("reflectorArgs")) {
         args project.reflectorArgs.split("::")
     }
